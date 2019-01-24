@@ -11,7 +11,7 @@ const routes: Routes = [
             { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
             { path: 'forms', loadChildren: './form/form.module#FormModule' },
             { path: 'blank-page', loadChildren: './blank-page/blank-page.module#BlankPageModule' },
-            { path: 'social', loadChildren: './social-info/social.module' }
+            { path: 'social', loadChildren: './social-info/social.module#SocialModule' }
         ]
     }
 ];

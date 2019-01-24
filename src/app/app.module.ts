@@ -46,7 +46,7 @@ export const createTranslateLoader = (http: HttpClient) => {
         AppRoutingModule
     ],
     // tslint:disable-next-line:max-line-length
-    declarations: [AppComponent, ProjectInfoComponent, LocationComponent, SocialInfoComponent, AgricultureInfoComponent, EngineeringInfoComponent, GroundwaterInfoComponent, EconomicInfoComponent, ImplementationInfoComponent, MapInfoComponent],
+    declarations: [AppComponent],
     providers: [AuthGuard],
     bootstrap: [AppComponent]
 })

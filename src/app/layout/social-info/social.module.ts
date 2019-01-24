@@ -9,4 +9,4 @@ import { PageHeaderModule } from './../../shared';
     imports: [CommonModule, SocialRoutingModule, PageHeaderModule],
     declarations: [SocialInfoComponent]
 })
-export class FormModule {}
+export class SocialModule {}
