@@ -14,6 +14,10 @@
             <i class="fa fa-fw fa-edit"></i>&nbsp;
             <span>{{ 'Social Information' | translate }}</span>
         </a>
+        <a [routerLink]="['/engineering']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+          <i class="fa fa-fw fa-edit"></i>&nbsp;
+          <span>{{ 'Engineering Information' | translate }}</span>
+      </a>
         <div class="nested-menu">
             <a class="list-group-item" (click)="addExpandClass('pages')">
                 <i class="fa fa-plus"></i>&nbsp;
