@@ -1,537 +1,641 @@
-<div id="home">
+<form [formGroup]="page4Form">
     <div class="jumbotron">
-        <h3>Existing cropping pattern</h3>
-        <br>
-        <br>
-        <div class="form-row">
-            <div class="col-md-4">
-                <label class="col-md-4 col-form-label">Crop name:</label>
-                <select class="col-md-4"> 
+      <h3>Existing cropping pattern</h3>
+      <br>
+      <br>
+      <div class="form-row">
+          <div class="col-md-4" >
+            <label class="col-md-4 col-form-label">Crop name:</label>
+            <select class="col-md-4"> 
               <option>select</option>
               <option>Option 2</option> 
             </select>
-            </div>
-            <div class="col-md-4">
-                <label class="col-md-4 col-form-label">Planting date:</label>
-                <select class="col-md-4"> 
+          </div>
+          <div class="col-md-4">
+            <label class="col-md-4 col-form-label">Planting date:</label>
+            <select class="col-md-4"> 
               <option>January</option>
               <option>Option 2</option> 
             </select>
-            </div>
-            <div class="col-md-4">
-                <select class="col-md-4"> 
+          </div>
+          <div class="col-md-4">
+            <select class="col-md-4"> 
               <option>First week</option>
               <option>Option 2</option> 
             </select>
-            </div>
-        </div>
-        <br>
-        <div class="form-row">
-            <div class="col-md-4">
-                <label class="col-md-4 col-form-label">Crop area:</label>
-                <input type="text">
-                <label>ha</label>
-            </div>
-            <div class="col-md-4">
-                <label class="col-md-4 col-form-label">Harvesting date:</label>
-                <select class="col-md-4"> 
+          </div>
+      </div>
+      <br>
+      <div class="form-row">
+          <div class="col-md-4">
+            <label class="col-md-4 col-form-label">Crop area:</label>
+            <input type="text" formControlName="CA">
+            <label>ha</label>
+            <span
+            *ngIf="!page4Form.get('CA').valid && page4Form.get('CA').touched"
+            class="help-block">
+            <span *ngIf="page4Form.get('CA').errors['pattern']">This name is invalid! Please enter a valid number.</span>
+            <span *ngIf="page4Form.get('CA').errors['required']">This field is required!</span>
+          </span>
+          </div>
+          <div class="col-md-4">
+            <label class="col-md-4 col-form-label">Harvesting date:</label>
+            <select class="col-md-4"> 
               <option>January</option>
               <option>Option 2</option> 
             </select>
-            </div>
-            <div class="col-md-4">
-                <select class="col-md-4"> 
+          </div>
+          <div class="col-md-4">
+            <select class="col-md-4"> 
               <option>First week</option>
               <option>Option 2</option> 
             </select>
-            </div>
+          </div>      
         </div>
-        <br>
-        <div class="form-row">
-            <div class="col-md-4">
-                <label class="col-md-4 col-form-label">Average crop yield:</label>
-                <input type="text">
-                <label>ton/ha</label>
-            </div>
-        </div>
-        <br>
-        <br>
-        <h3> Average farm input </h3>
-        <br>
-        <br>
-        <div class="form-row">
-            <div class="col-md-4">
-                <label class="col-md-4 col-form-label">Crop name:</label>
-                <select class="col-md-4"> 
+      <br>
+      <div class="form-row">
+          <div class="col-md-4">
+            <label class="col-md-4 col-form-label">Average crop yield:</label>
+            <input type="text" formControlName="AC">
+            <label>ton/ha</label>
+            <span
+            *ngIf="!page4Form.get('AC').valid && page4Form.get('AC').touched"
+            class="help-block">
+            <span *ngIf="page4Form.get('AC').errors['pattern']">This name is invalid! Please enter a valid number.</span>
+            <span *ngIf="page4Form.get('AC').errors['required']">This field is required!</span>
+          </span>
+          </div>
+      </div>
+      <br>
+      <br>
+      <h3> Average farm input </h3>
+      <br>
+      <br>
+      <div class="form-row">
+          <div class="col-md-4" >
+            <label class="col-md-4 col-form-label">Crop name:</label>
+            <select class="col-md-4"> 
               <option>select</option>
               <option>Option 2</option> 
             </select>
-            </div>
-            <div class="col-md-4">
-                <label class="col-md-4 col-form-label">Planting date:</label>
-                <select class="col-md-4"> 
+          </div>
+          <div class="col-md-4">
+            <label class="col-md-4 col-form-label">Planting date:</label>
+            <select class="col-md-4"> 
               <option>January</option>
               <option>Option 2</option> 
             </select>
-            </div>
-            <div class="col-md-4">
-                <select class="col-md-4"> 
+          </div>
+          <div class="col-md-4">
+            <select class="col-md-4"> 
               <option>First week</option>
               <option>Option 2</option> 
             </select>
-            </div>
-        </div>
-        <br>
+          </div>
+      </div>
+      <br>
+      <div class="form-row">
+          <div class="col-md-4">
+            <label class="col-md-4 col-form-label">Organic Manure:</label>
+            <input type="text" formControlName="OM">
+            <label>Nrs/ha</label>
+            <span
+            *ngIf="!page4Form.get('OM').valid && page4Form.get('OM').touched"
+            class="help-block">
+            <span *ngIf="page4Form.get('OM').errors['pattern']">This name is invalid! Please enter a valid number.</span>
+            <span *ngIf="page4Form.get('OM').errors['required']">This field is required!</span>
+          </span>
+          </div>
+          <div class="col-md-4">
+            <label class="col-md-4 col-form-label">Potash:</label>
+            <input type="text" formControlName="PT">
+            <label>Kg/ha</label>
+            <span
+            *ngIf="!page4Form.get('PT').valid && page4Form.get('PT').touched"
+            class="help-block">
+            <span *ngIf="page4Form.get('PT').errors['pattern']">This name is invalid! Please enter a valid number.</span>
+            <span *ngIf="page4Form.get('PT').errors['required']">This field is required!</span>
+          </span>
+          </div>
+          <div class="col-md-4">
+            <label class="col-md-4 col-form-label">Animal labour:</label>
+            <input type="text" formControlName="AL">
+            <label>No/ha</label>
+            <span
+            *ngIf="!page4Form.get('AL').valid && page4Form.get('AL').touched"
+            class="help-block">
+            <span *ngIf="page4Form.get('AL').errors['pattern']">This name is invalid! Please enter a valid number.</span>
+            <span *ngIf="page4Form.get('AL').errors['required']">This field is required!</span>
+          </span>
+          </div>
+      </div>
+      <br>
+    
         <div class="form-row">
-            <div class="col-md-4">
-                <label class="col-md-4 col-form-label">Organic Manure:</label>
-                <input type="text">
-                <label>Nrs/ha</label>
-            </div>
-            <div class="col-md-4">
-                <label class="col-md-4 col-form-label">Potash:</label>
-                <input type="text">
-                <label>Kg/ha</label>
-            </div>
-            <div class="col-md-4">
-                <label class="col-md-4 col-form-label">Animal labour:</label>
-                <input type="text">
-                <label>No/ha</label>
-            </div>
+          <div class="col-md-4">
+          </div>
+        <div class="col-md-4">
+            <label class="col-md-4 col-form-label">Urea:</label>
+            <input type="text" formControlname="UR">
+            <label>Kg/ha</label>
+            <span
+            *ngIf="!page4Form.get('UR').valid && page4Form.get('UR').touched"
+            class="help-block">
+            <span *ngIf="page4Form.get('UR').errors['pattern']">This name is invalid! Please enter a valid number.</span>
+            <span *ngIf="page4Form.get('UR').errors['required']">This field is required!</span>
+          </span>
+          </div>
+          <div class="col-md-4">
+            <label class="col-md-4 col-form-label">Machine labour:</label>
+            <input type="text" formControlName="ML">
+            <label>No/ha</label>
+            <span
+            *ngIf="!page4Form.get('ML').valid && page4Form.get('ML').touched"
+            class="help-block">
+            <span *ngIf="page4Form.get('ML').errors['pattern']">This name is invalid! Please enter a valid number.</span>
+            <span *ngIf="page4Form.get('ML').errors['required']">This field is required!</span>
+          </span>
+          </div>
+      </div>
+      <br>
+      <br>
+      <div class="btn-toolbar">
+        <div class="col-md-6">
+         <button type="button" class="mr-4">Add</button> 
+         <button type="button">Cancel</button> 
         </div>
-        <br>
-
-        <div class="form-row">
-            <div class="col-md-4">
-            </div>
-            <div class="col-md-4">
-                <label class="col-md-4 col-form-label">Urea:</label>
-                <input type="text">
-                <label>Kg/ha</label>
-            </div>
-            <div class="col-md-4">
-                <label class="col-md-4 col-form-label">Machine labour:</label>
-                <input type="text">
-                <label>No/ha</label>
-            </div>
-        </div>
-        <br>
-        <br>
-        <div class="btn-toolbar">
-            <div class="col-md-6">
-                <button type="button" class="mr-4">Add</button>
-                <button type="button">Cancel</button>
-            </div>
-        </div>
-        <br>
-        <br>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th scope="col">Crop name:</th>
-                    <th scope="col">Crop area:</th>
-                    <th scope="col">Avg. crop yield:(ton/ha)</th>
-                    <th scope="col">Planting date</th>
-                    <th scope="col">Harvesing date</th>
-                    <th scope="col">Seed(kg/gm)</th>
-
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-
-
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-
-
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-
-
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-
-
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-
-
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-
-
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-
-
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-
-
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-
-
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-
-
-                </tr>
-            </tbody>
-
-        </table>
-        <br>
-        <br>
-        <h3>Proposed cropping pattern</h3>
-        <br>
-        <br>
-        <div class="form-row">
-            <div class="col-md-4">
-                <label class="col-md-4 col-form-label">Crop name:</label>
-                <select class="col-md-4"> 
+      </div>
+      <br>
+      <br>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Crop name:</th>
+            <th scope="col">Crop area:</th>
+            <th scope="col">Avg. crop yield:(ton/ha)</th>
+            <th scope="col">Planting date</th>
+            <th scope="col">Harvesing date</th>
+            <th scope="col">Seed(kg/gm)</th>
+          </tr>
+          </thead>
+           <tbody>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              
+      
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              
+              
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              
+              
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              
+              
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              
+              
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+                            
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              
+              
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              
+              
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              
+              
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              
+              
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+            
+              
+            </tr>
+          </tbody>
+      </table>
+      <br>
+      <br>
+            <h3>Proposed cropping pattern</h3>
+      <br>
+      <br>
+      <div class="form-row">
+          <div class="col-md-4" >
+            <label class="col-md-4 col-form-label">Crop name:</label>
+            <select class="col-md-4"> 
               <option>select</option>
               <option>Option 2</option> 
             </select>
-            </div>
-            <div class="col-md-4">
-                <label class="col-md-4 col-form-label">Planting date:</label>
-                <select class="col-md-4"> 
+          </div>
+          <div class="col-md-4">
+            <label class="col-md-4 col-form-label">Planting date:</label>
+            <select class="col-md-4"> 
               <option>January</option>
               <option>Option 2</option> 
             </select>
-            </div>
-            <div class="col-md-4">
-                <select class="col-md-4"> 
+          </div>
+          <div class="col-md-4">
+            <select class="col-md-4"> 
               <option>First week</option>
               <option>Option 2</option> 
             </select>
-            </div>
-        </div>
-        <br>
-        <div class="form-row">
-            <div class="col-md-4">
-                <label class="col-md-4 col-form-label">Crop area:</label>
-                <input type="text">
-                <label>ha</label>
-            </div>
-            <div class="col-md-4">
-                <label class="col-md-4 col-form-label">Harvesting date:</label>
-                <select class="col-md-4"> 
+          </div>
+      </div>
+      <br>
+      <div class="form-row">
+          <div class="col-md-4">
+            <label class="col-md-4 col-form-label">Crop area:</label>
+            <input type="text" formControlName="CA1">
+            <label>ha</label>
+            <span
+            *ngIf="!page4Form.get('CA1').valid && page4Form.get('CA1').touched"
+            class="help-block">
+            <span *ngIf="page4Form.get('CA1').errors['pattern']">This name is invalid! Please enter a valid number.</span>
+            <span *ngIf="page4Form.get('CA1').errors['required']">This field is required!</span>
+          </span>
+          </div>
+          <div class="col-md-4">
+            <label class="col-md-4 col-form-label">Harvesting date:</label>
+            <select class="col-md-4"> 
               <option>January</option>
               <option>Option 2</option> 
             </select>
-            </div>
-            <div class="col-md-4">
-                <select class="col-md-4"> 
+          </div>
+          <div class="col-md-4">
+            <select class="col-md-4"> 
               <option>First week</option>
               <option>Option 2</option> 
             </select>
-            </div>
+          </div>      
         </div>
-        <br>
-        <div class="form-row">
-            <div class="col-md-4">
-                <label class="col-md-4 col-form-label">Average crop yield:</label>
-                <input type="text">
-                <label>ton/ha</label>
-            </div>
-        </div>
-        <br>
-        <br>
-        <h3> Average farm input </h3>
-        <br>
-        <br>
-        <div class="form-row">
-            <div class="col-md-4">
-                <label class="col-md-4 col-form-label">Crop name:</label>
-                <select class="col-md-4"> 
+      <br>
+      <div class="form-row">
+          <div class="col-md-4">
+            <label class="col-md-4 col-form-label">Average crop yield:</label>
+            <input type="text" formControlName="ACY">
+            <label>ton/ha</label>
+            <span
+            *ngIf="!page4Form.get('ACY').valid && page4Form.get('ACY').touched"
+            class="help-block">
+            <span *ngIf="page4Form.get('ACY').errors['pattern']">This name is invalid! Please enter a valid number.</span>
+            <span *ngIf="page4Form.get('ACY').errors['required']">This field is required!</span>
+          </span>
+          </div>
+      </div>
+      <br>
+      <br>
+      <h3> Average farm input </h3>
+      <br>
+      <br>
+      <div class="form-row">
+          <div class="col-md-4" >
+            <label class="col-md-4 col-form-label">Crop name:</label>
+            <select class="col-md-4"> 
               <option>select</option>
               <option>Option 2</option> 
             </select>
-            </div>
-            <div class="col-md-4">
-                <label class="col-md-4 col-form-label">Planting date:</label>
-                <select class="col-md-4"> 
+          </div>
+          <div class="col-md-4">
+            <label class="col-md-4 col-form-label">Planting date:</label>
+            <select class="col-md-4"> 
               <option>January</option>
               <option>Option 2</option> 
             </select>
-            </div>
-            <div class="col-md-4">
-                <select class="col-md-4"> 
+          </div>
+          <div class="col-md-4">
+            <select class="col-md-4"> 
               <option>First week</option>
               <option>Option 2</option> 
             </select>
-            </div>
-        </div>
-        <br>
+          </div>
+      </div>
+      <br>
+      <div class="form-row">
+          <div class="col-md-4">
+            <label class="col-md-4 col-form-label">Organic Manure:</label>
+            <input type="text" formControlName="OM1">
+            <label>Nrs/ha</label>
+            <span
+            *ngIf="!page4Form.get('OM1').valid && page4Form.get('OM1').touched"
+            class="help-block">
+            <span *ngIf="page4Form.get('OM1').errors['pattern']">This name is invalid! Please enter a valid number.</span>
+            <span *ngIf="page4Form.get('OM1').errors['required']">This field is required!</span>
+          </span>
+          </div>
+          <div class="col-md-4">
+            <label class="col-md-4 col-form-label">Potash:</label>
+            <input type="text" formControlName="PT1">
+            <label>Kg/ha</label>
+            <span
+            *ngIf="!page4Form.get('PT1').valid && page4Form.get('PT1').touched"
+            class="help-block">
+            <span *ngIf="page4Form.get('PT1').errors['pattern']">This name is invalid! Please enter a valid number.</span>
+            <span *ngIf="page4Form.get('PT1').errors['required']">This field is required!</span>
+          </span>
+          </div>
+          <div class="col-md-4">
+            <label class="col-md-4 col-form-label">Animal labour:</label>
+            <input type="text" formControlName="AL1">
+            <label>No/ha</label>
+            <span
+            *ngIf="!page4Form.get('AL1').valid && page4Form.get('AL1').touched"
+            class="help-block">
+            <span *ngIf="page4Form.get('AL1').errors['pattern']">This name is invalid! Please enter a valid number.</span>
+            <span *ngIf="page4Form.get('AL1').errors['required']">This field is required!</span>
+          </span>
+          </div>
+      </div>
+      <br>
+    
         <div class="form-row">
-            <div class="col-md-4">
-                <label class="col-md-4 col-form-label">Organic Manure:</label>
-                <input type="text">
-                <label>Nrs/ha</label>
-            </div>
-            <div class="col-md-4">
-                <label class="col-md-4 col-form-label">Potash:</label>
-                <input type="text">
-                <label>Kg/ha</label>
-            </div>
-            <div class="col-md-4">
-                <label class="col-md-4 col-form-label">Animal labour:</label>
-                <input type="text">
-                <label>No/ha</label>
-            </div>
+          <div class="col-md-4">
+          </div>
+        <div class="col-md-4">
+            <label class="col-md-4 col-form-label">Urea:</label>
+            <input type="text" formControlName="UR1">
+            <label>Kg/ha</label>
+            <span
+            *ngIf="!page4Form.get('UR1').valid && page4Form.get('UR1').touched"
+            class="help-block">
+            <span *ngIf="page4Form.get('UR1').errors['pattern']">This name is invalid! Please enter a valid number.</span>
+            <span *ngIf="page4Form.get('UR1').errors['required']">This field is required!</span>
+          </span>
+          </div>
+          <div class="col-md-4">
+            <label class="col-md-4 col-form-label">Machine labour:</label>
+            <input type="text" formControlName="ML1">
+            <label>No/ha</label>
+            <span
+            *ngIf="!page4Form.get('ML1').valid && page4Form.get('ML1').touched"
+            class="help-block">
+            <span *ngIf="page4Form.get('ML1').errors['pattern']">This name is invalid! Please enter a valid number.</span>
+            <span *ngIf="page4Form.get('ML1').errors['required']">This field is required!</span>
+          </span>
+          </div>
+      </div>
+      <br>
+      <br>
+      <div class="btn-toolbar">
+        <div class="col-md-6">
+         <button type="button" class="mr-4">Add</button> 
+         <button type="button">Cancel</button> 
         </div>
-        <br>
-
-        <div class="form-row">
-            <div class="col-md-4">
-            </div>
-            <div class="col-md-4">
-                <label class="col-md-4 col-form-label">Urea:</label>
-                <input type="text">
-                <label>Kg/ha</label>
-            </div>
-            <div class="col-md-4">
-                <label class="col-md-4 col-form-label">Machine labour:</label>
-                <input type="text">
-                <label>No/ha</label>
-            </div>
+      </div>
+      <br>
+      <br>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Crop name:</th>
+            <th scope="col">Crop area:</th>
+            <th scope="col">Avg. crop yield:(ton/ha)</th>
+            <th scope="col">Planting date</th>
+            <th scope="col">Harvesing date</th>
+            <th scope="col">Seed(kg/gm)</th>
+          </tr>
+        </thead>>
+           <tbody>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              
+      
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              
+              
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              
+              
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              
+              
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              
+              
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+                            
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              
+              
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+            
+              
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              
+              
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              
+              
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+            
+              
+            </tr>
+          </tbody>
+      </table>
+      <br>
+      <br>
+      <div class="form-row">
+        <div class="col-md-6" >
+          <label class="col-md-6 col-form-label">Nearest agricultural extension office:</label>
+          <input type="Text" formControlName="NA">
+          <span
+            *ngIf="!page4Form.get('NA').valid && page4Form.get('NA').touched"
+            class="help-block">
+            <span *ngIf="page4Form.get('NA').errors['pattern']">This name is invalid! Please enter a valid number.</span>
+            <span *ngIf="page4Form.get('NA').errors['required']">This field is required!</span>
+          </span>
         </div>
-        <br>
-        <br>
-        <div class="btn-toolbar">
-            <div class="col-md-6">
-                <button type="button" class="mr-4">Add</button>
-                <button type="button">Cancel</button>
-            </div>
+        <div class="col-md-6">
+          <label class="col-md-4 col-form-label">Distance:</label>
+          <input type="Text" formControlName="DS">
+          <span
+            *ngIf="!page4Form.get('DS').valid && page4Form.get('DS').touched"
+            class="help-block">
+            <span *ngIf="page4Form.get('DS').errors['pattern']">This name is invalid! Please enter a valid number.</span>
+            <span *ngIf="page4Form.get('DS').errors['required']">This field is required!</span>
+          </span>
         </div>
-        <br>
-        <br>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th scope="col">Crop name:</th>
-                    <th scope="col">Crop area:</th>
-                    <th scope="col">Avg. crop yield:(ton/ha)</th>
-                    <th scope="col">Planting date</th>
-                    <th scope="col">Harvesing date</th>
-                    <th scope="col">Seed(kg/gm)</th>
-
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-
-
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-
-
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-
-
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-
-
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-
-
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-
-
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-
-
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-
-
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-
-
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-
-
-                </tr>
-            </tbody>
-
-        </table>
-        <br>
-        <br>
-        <div class="form-row">
-            <div class="col-md-6">
-                <label class="col-md-6 col-form-label">Nearest agricultural extension office:</label>
-                <input type="Text">
-            </div>
-            <div class="col-md-6">
-                <label class="col-md-4 col-form-label">Distance:</label>
-                <input type="Text">
-            </div>
+      </div>
+      <br>
+      <div class="form-row">
+        <div class="col-md-6">
+          <label class="col-md-6 col-form-label">Nearest agrovet office:</label>
+          <input type="Text" formControlName="NAO">
+          <span
+            *ngIf="!page4Form.get('NAO').valid && page4Form.get('NAO').touched"
+            class="help-block">
+            <span *ngIf="page4Form.get('NAO').errors['pattern']">This name is invalid! Please enter a valid number.</span>
+            <span *ngIf="page4Form.get('NAO').errors['required']">This field is required!</span>
+          </span>
         </div>
-        <br>
-        <div class="form-row">
-            <div class="col-md-6">
-                <label class="col-md-6 col-form-label">Nearest agrovet office:</label>
-                <input type="Text">
-            </div>
-            <div class="col-md-6">
-                <label class="col-md-4 col-form-label">Distance:</label>
-                <input type="Text">
-            </div>
+        <div class="col-md-6">
+          <label class="col-md-4 col-form-label">Distance:</label>
+          <input type="Text" formControlName="DS1">
+          <span
+            *ngIf="!page4Form.get('DS1').valid && page4Form.get('DS1').touched"
+            class="help-block">
+            <span *ngIf="page4Form.get('DS1').errors['pattern']">This name is invalid! Please enter a valid number.</span>
+            <span *ngIf="page4Form.get('DS1').errors['required']">This field is required!</span>
+          </span>
         </div>
-        <br>
-        <br>
-        <div class="btn-toolbar">
-            <div class="col-md-6">
-                <button type="button" class="mr-4">Save</button>
-                <button type="button" class="mr-4">Reset</button>
-                <button type="button">Cancel</button>
-            </div>
+      </div>
+      <br>
+      <br>
+      <div class="btn-toolbar">
+        <div class="col-md-6">
+         <button type="button" class="mr-4">Save</button> 
+         <button type="button" class="mr-4">Reset</button> 
+         <button type="button">Cancel</button> 
         </div>
+      </div>
     </div>
