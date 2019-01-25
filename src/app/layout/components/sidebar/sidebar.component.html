@@ -14,17 +14,17 @@
             <i class="fa fa-fw fa-edit"></i>&nbsp;
             <span>{{ 'Social Information' | translate }}</span>
         </a>
-        <a [routerLink]="['/agriculture']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-edit"></i>&nbsp;
-            <span>{{ 'Agriculture Information' | translate }}</span>
-        </a>
         <a [routerLink]="['/engineering']" [routerLinkActive]="['router-link-active']" class="list-group-item">
           <i class="fa fa-fw fa-edit"></i>&nbsp;
           <span>{{ 'Engineering Information' | translate }}</span>
       </a>
-      <a [routerLink]="['/groundwater']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+      <a [routerLink]="['/implementation']" [routerLinkActive]="['router-link-active']" class="list-group-item">
         <i class="fa fa-fw fa-edit"></i>&nbsp;
-        <span>{{ 'Groundwater Project Information' | translate }}</span>
+        <span>{{ 'Implementation Information' | translate }}</span>
+    </a>
+    <a [routerLink]="['/economic']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <i class="fa fa-fw fa-edit"></i>&nbsp;
+        <span>{{ 'Economic Information' | translate }}</span>
     </a>
         <div class="nested-menu">
             <a class="list-group-item" (click)="addExpandClass('pages')">
