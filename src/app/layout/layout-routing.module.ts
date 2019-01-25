@@ -13,6 +13,7 @@ const routes: Routes = [
             { path: 'blank-page', loadChildren: './blank-page/blank-page.module#BlankPageModule' },
             { path: 'location', loadChildren: './location/location.module#locationModule' },
             { path: 'social', loadChildren: './social-info/social.module#SocialModule' },
+            { path: 'implementation', loadChildren: './implementation-info/implementation.module#ImplementationModule' },
             { path: 'engineering', loadChildren: './engineering-info/engineering.module#EngineeringModule' }
         ]
     }
