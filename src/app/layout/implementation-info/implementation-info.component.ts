@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-implementation-info',
@@ -7,19 +6,10 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./implementation-info.component.scss']
 })
 export class ImplementationInfoComponent implements OnInit {
-  page8Form: FormGroup;
 
   constructor() { }
 
   ngOnInit() {
-    this.page8Form= 
-    new FormGroup({
-      'GON':new FormControl(null,[Validators.required,Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'WUA':new FormControl(null,[Validators.required,Validators.pattern(/^[1-9]+[0-9]*$/)])
-    
-    }
-    )
-  }
   }
 
-
+}

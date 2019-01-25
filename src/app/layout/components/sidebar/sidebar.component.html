@@ -10,22 +10,21 @@
             <span>{{ 'Forms' | translate }}</span>
         </a>
 
-        <a [routerLink]="['/location']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-edit"></i>&nbsp;
-            <span>{{ 'Location' | translate }}</span>
-        </a>
-
         <a [routerLink]="['/social']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-edit"></i>&nbsp;
             <span>{{ 'Social Information' | translate }}</span>
+        </a>
+        <a [routerLink]="['/agriculture']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-edit"></i>&nbsp;
+            <span>{{ 'Agriculture Information' | translate }}</span>
         </a>
         <a [routerLink]="['/engineering']" [routerLinkActive]="['router-link-active']" class="list-group-item">
           <i class="fa fa-fw fa-edit"></i>&nbsp;
           <span>{{ 'Engineering Information' | translate }}</span>
       </a>
-      <a [routerLink]="['/implementation']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+      <a [routerLink]="['/groundwater']" [routerLinkActive]="['router-link-active']" class="list-group-item">
         <i class="fa fa-fw fa-edit"></i>&nbsp;
-        <span>{{ 'Implementation Information' | translate }}</span>
+        <span>{{ 'Groundwater Project Information' | translate }}</span>
     </a>
         <div class="nested-menu">
             <a class="list-group-item" (click)="addExpandClass('pages')">
