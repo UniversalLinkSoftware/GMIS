@@ -14,6 +14,9 @@ const routes: Routes = [
             { path: 'social', loadChildren: './social-info/social.module#SocialModule' },
             { path: 'agriculture', loadChildren: './agriculture-info/agriculture-info.module#AgricultureModule' },
             { path: 'engineering', loadChildren: './engineering-info/engineering.module#EngineeringModule' },
+            { path: 'economic', loadChildren: './economic-info/economic.module#EconomicModule' },
+            { path: 'location', loadChildren: './location/location.module#LocationModule' },
+            { path: 'implementation', loadChildren: './implementation-info/implementation.module#ImplementationModule' },
             { path: 'groundwater', loadChildren: './groundwater-info/groundwater.module#GroundwaterModule' }
         ]
     }
