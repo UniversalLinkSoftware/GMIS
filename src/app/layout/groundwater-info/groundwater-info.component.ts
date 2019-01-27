@@ -18,13 +18,13 @@ export class GroundwaterInfoComponent implements OnInit {
       'WD':new FormControl(null,[Validators.required,Validators.pattern(/^[1-9]+[0-9]*$/)]),
       'WS':new FormControl(null,[Validators.required,Validators.pattern(/^[1-9]+[0-9]*$/)]),
       'ST':new FormControl(null,[Validators.required,Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'HD':new FormControl(null,[Validators.required,]),
+      'HD':new FormControl(null, [Validators.required,]),
       'AT':new FormControl(null,[Validators.required,]),
       'AM':new FormControl(null,[Validators.required,]),
       'BC':new FormControl(null,[Validators.required,Validators.pattern(/^[1-9]+[0-9]*$/)]),
       'MCL':new FormControl(null,[Validators.required,Validators.pattern(/^[1-9]+[0-9]*$/)]),
       'O':new FormControl(null,[Validators.required,Validators.pattern(/^[1-9]+[0-9]*$/)])
-    })
+    });
   }
   }
 
