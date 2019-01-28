@@ -31,6 +31,7 @@
             <label class="col-md-4 col-form-label">Crop area:</label>
             <input type="text" formControlName="CA">
             <label>ha</label>
+            <br>
             <span
             *ngIf="!page4Form.get('CA').valid && page4Form.get('CA').touched"
             class="help-block">
@@ -58,6 +59,7 @@
             <label class="col-md-4 col-form-label">Average crop yield:</label>
             <input type="text" formControlName="AC">
             <label>ton/ha</label>
+            <br>
             <span
             *ngIf="!page4Form.get('AC').valid && page4Form.get('AC').touched"
             class="help-block">
@@ -99,6 +101,7 @@
             <label class="col-md-4 col-form-label">Organic Manure:</label>
             <input type="text" formControlName="OM">
             <label>Nrs/ha</label>
+            <br>
             <span
             *ngIf="!page4Form.get('OM').valid && page4Form.get('OM').touched"
             class="help-block">
@@ -110,6 +113,7 @@
             <label class="col-md-4 col-form-label">Potash:</label>
             <input type="text" formControlName="PT">
             <label>Kg/ha</label>
+            <br>
             <span
             *ngIf="!page4Form.get('PT').valid && page4Form.get('PT').touched"
             class="help-block">
@@ -121,6 +125,7 @@
             <label class="col-md-4 col-form-label">Animal labour:</label>
             <input type="text" formControlName="AL">
             <label>No/ha</label>
+            <br>
             <span
             *ngIf="!page4Form.get('AL').valid && page4Form.get('AL').touched"
             class="help-block">
@@ -136,8 +141,9 @@
           </div>
         <div class="col-md-4">
             <label class="col-md-4 col-form-label">Urea:</label>
-            <input type="text" formControlname="UR">
+            <input type="text" formControlName="UR">
             <label>Kg/ha</label>
+            <br>
             <span
             *ngIf="!page4Form.get('UR').valid && page4Form.get('UR').touched"
             class="help-block">
@@ -149,6 +155,7 @@
             <label class="col-md-4 col-form-label">Machine labour:</label>
             <input type="text" formControlName="ML">
             <label>No/ha</label>
+            <br>
             <span
             *ngIf="!page4Form.get('ML').valid && page4Form.get('ML').touched"
             class="help-block">
@@ -323,6 +330,7 @@
             <label class="col-md-4 col-form-label">Crop area:</label>
             <input type="text" formControlName="CA1">
             <label>ha</label>
+            <br>
             <span
             *ngIf="!page4Form.get('CA1').valid && page4Form.get('CA1').touched"
             class="help-block">
@@ -350,6 +358,7 @@
             <label class="col-md-4 col-form-label">Average crop yield:</label>
             <input type="text" formControlName="ACY">
             <label>ton/ha</label>
+            <br>
             <span
             *ngIf="!page4Form.get('ACY').valid && page4Form.get('ACY').touched"
             class="help-block">
@@ -391,6 +400,7 @@
             <label class="col-md-4 col-form-label">Organic Manure:</label>
             <input type="text" formControlName="OM1">
             <label>Nrs/ha</label>
+            <br>
             <span
             *ngIf="!page4Form.get('OM1').valid && page4Form.get('OM1').touched"
             class="help-block">
@@ -402,17 +412,20 @@
             <label class="col-md-4 col-form-label">Potash:</label>
             <input type="text" formControlName="PT1">
             <label>Kg/ha</label>
+            <br>
             <span
             *ngIf="!page4Form.get('PT1').valid && page4Form.get('PT1').touched"
             class="help-block">
             <span *ngIf="page4Form.get('PT1').errors['pattern']">This name is invalid! Please enter a valid number.</span>
             <span *ngIf="page4Form.get('PT1').errors['required']">This field is required!</span>
           </span>
+          <br>
           </div>
           <div class="col-md-4">
             <label class="col-md-4 col-form-label">Animal labour:</label>
             <input type="text" formControlName="AL1">
             <label>No/ha</label>
+            <br>
             <span
             *ngIf="!page4Form.get('AL1').valid && page4Form.get('AL1').touched"
             class="help-block">
@@ -430,6 +443,7 @@
             <label class="col-md-4 col-form-label">Urea:</label>
             <input type="text" formControlName="UR1">
             <label>Kg/ha</label>
+            <br>
             <span
             *ngIf="!page4Form.get('UR1').valid && page4Form.get('UR1').touched"
             class="help-block">
@@ -441,6 +455,7 @@
             <label class="col-md-4 col-form-label">Machine labour:</label>
             <input type="text" formControlName="ML1">
             <label>No/ha</label>
+            <br>
             <span
             *ngIf="!page4Form.get('ML1').valid && page4Form.get('ML1').touched"
             class="help-block">
@@ -588,6 +603,7 @@
         <div class="col-md-6" >
           <label class="col-md-6 col-form-label">Nearest agricultural extension office:</label>
           <input type="Text" formControlName="NA">
+          <br>
           <span
             *ngIf="!page4Form.get('NA').valid && page4Form.get('NA').touched"
             class="help-block">
@@ -598,6 +614,7 @@
         <div class="col-md-6">
           <label class="col-md-4 col-form-label">Distance:</label>
           <input type="Text" formControlName="DS">
+          <br>
           <span
             *ngIf="!page4Form.get('DS').valid && page4Form.get('DS').touched"
             class="help-block">
@@ -611,6 +628,7 @@
         <div class="col-md-6">
           <label class="col-md-6 col-form-label">Nearest agrovet office:</label>
           <input type="Text" formControlName="NAO">
+          <br>
           <span
             *ngIf="!page4Form.get('NAO').valid && page4Form.get('NAO').touched"
             class="help-block">
@@ -621,6 +639,7 @@
         <div class="col-md-6">
           <label class="col-md-4 col-form-label">Distance:</label>
           <input type="Text" formControlName="DS1">
+          <br>
           <span
             *ngIf="!page4Form.get('DS1').valid && page4Form.get('DS1').touched"
             class="help-block">

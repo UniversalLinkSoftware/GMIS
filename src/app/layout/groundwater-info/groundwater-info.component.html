@@ -1,103 +1,167 @@
-<div id="home">
+<form [formGroup]="page6Form">
     <div class="jumbotron">
         <section>
-            <h3> Well Information </h3>
+        <h3> Well Information </h3>
+        <br>
+        <div class="form-row">
+          <div class="col-md-6">
+            <label class="col-md-4 col-form-label">No. of wells:</label>
+            <input type="Text" formControlName="NW" >
             <br>
-            <div class="form-row">
-                <div class="col-md-6">
-                    <label class="col-md-4 col-form-label">No. of wells:</label>
-                    <input type="Text">
-                </div>
-            </div>
+            <span
+            *ngIf="!page6Form.get('NW').valid && page6Form.get('NW').touched"
+            class="help-block">
+            <span *ngIf="page6Form.get('NW').errors['pattern']">This name is invalid! Please enter a valid number.</span>
+            <span *ngIf="page6Form.get('NW').errors['required']">This field is required!</span>
+          </span>
+          </div>
+        </div>
         </section>
         <br>
-        <div class="form-row">
+          <div class="form-row">
             <div class="col-md-6">
-                <label class="col-md-4 col-form-label">Type of wells:</label>
-                <select class="col-md-3">
-              <option>Deep tubewell</option>
-              <option>Option 1</option>
-              <option>Option 2</option> 
-            </select>
+              <label class="col-md-4 col-form-label">Type of wells:</label>
+              <select class="col-md-3">
+                <option>Deep tubewell</option>
+                <option>Option 1</option>
+                <option>Option 2</option> 
+              </select>
             </div>
-            <div class="col-md-6">
+              <div class="col-md-6">
                 <label class="col-md-4 col-form-label">Well depth:</label>
-                <input type="text">
+                <input type="text" formControlName="WD">
                 <label>m</label>
-            </div>
-        </div>
+                <br>
+                <span
+            *ngIf="!page6Form.get('WD').valid && page6Form.get('WD').touched"
+            class="help-block">
+            <span *ngIf="page6Form.get('WD').errors['pattern']">This name is invalid! Please enter a valid number.</span>
+            <span *ngIf="page6Form.get('WD').errors['required']">This field is required!</span>
+          </span>
+              </div>
+          </div>
         <br>
         <div class="form-row">
             <div class="col-md-6">
-                <label class="col-md-4 col-form-label">Tube well spacing:</label>
-                <input type="text">
-                <label>m</label>
+              <label class="col-md-4 col-form-label">Tube well spacing:</label>
+              <input type="text" formControlName="WS">
+              <label>m</label>
+              <br>
+              <span
+            *ngIf="!page6Form.get('WS').valid && page6Form.get('WS').touched"
+            class="help-block">
+            <span *ngIf="page6Form.get('WS').errors['pattern']">This name is invalid! Please enter a valid number.</span>
+            <span *ngIf="page6Form.get('WS').errors['required']">This field is required!</span>
+          </span>
             </div>
             <div class="col-md-6">
-                <label class="col-md-4 col-form-label">Size of tubewells:</label>
-                <input type="text">
-                <label>inch</label>
+              <label class="col-md-4 col-form-label">Size of tubewells:</label>
+              <input type="text" formControlName="ST">
+              <label>inch</label>
+              <br>
+              <span
+            *ngIf="!page6Form.get('ST').valid && page6Form.get('ST').touched"
+            class="help-block">
+            <span *ngIf="page6Form.get('ST').errors['pattern']">This name is invalid! Please enter a valid number.</span>
+            <span *ngIf="page6Form.get('ST').errors['required']">This field is required!</span>
+          </span>
             </div>
         </div>
         <br>
         <br>
-
-        <h3>Topography, Geology and Hydrology of the Area </h3>
-        <br>
-        <div class="form-group row">
-            <div class="col-md-12">
+    
+          <h3>Topography, Geology and Hydrology of the Area </h3>
+          <br>
+            <div class="form-group row">
+              <div class="col-md-12">
                 <label class="col-md-4 col-form-label"> Hydrological Description </label>
-
-                <input type="text" class="form-control col-md-12">
+                  
+                  <input type="text" class="form-control col-md-12" formControlName="HD">
+                  <span
+            *ngIf="!page6Form.get('HD').valid && page6Form.get('HD').touched"
+            class="help-block">
+            <span *ngIf="page6Form.get('HD').errors['required']">This field is required!</span>
+          </span>
+              </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-md-12">
+            <div class="form-group row">
+              <div class="col-md-12">
                 <label class="col-md-4 col-form-label"> Aquifer type </label>
-                <input type="text" class="form-control col-md-12">
+                  <input type="text" class="form-control col-md-12" formControlName="AT">
+                  <span
+            *ngIf="!page6Form.get('AT').valid && page6Form.get('AT').touched"
+            class="help-block">
+            <span *ngIf="page6Form.get('AT').errors['required']">This field is required!</span>
+          </span>
+              </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-md-12">
+            <div class="form-group row">
+              <div class="col-md-12">
                 <label class="col-md-4 col-form-label"> Aquifer materials</label>
-                <input type="text" class="form-control col-md-12">
+                  <input type="text" class="form-control col-md-12" formControlName="AM">
+                  <span
+            *ngIf="!page6Form.get('AM').valid && page6Form.get('AM').touched"
+            class="help-block">
+            <span *ngIf="page6Form.get('AM').errors['required']">This field is required!</span>
+          </span>
+              </div>
             </div>
-        </div>
         <br>
         <h3>Distribution System</h3>
         <br>
         <div class="form-group row">
             <div class="col-md-6">
-                <label class="col-md-4 col-form-label">Open channel system:</label>
-                <select class="col-md-3"> 
-              <option>Option 1</option>
-              <option>Option 2</option> 
-            </select>
+              <label class="col-md-4 col-form-label">Open channel system:</label>
+              <select class="col-md-3"> 
+                <option>Option 1</option>
+                <option>Option 2</option> 
+              </select>
             </div>
             <div class="col-md-6">
-                <label class="col-md-4 col-form-label">No. of branch channel:</label>
-                <input type="text">
+              <label class="col-md-4 col-form-label">No. of branch channel:</label>
+              <input type="text" formControlName="BC">
+              <br>
+              <span
+            *ngIf="!page6Form.get('BC').valid && page6Form.get('BC').touched"
+            class="help-block">
+            <span *ngIf="page6Form.get('BC').errors['pattern']">This name is invalid! Please enter a valid number.</span>
+            <span *ngIf="page6Form.get('BC').errors['required']">This field is required!</span>
+          </span>
+            </div>
+        </div>
+         <div class="form-group row">
+            <div class="col-md-6">
+              <label class="col-md-4 col-form-label"> Buried pipe system: </label>
+              <select class="col-md-3"> 
+                <option>Option 1</option>
+                <option>Option 2</option> 
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label class="col-md-4 col-form-label">Main channel length:</label>
+              <input type="text" formControlName="MCL">
+              <label>km</label>
+              <br>
+              <span
+            *ngIf="!page6Form.get('MCL').valid && page6Form.get('MCL').touched"
+            class="help-block">
+            <span *ngIf="page6Form.get('MCL').errors['pattern']">This name is invalid! Please enter a valid number.</span>
+            <span *ngIf="page6Form.get('MCL').errors['required']">This field is required!</span>
+          </span>
             </div>
         </div>
         <div class="form-group row">
-            <div class="col-md-6">
-                <label class="col-md-4 col-form-label"> Buried pipe system: </label>
-                <select class="col-md-3"> 
-              <option>Option 1</option>
-              <option>Option 2</option> 
-            </select>
-            </div>
-            <div class="col-md-6">
-                <label class="col-md-4 col-form-label">Main channel length:</label>
-                <input type="text">
-                <label>km</label>
-            </div>
+        <div class="col-md-6">
+            <label class="col-md-4 col-form-label">Outlets:</label>
+            <input type="Text" formControlName="O">
+            <br>
+            <span
+            *ngIf="!page6Form.get('O').valid && page6Form.get('O').touched"
+            class="help-block">
+            <span *ngIf="page6Form.get('O').errors['pattern']">This name is invalid! Please enter a valid number.</span>
+            <span *ngIf="page6Form.get('O').errors['required']">This field is required!</span>
+          </span>
         </div>
-        <div class="form-group row">
-            <div class="col-md-6">
-                <label class="col-md-4 col-form-label">Outlets:</label>
-                <input type="Text">
-            </div>
-        </div>
-
     </div>
+    </div>
+    </form>
