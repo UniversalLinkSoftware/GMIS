@@ -26,6 +26,10 @@ var map = {
 		"common",
 		"dashboard-dashboard-module"
 	],
+	"./economic-info/economic.module": [
+		"./src/app/layout/economic-info/economic.module.ts",
+		"economic-info-economic-module"
+	],
 	"./engineering-info/engineering.module": [
 		"./src/app/layout/engineering-info/engineering.module.ts",
 		"engineering-info-engineering-module"
@@ -39,11 +43,19 @@ var map = {
 		"./src/app/layout/groundwater-info/groundwater.module.ts",
 		"groundwater-info-groundwater-module"
 	],
+	"./implementation-info/implementation.module": [
+		"./src/app/layout/implementation-info/implementation.module.ts",
+		"implementation-info-implementation-module"
+	],
 	"./layout/layout.module": [
 		"./src/app/layout/layout.module.ts",
 		"default~dashboard-dashboard-module~layout-layout-module",
 		"common",
 		"layout-layout-module"
+	],
+	"./location/location.module": [
+		"./src/app/layout/location/location.module.ts",
+		"location-location-module"
 	],
 	"./login/login.module": [
 		"./src/app/login/login.module.ts",
@@ -728,7 +740,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\ST lawerence\Angular\Project1\angulargmis\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\Project1\gmisdev\src\main.ts */"./src/main.ts");
 
 
 /***/ })

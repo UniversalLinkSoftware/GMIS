@@ -1,3 +1,190 @@
-<p>
-  project-info works!
-</p>
+<div id="home">
+  <div class="jumbotron">
+    <form [formGroup]="project">
+      <div class="form-group row">
+        <label class="col-md-auto col-form-label">Sub-Project Name:</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control"  formControlName="spn" >
+          <span *ngIf="!project.get('spn').valid && project.get('spn').touched"  class="help-block">
+            <span *ngIf="project.get('spn').errors['required']">This field is required!</span>
+          </span>
+        </div>
+        <div class="col-sm-1">
+          <button type="submit" class="btn btn-primary">Edit</button>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-md-auto col-form-label">Command Area:</label>
+        <div class="col-md-auto col-form-label">GCA</div>
+        <div class="col-sm-3">
+          <input type="number" class="form-control" formControlName="gca">
+          <span *ngIf="!project.get('gca').valid && project.get('gca').touched"  class="help-block">
+              <span *ngIf="project.get('gca').errors['pattern']">This is invalid! please enter number!</span>
+              <span *ngIf="project.get('gca').errors['required']">This field is required!</span>
+            </span>
+        </div>
+        <label class="col-md-left col-form-label">ha</label>
+        <label class="col-md-auto col-form-label">NCA</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" formControlName="nca" >
+          <span *ngIf="!project.get('nca').valid && project.get('nca').touched"  class="help-block">
+              <span *ngIf="project.get('nca').errors['pattern']">This is invalid! please enter number!</span>
+              <span *ngIf="project.get('nca').errors['required']">This field is required!</span>
+            </span>
+        </div>
+        <label class="col-md-left col-form-label">ha</label>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-md-auto col-form-label">Management System</label>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-md-10">
+          <div class="col-sm-2 form-check form-check-inline">
+              <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+            <label class="form-check-label" for="inlineCheckbox1">FMIS</label>
+          </div>
+          <div class="col-sm-2 form-check form-check-inline">
+             <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+            <label class="form-check-label" for="inlineCheckbox2">AMIS</label>
+          </div>
+          <div class="col-sm-2 form-check form-check-inline">
+             <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" >
+            <label class="form-check-label" for="inlineCheckbox3">JMIS</label>
+          </div>
+          <div class="col-sm-4 form-check form-check-inline">
+              <input type="radio" name="optionsRadios" id="optionsRadios4" value="option4" >
+            <label class="form-check-label" for="inlineCheckbox4">others</label>
+            <input type="text" class="form-control ml-2" >
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-1"></div>
+        <label class="col-2-auto">Program:</label>
+        <div class="col-4">
+          <select id="inputState" class="form-control">
+            <option selected>IISP</option>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+          </select>
+        </div>
+        <div class="col-4">
+          <input type="file" class="form-control-file" id="exampleFormControlFile1">
+        </div>
+        <div class="col-1"></div>
+      </div>
+
+      <div class="form-group row ">
+        <label class="col-md-auto col-form-label ">Sub Project Type:</label>
+        <div class=" form-check form-check-inline">
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" >
+          <label class="form-check-label" for="inlineCheckbox1">new</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" >
+          <label class="form-check-label" for="inlineCheckbox3">Rehabilaton</label>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-md-auto col-form-label">Status of Project:</label>
+        <div class="col-4">
+          <select id="inputState" class="form-control">
+            <option selected>-Select-</option>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-md-auto col-form-label">Sub Project Comment:</label>
+        <div class="col-7">
+        <textarea class="form-control" rows="3"></textarea>
+        </div>
+        <div class="col-1">
+          <button type="submit" class="btn btn-primary ">search</button>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-md-auto col-form-label">Other Information:</label>
+      </div>
+      <div class="form-group row">
+        <div class="col-2-auto">
+          <label class="col-md-auto col-form-label">Prepared By:</label>
+        </div>
+        <div class="col-2-auto">
+          <input type="text" class="form-control" formControlName="pb">
+          <span *ngIf="!project.get('pb').valid && project.get('pb').touched"  class="help-block">
+              <span *ngIf="project.get('pb').errors['required']">This field is required!</span>
+            </span>
+        </div>
+        <div class="col-4-auto">
+          <label class="col-md-auto col-form-label">Recomended By:</label>
+        </div>
+        <div class="col-2-auto">
+          <input type="text" class="form-control" formControlName="rb">
+          <span *ngIf="!project.get('rb').valid && project.get('rb').touched"  class="help-block">
+              <span *ngIf="project.get('rb').errors['required']">This field is required!</span>
+            </span>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-2-auto">
+          <label class="col-md-auto col-form-label">Approved By:</label>
+        </div>
+        <div class="col-2-auto">
+          <input type="text" class="form-control" formControlName="ab">
+          <span *ngIf="!project.get('ab').valid && project.get('ab').touched"  class="help-block">
+              <span *ngIf="project.get('ab').errors['required']">This field is required!</span>
+            </span>
+        </div>
+        <div class="col-4-auto">
+          <label class="col-md-auto col-form-label ml-1">Approved Date:</label>
+        </div>
+        <div class="col-2-auto">
+          <input type="date" class="form-control ml-1" formControlName="ad">
+          <span *ngIf="!project.get('ad').valid && project.get('ad').touched"  class="help-block">
+              <span *ngIf="project.get('ad').errors['pattern']">This is invalid! please enter number!</span>
+              <span *ngIf="project.get('ad').errors['required']">This field is required!</span>
+            </span>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-md-auto col-form-label">Approved Date:</label>
+        <div class="col-3">
+          <input type="date" class="form-control"formControlName="ad1" >
+          <span *ngIf="!project.get('ad1').valid && project.get('ad1').touched"  class="help-block">
+              <span *ngIf="project.get('ad1').errors['pattern']">This is invalid! please enter number!</span>
+              <span *ngIf="project.get('ad1').errors['required']">This field is required!</span>
+            </span>
+        </div>
+        <label class="col-md-left col-form-label">AD</label>
+        <div class="col-1"></div>
+        <label class="col-md-auto col-form-label">End Date:</label>
+        <div class="col-3  ">
+          <input type="date" class="form-control" formControlName="ed" >
+          <span *ngIf="!project.get('ed').valid && project.get('ed').touched"  class="help-block">
+              <span *ngIf="project.get('ed').errors['pattern']">This is invalid! please enter number!</span>
+              <span *ngIf="project.get('ed').errors['required']">This field is required!</span>
+            </span>
+        </div>
+        <label class="col-md-left col-form-label">AD</label>
+      </div>
+
+      <div  class="col-md-auto">
+        <button class="btn btn-default ml-2 mr-4" type="button" >Save</button>
+        <button class="btn btn-default mr-4" type="button" >Reset</button>
+      </div>
+    </form>
+  </div>
+</div>
+
