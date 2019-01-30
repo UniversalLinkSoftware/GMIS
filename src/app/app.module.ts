@@ -19,6 +19,9 @@ import { EconomicInfoComponent } from './layout/economic-info/economic-info.comp
 import { ImplementationInfoComponent } from './layout/implementation-info/implementation-info.component';
 import { MapInfoComponent } from './layout/map-info/map-info.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SocialService } from './layout/social-info/social.service';
+import { DataStorageService } from './layout/social-info/data-storage.service';
+import { HttpModule } from '@angular/http';
 
 // AoT requires an exported function for factories
 export const createTranslateLoader = (http: HttpClient) => {
@@ -37,6 +40,7 @@ export const createTranslateLoader = (http: HttpClient) => {
         BrowserModule,
         BrowserAnimationsModule,
         HttpClientModule,
+        HttpModule,
         ReactiveFormsModule,
         TranslateModule.forRoot({
             loader: {
@@ -49,7 +53,7 @@ export const createTranslateLoader = (http: HttpClient) => {
     ],
     // tslint:disable-next-line:max-line-length
     declarations: [AppComponent],
-    providers: [AuthGuard],
+    providers: [AuthGuard, SocialService, DataStorageService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}
