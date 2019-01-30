@@ -66,6 +66,10 @@ var map = {
 		"./src/app/not-found/not-found.module.ts",
 		"not-found-not-found-module"
 	],
+	"./project-info/project.module": [
+		"./src/app/layout/project-info/project.module.ts",
+		"project-info-project-module"
+	],
 	"./server-error/server-error.module": [
 		"./src/app/server-error/server-error.module.ts",
 		"server-error-server-error-module"

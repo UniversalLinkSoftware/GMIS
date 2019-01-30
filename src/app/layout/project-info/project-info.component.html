@@ -152,7 +152,6 @@
         <div class="col-2-auto">
           <input type="date" class="form-control ml-1" formControlName="ad">
           <span *ngIf="!project.get('ad').valid && project.get('ad').touched"  class="help-block">
-              <span *ngIf="project.get('ad').errors['pattern']">This is invalid! please enter number!</span>
               <span *ngIf="project.get('ad').errors['required']">This field is required!</span>
             </span>
         </div>
@@ -163,7 +162,6 @@
         <div class="col-3">
           <input type="date" class="form-control"formControlName="ad1" >
           <span *ngIf="!project.get('ad1').valid && project.get('ad1').touched"  class="help-block">
-              <span *ngIf="project.get('ad1').errors['pattern']">This is invalid! please enter number!</span>
               <span *ngIf="project.get('ad1').errors['required']">This field is required!</span>
             </span>
         </div>
@@ -173,16 +171,15 @@
         <div class="col-3  ">
           <input type="date" class="form-control" formControlName="ed" >
           <span *ngIf="!project.get('ed').valid && project.get('ed').touched"  class="help-block">
-              <span *ngIf="project.get('ed').errors['pattern']">This is invalid! please enter number!</span>
-              <span *ngIf="project.get('ed').errors['required']">This field is required!</span>
+             <span *ngIf="project.get('ed').errors['required']">This field is required!</span>
             </span>
         </div>
         <label class="col-md-left col-form-label">AD</label>
       </div>
 
       <div  class="col-md-auto">
-        <button class="btn btn-default ml-2 mr-4" type="button" >Save</button>
-        <button class="btn btn-default mr-4" type="button" >Reset</button>
+        <button class="btn btn-primary ml-2 mr-4" type="button" >Save</button>
+        <button class="btn btn-danger mr-4" type="button" >Reset</button>
       </div>
     </form>
   </div>

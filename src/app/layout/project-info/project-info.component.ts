@@ -18,9 +18,9 @@ export class ProjectInfoComponent implements OnInit {
       'pb': new FormControl(null, [Validators.required]),
       'rb': new FormControl(null, [Validators.required]),
       'ab': new FormControl(null, [Validators.required]),
-      'ad': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'ad1': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'ed': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'ad': new FormControl(null, [Validators.required]),
+      'ad1': new FormControl(null, [Validators.required]),
+      'ed': new FormControl(null, [Validators.required]),
   });
   }
 }
