@@ -6,20 +6,28 @@ import { Http, Response } from '@angular/http';
 import { map} from 'rxjs/operators';
 import 'rxjs';
 import { SocialService } from './social.service';
-
+import { EngineeringService } from '../engineering-info/engineering.service';
+import { ProjectService } from '../project-info/project.service';
 
 
 
 
  @Injectable()
 export class DataStorageService {
-  constructor(private http: Http, private socialService: SocialService,private implementationService:ImplementationService) {}
+  constructor(private http: Http, private socialService: SocialService, private implementationService: ImplementationService,
+    private engineeringService: EngineeringService, private projectService: ProjectService) {}
 
   storeSocial() {
        return this.http.put('https://shopping-ang7.firebaseio.com/social.json', this.socialService.getSocialInfo());
   }
-  storeImplementation(){
-    return this.http.put('https://shopping-b94a8.firebaseio.com/implementation.json',this.implementationService.getImplementationInfo())
+  storeEngineering() {
+    return this.http.put('https://server1-345f5.firebaseio.com//engineering.json', this.engineeringService.getEngineeringInfo());
+  }
+  storeProject() {
+    return this.http.put('https://server1-345f5.firebaseio.com//project.json', this.projectService.getProjectInfo());
+  }
+  storeImplementation() {
+    return this.http.put('https://shopping-b94a8.firebaseio.com/implementation.json', this.implementationService.getImplementationInfo());
   }
 
   // getSocial() {

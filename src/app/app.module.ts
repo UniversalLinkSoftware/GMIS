@@ -1,3 +1,4 @@
+
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -24,6 +25,8 @@ import { DataStorageService } from './layout/social-info/data-storage.service';
 import { HttpModule } from '@angular/http';
 import { Implementation } from './layout/implementation-info/implementation-info.model';
 import { ImplementationService } from './layout/implementation-info/implementation.service';
+import { EngineeringService } from './layout/engineering-info/engineering.service';
+import { ProjectService } from './layout/project-info/project.service';
 
 // AoT requires an exported function for factories
 export const createTranslateLoader = (http: HttpClient) => {
@@ -55,7 +58,7 @@ export const createTranslateLoader = (http: HttpClient) => {
     ],
     // tslint:disable-next-line:max-line-length
     declarations: [AppComponent],
-    providers: [AuthGuard, SocialService,ImplementationService, DataStorageService],
+    providers: [AuthGuard, SocialService, ImplementationService, DataStorageService, EngineeringService, ProjectService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}
