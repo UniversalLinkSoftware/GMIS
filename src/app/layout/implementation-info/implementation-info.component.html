@@ -1,25 +1,25 @@
 <body>
     <div class="jumbotron">
-        <form [formGroup]="page8Form" >
+        <form [formGroup]="page8Form" (ngSubmit)='onSubmit()'>
        <h3>Implementation Information</h3><br>
     <h4>Progress Monitoring
       <br>
     </h4>
     
       <div class="form-group " >
-        <label for="GON"  >GON Share : </label> 
-        <input type="number" class=" form-control" id="GON" formControlName="GON">
-        <span *ngIf="!page8Form.get('GON').valid && page8Form.get('GON').touched">
-            <span *ngIf="page8Form.get('GON').valid">Only Numbers Allowed.</span>
-            <span *ngIf="page8Form.get('GON').touched">Please Enter Valid Amount of Share In NRS</span>
+        <label for="gonShare"  >GON Share : </label> 
+        <input type="number" class=" form-control" id="gonShare" formControlName="gonShare">
+        <span *ngIf="!page8Form.get('gonShare').valid && page8Form.get('gonShare').touched">
+            <span *ngIf="page8Form.get('gonShare').valid">Only Numbers Allowed.</span>
+            <span *ngIf="page8Form.get('gonShare').touched">Please Enter Valid Amount of Share In NRS</span>
           </span> 
       
       <div class="form-group">
-        <label for="WUA"class="ml-5">WUA Share:</label>
-        <input type="number" class="form-control" id="WUA" formControlName="WUA">
-        <span *ngIf="!page8Form.get('WUA').valid && page8Form.get('WUA').touched">
-          <span *ngIf="page8Form.get('WUA').valid">Only Numbers Allowed.</span>
-          <span *ngIf="page8Form.get('WUA').touched">Please Enter Valid Amount of Share In NRS</span>
+        <label for="wuaShare"class="ml-5">WUA Share:</label>
+        <input type="number" class="form-control" id="wuaShare" formControlName="wuaShare">
+        <span *ngIf="!page8Form.get('wuaShare').valid && page8Form.get('wuaShare').touched">
+          <span *ngIf="page8Form.get('wuaShare').valid">Only Numbers Allowed.</span>
+          <span *ngIf="page8Form.get('wuaShare').touched">Please Enter Valid Amount of Share In NRS</span>
         </span> 
       </div></div> 
       
@@ -27,24 +27,34 @@
        
       <div class="form-group">
         <label for="comment">Physical Progress:</label>
-        <textarea class="form-control"cols="60"  rows="3" id="comment"></textarea>
+        <textarea class="form-control"cols="60"  rows="3" id="comment"formControlName="physicalProgress">
+          <span *ngIf="!page8Form.get('physicalProgress').valid && page8Form.get('physicalProgress').touched">
+            <span *ngIf="page8Form.get('physicalProgress').touched">This Field Is Required.</span>
+           
+          </span> 
+          
+        </textarea>
       </div>  
     
        
         <div class="form-group " >
           <label for="GON"  >Physical Progress Date : </label> 
-          <input type="text" class=" form-control " id="GON"> AD </div> 
+          <input type="text" class=" form-control " id="GON"formControlName="physicalProgressDate">
+          <span *ngIf="!page8Form.get('physicalProgressDate').valid && page8Form.get('physicalProgressDate').touched">
+            <span *ngIf="page8Form.get('physicalProgressDate').touched">This Field Is Required.</span>
+           
+          </span>  AD </div> 
     
            
             <div class="form-group">
               <label for="comment">Finiancial Progress</label>
-              <textarea class="form-control"cols="60"  rows="3" id="comment"></textarea>
+              <textarea class="form-control"cols="60"  rows="3" id="comment"formControlName="finiancialProgress"></textarea>
             </div>  
     
              
               <div class="form-group " >
                 <label for="GON"  >Finiancial Progress Date: </label> 
-                <input type="text" class=" form-control " id="GON"> AD </div> 
+                <input type="text" class=" form-control " id="GON"formControlName="finiancialProgressDate"> AD </div> 
                 <hr>
                 <h4>Institutional Monitoring
                   <br>
@@ -53,12 +63,12 @@
                   <div class="form-group">
                     <label for="comment">WUA Development Office
                       (Name,No of WUA Members):</label>
-                    <textarea class="form-control"cols="60"  rows="3" id="comment"></textarea>
+                    <textarea class="form-control"cols="60"  rows="3" id="comment"formControlName="wuaDevelopmentOffice"></textarea>
                   </div>  
                    
                     <div class="form-group " >
                       <label for="GON"  >WUA Registration Date : </label> 
-                      <input type="text" class=" form-control " id="GON"> AD </div> 
+                      <input type="text" class=" form-control " id="GON"formControlName="wuaRegistrarionDate"> AD </div> 
                       <hr>
     
                       <h4>WUA Training
@@ -67,21 +77,21 @@
                        
                         <div class="form-group " >
                           <label for="GON"  >Training Name : </label> 
-                          <input type="text" class=" form-control " id="GON"> 
+                          <input type="text" class=" form-control " id="GON"formControlName="trainingName"> 
                            
                             <div class="form-group " >
                               <label for="GON"  >Training Date : </label> 
-                              <input type="text" class=" form-control " id="GON"> AD </div>
+                              <input type="text" class=" form-control " id="GON"formControlName="trainingDate"> AD </div>
                              </div> 
     
                                
                                 <div class="form-group " >
                                   <label for="GON"  >Training Period : </label> 
-                                  <input type="text" class=" form-control " id="GON"> 
+                                  <input type="text" class=" form-control " id="GON"formControlName="trainingPeriod"> 
                                    
                                     <div class="form-group " >
                                       <label for="GON"  >No. Of Participants : </label> 
-                                      <input type="text" class=" form-control " id="GON"> </div> 
+                                      <input type="text" class=" form-control " id="GON"formControlName="numberOfParticipants"> </div> 
                                       </div> 
                                       <button type="Submit" class="btn btn-outline-success mr-2">Add</button>  
                 <button type="Reset" class="btn btn-outline-danger">Cancel</button>
@@ -118,8 +128,8 @@
                         
            
     <hr>
-                <button type="Submit" class="btn btn-outline-success mr-2">Save</button>  
-                <button type="Submit" class="btn btn-outline-warning mr-2">Reset</button>  
+                <button type="button" class="btn btn-outline-success mr-2"(click)="onSaveData()">Save </button>
+                <button type="Submit" class="btn btn-outline-warning mr-2">Submit</button>  
                 <button type="Reset" class="btn btn-outline-danger">Cancel</button>
   
     

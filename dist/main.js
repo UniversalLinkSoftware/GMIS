@@ -238,12 +238,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _shared__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./shared */ "./src/app/shared/index.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _layout_social_info_social_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./layout/social-info/social.service */ "./src/app/layout/social-info/social.service.ts");
+/* harmony import */ var _layout_social_info_data_storage_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./layout/social-info/data-storage.service */ "./src/app/layout/social-info/data-storage.service.ts");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var _layout_implementation_info_implementation_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./layout/implementation-info/implementation.service */ "./src/app/layout/implementation-info/implementation.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
+
 
 
 
@@ -275,6 +283,7 @@ var AppModule = /** @class */ (function () {
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["BrowserModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClientModule"],
+                _angular_http__WEBPACK_IMPORTED_MODULE_13__["HttpModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_10__["ReactiveFormsModule"],
                 _ngx_translate_core__WEBPACK_IMPORTED_MODULE_5__["TranslateModule"].forRoot({
                     loader: {
@@ -287,11 +296,113 @@ var AppModule = /** @class */ (function () {
             ],
             // tslint:disable-next-line:max-line-length
             declarations: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]],
-            providers: [_shared__WEBPACK_IMPORTED_MODULE_9__["AuthGuard"]],
+            providers: [_shared__WEBPACK_IMPORTED_MODULE_9__["AuthGuard"], _layout_social_info_social_service__WEBPACK_IMPORTED_MODULE_11__["SocialService"], _layout_implementation_info_implementation_service__WEBPACK_IMPORTED_MODULE_14__["ImplementationService"], _layout_social_info_data_storage_service__WEBPACK_IMPORTED_MODULE_12__["DataStorageService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/layout/implementation-info/implementation.service.ts":
+/*!**********************************************************************!*\
+  !*** ./src/app/layout/implementation-info/implementation.service.ts ***!
+  \**********************************************************************/
+/*! exports provided: ImplementationService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ImplementationService", function() { return ImplementationService; });
+var ImplementationService = /** @class */ (function () {
+    function ImplementationService() {
+    }
+    ImplementationService.prototype.ngOnInit = function () { };
+    ImplementationService.prototype.addImplementation = function (implementation) {
+        console.log(implementation);
+        this.implementationInfo = implementation;
+    };
+    ImplementationService.prototype.getSocialInfo = function () {
+        return this.implementationInfo;
+    };
+    return ImplementationService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/layout/social-info/data-storage.service.ts":
+/*!************************************************************!*\
+  !*** ./src/app/layout/social-info/data-storage.service.ts ***!
+  \************************************************************/
+/*! exports provided: DataStorageService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataStorageService", function() { return DataStorageService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _social_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./social.service */ "./src/app/layout/social-info/social.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var DataStorageService = /** @class */ (function () {
+    function DataStorageService(http, socialService) {
+        this.http = http;
+        this.socialService = socialService;
+    }
+    DataStorageService.prototype.storeSocial = function () {
+        return this.http.put('https://shopping-ang7.firebaseio.com/social.json', this.socialService.getSocialInfo());
+    };
+    DataStorageService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"], _social_service__WEBPACK_IMPORTED_MODULE_3__["SocialService"]])
+    ], DataStorageService);
+    return DataStorageService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/layout/social-info/social.service.ts":
+/*!******************************************************!*\
+  !*** ./src/app/layout/social-info/social.service.ts ***!
+  \******************************************************/
+/*! exports provided: SocialService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SocialService", function() { return SocialService; });
+var SocialService = /** @class */ (function () {
+    function SocialService() {
+    }
+    SocialService.prototype.ngOnInit = function () { };
+    SocialService.prototype.addSocial = function (social) {
+        console.log(social);
+        this.socialInfo = social;
+    };
+    SocialService.prototype.getSocialInfo = function () {
+        return this.socialInfo;
+    };
+    return SocialService;
 }());
 
 
@@ -744,7 +855,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Project1\gmisdev\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! F:\uzz\Project Angular\GMIS DEV\src\main.ts */"./src/main.ts");
 
 
 /***/ })

@@ -22,6 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SocialService } from './layout/social-info/social.service';
 import { DataStorageService } from './layout/social-info/data-storage.service';
 import { HttpModule } from '@angular/http';
+import { Implementation } from './layout/implementation-info/implementation-info.model';
+import { ImplementationService } from './layout/implementation-info/implementation.service';
 
 // AoT requires an exported function for factories
 export const createTranslateLoader = (http: HttpClient) => {
@@ -53,7 +55,7 @@ export const createTranslateLoader = (http: HttpClient) => {
     ],
     // tslint:disable-next-line:max-line-length
     declarations: [AppComponent],
-    providers: [AuthGuard, SocialService, DataStorageService],
+    providers: [AuthGuard, SocialService,ImplementationService, DataStorageService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

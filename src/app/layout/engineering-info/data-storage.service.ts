@@ -11,7 +11,7 @@ export class DataStorageService {
   constructor(private http: Http) {}
 
   storeProducts() {
-    return this.http.put('https://shopping-ce6ab.firebaseio.com/product.json',);
+    return this.http.put('https://shopping-b94a8.firebaseio.com/',{});
   }
 
   // getProducts() {

@@ -1,3 +1,4 @@
+import { ImplementationService } from './../implementation-info/implementation.service';
 import { Social } from './social-info.model';
 import {SocialInfoComponent} from './social-info.component';
 import { Injectable } from '@angular/core';
@@ -12,10 +13,13 @@ import { SocialService } from './social.service';
 
  @Injectable()
 export class DataStorageService {
-  constructor(private http: Http, private socialService: SocialService) {}
+  constructor(private http: Http, private socialService: SocialService,private implementationService:ImplementationService) {}
 
   storeSocial() {
        return this.http.put('https://shopping-ang7.firebaseio.com/social.json', this.socialService.getSocialInfo());
+  }
+  storeImplementation(){
+    return this.http.put('https://shopping-b94a8.firebaseio.com/implementation.json',this.implementationService.getImplementationInfo())
   }
 
   // getSocial() {
