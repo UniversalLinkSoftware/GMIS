@@ -27,6 +27,7 @@ import { Implementation } from './layout/implementation-info/implementation-info
 import { ImplementationService } from './layout/implementation-info/implementation.service';
 import { EngineeringService } from './layout/engineering-info/engineering.service';
 import { ProjectService } from './layout/project-info/project.service';
+import { GroundwaterService } from './layout/groundwater-info/groundwater.service';
 
 // AoT requires an exported function for factories
 export const createTranslateLoader = (http: HttpClient) => {
@@ -58,7 +59,8 @@ export const createTranslateLoader = (http: HttpClient) => {
     ],
     // tslint:disable-next-line:max-line-length
     declarations: [AppComponent],
-    providers: [AuthGuard, SocialService, ImplementationService, DataStorageService, EngineeringService, ProjectService],
+    // tslint:disable-next-line:max-line-length
+    providers: [AuthGuard, SocialService, ImplementationService, DataStorageService, EngineeringService, ProjectService, GroundwaterService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -1,4 +1,4 @@
-<form [formGroup]="page6Form">
+<form [formGroup]="page6Form" (ngSubmit)='onSubmit()'>
     <div class="jumbotron">
         <section>
         <h3> Well Information </h3>
@@ -6,13 +6,13 @@
         <div class="form-row">
           <div class="col-md-6">
             <label class="col-md-4 col-form-label">No. of wells:</label>
-            <input type="Text" formControlName="NW" >
+            <input type="Text" formControlName="noOfWells" >
             <br>
             <span
-            *ngIf="!page6Form.get('NW').valid && page6Form.get('NW').touched"
+            *ngIf="!page6Form.get('noOfWells').valid && page6Form.get('noOfWells').touched"
             class="help-block">
-            <span *ngIf="page6Form.get('NW').errors['pattern']">This name is invalid! Please enter a valid number.</span>
-            <span *ngIf="page6Form.get('NW').errors['required']">This field is required!</span>
+            <span *ngIf="page6Form.get('noOfWells').errors['pattern']">This name is invalid! Please enter a valid number.</span>
+            <span *ngIf="page6Form.get('noOfWells').errors['required']">This field is required!</span>
           </span>
           </div>
         </div>
@@ -29,14 +29,14 @@
             </div>
               <div class="col-md-6">
                 <label class="col-md-4 col-form-label">Well depth:</label>
-                <input type="text" formControlName="WD">
+                <input type="text" formControlName="wellDepth">
                 <label>m</label>
                 <br>
                 <span
-            *ngIf="!page6Form.get('WD').valid && page6Form.get('WD').touched"
+            *ngIf="!page6Form.get('wellDepth').valid && page6Form.get('wellDepth').touched"
             class="help-block">
-            <span *ngIf="page6Form.get('WD').errors['pattern']">This name is invalid! Please enter a valid number.</span>
-            <span *ngIf="page6Form.get('WD').errors['required']">This field is required!</span>
+            <span *ngIf="page6Form.get('wellDepth').errors['pattern']">This name is invalid! Please enter a valid number.</span>
+            <span *ngIf="page6Form.get('wellDepth').errors['required']">This field is required!</span>
           </span>
               </div>
           </div>
@@ -44,26 +44,26 @@
         <div class="form-row">
             <div class="col-md-6">
               <label class="col-md-4 col-form-label">Tube well spacing:</label>
-              <input type="text" formControlName="WS">
+              <input type="text" formControlName="tubeWellSpacing">
               <label>m</label>
               <br>
               <span
-            *ngIf="!page6Form.get('WS').valid && page6Form.get('WS').touched"
+            *ngIf="!page6Form.get('tubeWellSpacing').valid && page6Form.get('tubeWellSpacing').touched"
             class="help-block">
-            <span *ngIf="page6Form.get('WS').errors['pattern']">This name is invalid! Please enter a valid number.</span>
-            <span *ngIf="page6Form.get('WS').errors['required']">This field is required!</span>
+            <span *ngIf="page6Form.get('tubeWellSpacing').errors['pattern']">This name is invalid! Please enter a valid number.</span>
+            <span *ngIf="page6Form.get('tubeWellSpacing').errors['required']">This field is required!</span>
           </span>
             </div>
             <div class="col-md-6">
               <label class="col-md-4 col-form-label">Size of tubewells:</label>
-              <input type="text" formControlName="ST">
+              <input type="text" formControlName="sizeOfTubewells">
               <label>inch</label>
               <br>
               <span
-            *ngIf="!page6Form.get('ST').valid && page6Form.get('ST').touched"
+            *ngIf="!page6Form.get('sizeOfTubewells').valid && page6Form.get('sizeOfTubewells').touched"
             class="help-block">
-            <span *ngIf="page6Form.get('ST').errors['pattern']">This name is invalid! Please enter a valid number.</span>
-            <span *ngIf="page6Form.get('ST').errors['required']">This field is required!</span>
+            <span *ngIf="page6Form.get('sizeOfTubewells').errors['pattern']">This name is invalid! Please enter a valid number.</span>
+            <span *ngIf="page6Form.get('sizeOfTubewells').errors['required']">This field is required!</span>
           </span>
             </div>
         </div>
@@ -76,33 +76,33 @@
               <div class="col-md-12">
                 <label class="col-md-4 col-form-label"> Hydrological Description </label>
                   
-                  <input type="text" class="form-control col-md-12" formControlName="HD">
+                  <input type="text" class="form-control col-md-12" formControlName="hydrologicalDescription">
                   <span
-            *ngIf="!page6Form.get('HD').valid && page6Form.get('HD').touched"
+            *ngIf="!page6Form.get('hydrologicalDescription').valid && page6Form.get('hydrologicalDescription').touched"
             class="help-block">
-            <span *ngIf="page6Form.get('HD').errors['required']">This field is required!</span>
+            <span *ngIf="page6Form.get('hydrologicalDescription').errors['required']">This field is required!</span>
           </span>
               </div>
             </div>
             <div class="form-group row">
               <div class="col-md-12">
                 <label class="col-md-4 col-form-label"> Aquifer type </label>
-                  <input type="text" class="form-control col-md-12" formControlName="AT">
+                  <input type="text" class="form-control col-md-12" formControlName="aquiferType">
                   <span
-            *ngIf="!page6Form.get('AT').valid && page6Form.get('AT').touched"
+            *ngIf="!page6Form.get('aquiferType').valid && page6Form.get('aquiferType').touched"
             class="help-block">
-            <span *ngIf="page6Form.get('AT').errors['required']">This field is required!</span>
+            <span *ngIf="page6Form.get('aquiferType').errors['required']">This field is required!</span>
           </span>
               </div>
             </div>
             <div class="form-group row">
               <div class="col-md-12">
                 <label class="col-md-4 col-form-label"> Aquifer materials</label>
-                  <input type="text" class="form-control col-md-12" formControlName="AM">
+                  <input type="text" class="form-control col-md-12" formControlName="aquiferMaterials">
                   <span
-            *ngIf="!page6Form.get('AM').valid && page6Form.get('AM').touched"
+            *ngIf="!page6Form.get('aquiferMaterials').valid && page6Form.get('aquiferMaterials').touched"
             class="help-block">
-            <span *ngIf="page6Form.get('AM').errors['required']">This field is required!</span>
+            <span *ngIf="page6Form.get('aquiferMaterials').errors['required']">This field is required!</span>
           </span>
               </div>
             </div>
@@ -119,13 +119,13 @@
             </div>
             <div class="col-md-6">
               <label class="col-md-4 col-form-label">No. of branch channel:</label>
-              <input type="text" formControlName="BC">
+              <input type="text" formControlName="noOfBranchChannel">
               <br>
               <span
-            *ngIf="!page6Form.get('BC').valid && page6Form.get('BC').touched"
+            *ngIf="!page6Form.get('noOfBranchChannel').valid && page6Form.get('noOfBranchChannel').touched"
             class="help-block">
-            <span *ngIf="page6Form.get('BC').errors['pattern']">This name is invalid! Please enter a valid number.</span>
-            <span *ngIf="page6Form.get('BC').errors['required']">This field is required!</span>
+            <span *ngIf="page6Form.get('noOfBranchChannel').errors['pattern']">This name is invalid! Please enter a valid number.</span>
+            <span *ngIf="page6Form.get('noOfBranchChannel').errors['required']">This field is required!</span>
           </span>
             </div>
         </div>
@@ -139,29 +139,31 @@
             </div>
             <div class="col-md-6">
               <label class="col-md-4 col-form-label">Main channel length:</label>
-              <input type="text" formControlName="MCL">
+              <input type="text" formControlName="mainChannelLength">
               <label>km</label>
               <br>
               <span
-            *ngIf="!page6Form.get('MCL').valid && page6Form.get('MCL').touched"
+            *ngIf="!page6Form.get('mainChannelLength').valid && page6Form.get('mainChannelLength').touched"
             class="help-block">
-            <span *ngIf="page6Form.get('MCL').errors['pattern']">This name is invalid! Please enter a valid number.</span>
-            <span *ngIf="page6Form.get('MCL').errors['required']">This field is required!</span>
+            <span *ngIf="page6Form.get('mainChannelLength').errors['pattern']">This name is invalid! Please enter a valid number.</span>
+            <span *ngIf="page6Form.get('mainChannelLength').errors['required']">This field is required!</span>
           </span>
             </div>
         </div>
         <div class="form-group row">
         <div class="col-md-6">
             <label class="col-md-4 col-form-label">Outlets:</label>
-            <input type="Text" formControlName="O">
+            <input type="Text" formControlName="outlets">
             <br>
             <span
-            *ngIf="!page6Form.get('O').valid && page6Form.get('O').touched"
+            *ngIf="!page6Form.get('outlets').valid && page6Form.get('outlets').touched"
             class="help-block">
-            <span *ngIf="page6Form.get('O').errors['pattern']">This name is invalid! Please enter a valid number.</span>
-            <span *ngIf="page6Form.get('O').errors['required']">This field is required!</span>
+            <span *ngIf="page6Form.get('outlets').errors['pattern']">This name is invalid! Please enter a valid number.</span>
+            <span *ngIf="page6Form.get('outlets').errors['required']">This field is required!</span>
           </span>
         </div>
     </div>
     </div>
+    <button type="Submit" class="btn btn-outline-success mr-2">Submit</button>
+    <button type="button" class="btn btn-outline-warning" (click)="onSaveData()">save</button>
     </form>
