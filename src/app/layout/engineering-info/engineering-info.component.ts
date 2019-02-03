@@ -14,6 +14,18 @@ import { DataStorageService } from '../social-info/data-storage.service';
 export class EngineeringInfoComponent implements OnInit {
   myGroup: FormGroup;
   engineeringInfo: RiverHydology;
+  // fieldArray: Array<any> = [];
+  // newAttribute: any = {};
+
+
+  // addFieldValue() {
+  //     this.fieldArray.push(this.newAttribute);
+  //     this.newAttribute = {};
+  // }
+
+  // deleteFieldValue(index) {
+  //     this.fieldArray.splice(index, 1);
+  // }
   constructor(private engineeringService: EngineeringService, private dataStorageService: DataStorageService ) {}
   onSubmit() {
       this.engineeringService.addEngineering(this.myGroup.value);
@@ -26,7 +38,9 @@ export class EngineeringInfoComponent implements OnInit {
         );
       }
   ngOnInit() {
+
     this.myGroup = new FormGroup({
+      // firstName: new FormControl(),
       'catchmentArea': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/ )]),
       'lngSlopeOfRiverAtHeadworksSite': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
       'floodDischarge25': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
@@ -37,7 +51,9 @@ export class EngineeringInfoComponent implements OnInit {
       'riverWidthAtHeadworksSite': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
       'averageAnnualRiverfall': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
       'hydrologicalRegion': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'riverBasin': new FormControl(null, [Validators.required]),
 
+      'mCanalDirection': new FormControl(null, [Validators.required]),
       'mTotalLength': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
       'mLinedTypeCanalLength': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
       'mDesignDischarge': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),

@@ -9,10 +9,10 @@ export class RiverHydology {
     public nameOfRiverSource: string,
     public riverWidthAtHeadworksSite: number,
     public averageAnnualRiverfall: number,
-    // public hydrologicalRegion: string,
+    public hydrologicalRegion: string,
     public riverBasin: string,
 
-     // public mCanalDirection: string,
+     public mCanalDirection: string,
      public mTotalLength: number,
      public mLinedTypeCanalLength: number,
      public mDesignDischarge: number,
