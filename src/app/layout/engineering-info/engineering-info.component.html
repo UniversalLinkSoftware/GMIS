@@ -521,6 +521,7 @@
         <div>
         <button class="btn btn-success ml-2 mr-5" type="submit" >Submit</button>
         <button class="btn btn-primary mr-2" type="button" (click)="onSaveData()" >Save</button>
+        <button class="btn btn-primary mr-2" (click)="buttonClicked()">Click to Insert New Row</button>
         </div>
 
         <br>
@@ -544,68 +545,23 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+              
+                  <tr *ngFor="let row of rows">
+                    <td>{{row.bNameOfBranchCanal}}</td>
+                    <td>{{row.bgca}}</td>
+                    <td>{{row.bcca}}</td>
+                    <td>{{row.bTotallength}}</td>
+                    <td>{{row.bLinedTypeCanalLength}}</td>
+                    <td>{{row.bUnlinedTypeCanalLength}}</td>
+                    <td>{{row.bDesignDischarge}}</td>
+                    <td>{{row.btertiary}}</td>
+                    <td>{{row.bSubBranchLength}}</td>
+                    <td>{{row.bCanalStructure}}</td>
+                    
                   </tr>
               </tbody>
             </table>
+            
           </div>
        </div>
         <br>

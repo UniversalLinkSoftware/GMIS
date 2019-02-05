@@ -302,6 +302,7 @@ var AppModule = /** @class */ (function () {
             ],
             // tslint:disable-next-line:max-line-length
             declarations: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]],
+            // tslint:disable-next-line:max-line-length
             providers: [_shared__WEBPACK_IMPORTED_MODULE_9__["AuthGuard"], _layout_social_info_social_service__WEBPACK_IMPORTED_MODULE_11__["SocialService"], _layout_implementation_info_implementation_service__WEBPACK_IMPORTED_MODULE_14__["ImplementationService"], _layout_social_info_data_storage_service__WEBPACK_IMPORTED_MODULE_12__["DataStorageService"], _layout_engineering_info_engineering_service__WEBPACK_IMPORTED_MODULE_15__["EngineeringService"], _layout_project_info_project_service__WEBPACK_IMPORTED_MODULE_16__["ProjectService"], _layout_groundwater_info_groundwater_service__WEBPACK_IMPORTED_MODULE_17__["GroundwaterService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
         })
@@ -442,6 +443,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _social_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./social.service */ "./src/app/layout/social-info/social.service.ts");
 /* harmony import */ var _engineering_info_engineering_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../engineering-info/engineering.service */ "./src/app/layout/engineering-info/engineering.service.ts");
 /* harmony import */ var _project_info_project_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../project-info/project.service */ "./src/app/layout/project-info/project.service.ts");
+/* harmony import */ var _groundwater_info_groundwater_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../groundwater-info/groundwater.service */ "./src/app/layout/groundwater-info/groundwater.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -458,13 +460,17 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var DataStorageService = /** @class */ (function () {
-    function DataStorageService(http, socialService, implementationService, engineeringService, projectService) {
+    function DataStorageService(http, socialService, implementationService, 
+    // tslint:disable-next-line:max-line-length
+    engineeringService, projectService, groundwaterService) {
         this.http = http;
         this.socialService = socialService;
         this.implementationService = implementationService;
         this.engineeringService = engineeringService;
         this.projectService = projectService;
+        this.groundwaterService = groundwaterService;
     }
     DataStorageService.prototype.storeSocial = function () {
         return this.http.put('https://shopping-ang7.firebaseio.com/social.json', this.socialService.getSocialInfo());
@@ -484,7 +490,7 @@ var DataStorageService = /** @class */ (function () {
     DataStorageService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
         __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_2__["Http"], _social_service__WEBPACK_IMPORTED_MODULE_4__["SocialService"], _implementation_info_implementation_service__WEBPACK_IMPORTED_MODULE_0__["ImplementationService"],
-            _engineering_info_engineering_service__WEBPACK_IMPORTED_MODULE_5__["EngineeringService"], _project_info_project_service__WEBPACK_IMPORTED_MODULE_6__["ProjectService"]])
+            _engineering_info_engineering_service__WEBPACK_IMPORTED_MODULE_5__["EngineeringService"], _project_info_project_service__WEBPACK_IMPORTED_MODULE_6__["ProjectService"], _groundwater_info_groundwater_service__WEBPACK_IMPORTED_MODULE_7__["GroundwaterService"]])
     ], DataStorageService);
     return DataStorageService;
 }());
@@ -967,7 +973,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\ST lawerence\Angular\GMISdev\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! F:\uzz\Project Angular\GMIS DEV\src\main.ts */"./src/main.ts");
 
 
 /***/ })

@@ -35,6 +35,7 @@ export class RiverHydology {
     public btertiary: string,
     public bSubBranchLength: string,
     public bCanalStructure: string,
+    
   ) {}
   }
 
