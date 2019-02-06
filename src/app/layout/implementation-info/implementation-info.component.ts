@@ -14,7 +14,19 @@ export class ImplementationInfoComponent implements OnInit {
 
   
   page8Form: FormGroup;
-  implementationInfo:Implementation
+  implementationInfo:Implementation;
+  public rows: Array<{trainingName: string, trainingDate: number, trainingPeriod: number
+    numberOfParticipants: number, }> = [];
+    buttonClicked() {
+      let trainingName= this.page8Form.controls['trainingName'].value;
+      let trainingDate = this.page8Form.controls['trainingDate'].value;
+      let trainingPeriod=this.page8Form.controls['trainingPeriod'].value;
+      let numberOfParticipants=this.page8Form.controls['numberOfParticipants'].value;
+
+      this.rows.push( {trainingName: trainingName, trainingDate:trainingDate, trainingPeriod: trainingPeriod,numberOfParticipants: numberOfParticipants,
+        } );
+        this.page8Form.reset();}
+
   constructor(private implementationService: ImplementationService, private dataStorageService: DataStorageService ) {}
   onSubmit() {
       this.implementationService.addImplementation(this.page8Form.value);
