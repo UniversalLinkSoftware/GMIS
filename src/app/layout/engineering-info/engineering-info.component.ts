@@ -14,6 +14,50 @@ import { DataStorageService } from '../social-info/data-storage.service';
 export class EngineeringInfoComponent implements OnInit {
   myGroup: FormGroup;
   engineeringInfo: RiverHydology;
+  public rows: Array<{bNameOfBranchCanal: string, bgca: number, bcca: number
+      bTotallength: number,
+      bLinedTypeCanalLength: number,
+      bUnlinedTypeCanalLength: number,
+      bDesignDischarge: number,
+      btertiary: string,
+      bSubBranchLength: string,
+      bCanalStructure: string, }> = [];
+ 
+  
+  
+  // fieldArray: Array<any> = [];
+  // newAttribute: any = {};
+
+
+  // addFieldValue() {
+  //     this.fieldArray.push(this.newAttribute);
+  //     this.newAttribute = {};
+  // }
+
+  // deleteFieldValue(index) {
+  //     this.fieldArray.splice(index, 1);
+  // }
+  buttonClicked() {
+    let bNameOfBranchCanal= this.myGroup.controls['bNameOfBranchCanal'].value;
+    let bgca = this.myGroup.controls['bgca'].value;
+    let bcca=this.myGroup.controls['bcca'].value;
+    let bTotallength=this.myGroup.controls['bTotallength'].value;
+    let bLinedTypeCanalLength=this.myGroup.controls['bLinedTypeCanalLength'].value;
+    let bUnlinedTypeCanalLength=this.myGroup.controls['bUnlinedTypeCanalLength'].value;
+    let bDesignDischarge=this.myGroup.controls['bDesignDischarge'].value;
+    let btertiary=this.myGroup.controls['btertiary'].value;
+    let bSubBranchLength=this.myGroup.controls['bSubBranchLength'].value;
+    let bCanalStructure=this.myGroup.controls['bCanalStructure'].value;
+    
+   this.rows.push( {bNameOfBranchCanal: bNameOfBranchCanal, bgca:bgca, bcca: bcca,bTotallength: bTotallength,
+    bLinedTypeCanalLength: bLinedTypeCanalLength,
+    bUnlinedTypeCanalLength: bUnlinedTypeCanalLength,
+    bDesignDischarge: bDesignDischarge,
+    btertiary: btertiary,
+    bSubBranchLength: bSubBranchLength,
+    bCanalStructure: bCanalStructure, } );
+  this.myGroup.reset();}
+    
   constructor(private engineeringService: EngineeringService, private dataStorageService: DataStorageService ) {}
   onSubmit() {
       this.engineeringService.addEngineering(this.myGroup.value);
@@ -25,8 +69,11 @@ export class EngineeringInfoComponent implements OnInit {
           }
         );
       }
+      
   ngOnInit() {
+
     this.myGroup = new FormGroup({
+      // firstName: new FormControl(),
       'catchmentArea': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/ )]),
       'lngSlopeOfRiverAtHeadworksSite': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
       'floodDischarge25': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
@@ -37,7 +84,9 @@ export class EngineeringInfoComponent implements OnInit {
       'riverWidthAtHeadworksSite': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
       'averageAnnualRiverfall': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
       'hydrologicalRegion': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'riverBasin': new FormControl(null, [Validators.required]),
 
+      'mCanalDirection': new FormControl(null, [Validators.required]),
       'mTotalLength': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
       'mLinedTypeCanalLength': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
       'mDesignDischarge': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),

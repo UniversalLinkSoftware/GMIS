@@ -8,6 +8,8 @@ import 'rxjs';
 import { SocialService } from './social.service';
 import { EngineeringService } from '../engineering-info/engineering.service';
 import { ProjectService } from '../project-info/project.service';
+import { GroundwaterService } from '../groundwater-info/groundwater.service';
+
 
 
 
@@ -15,7 +17,8 @@ import { ProjectService } from '../project-info/project.service';
  @Injectable()
 export class DataStorageService {
   constructor(private http: Http, private socialService: SocialService, private implementationService: ImplementationService,
-    private engineeringService: EngineeringService, private projectService: ProjectService) {}
+    // tslint:disable-next-line:max-line-length
+    private engineeringService: EngineeringService, private projectService: ProjectService, private groundwaterService: GroundwaterService) {}
 
   storeSocial() {
        return this.http.put('https://shopping-ang7.firebaseio.com/social.json', this.socialService.getSocialInfo());
@@ -28,6 +31,9 @@ export class DataStorageService {
   }
   storeImplementation() {
     return this.http.put('https://shopping-b94a8.firebaseio.com/implementation.json', this.implementationService.getImplementationInfo());
+  }
+  storeGroundwater() {
+        return this.http.put('https://serverproject-aef56.firebaseio.com/groundwater.json', this.groundwaterService.getGroundwaterInfo());
   }
 
   getSocial() {
