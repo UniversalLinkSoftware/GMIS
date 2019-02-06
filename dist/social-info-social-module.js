@@ -18,7 +18,7 @@ module.exports = "<h1>Social Information</h1>\r\n\r\n<div class=\"jumbotron\">\r
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".container {\n  margin-top: 30px; }\n\ninput.ng-invalid.ng-touched {\n  border: 1px solid red; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGF5b3V0L3NvY2lhbC1pbmZvL0Q6XFxTVCBsYXdlcmVuY2VcXEFuZ3VsYXJcXEdNSVNkZXYvc3JjXFxhcHBcXGxheW91dFxcc29jaWFsLWluZm9cXHNvY2lhbC1pbmZvLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksZ0JBQWdCLEVBQUE7O0FBR2xCO0VBQ0UscUJBQXFCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9sYXlvdXQvc29jaWFsLWluZm8vc29jaWFsLWluZm8uY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY29udGFpbmVyIHtcclxuICAgIG1hcmdpbi10b3A6IDMwcHg7XHJcbiAgfVxyXG4gIFxyXG4gIGlucHV0Lm5nLWludmFsaWQubmctdG91Y2hlZCB7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCByZWQ7XHJcbiAgfVxyXG4gICJdfQ== */"
+module.exports = ".container {\n  margin-top: 30px; }\n\ninput.ng-invalid.ng-touched {\n  border: 1px solid red; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGF5b3V0L3NvY2lhbC1pbmZvL0Y6XFx1enpcXFByb2plY3QgQW5ndWxhclxcR01JUyBERVYvc3JjXFxhcHBcXGxheW91dFxcc29jaWFsLWluZm9cXHNvY2lhbC1pbmZvLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksZ0JBQWdCLEVBQUE7O0FBR2xCO0VBQ0UscUJBQXFCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9sYXlvdXQvc29jaWFsLWluZm8vc29jaWFsLWluZm8uY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY29udGFpbmVyIHtcclxuICAgIG1hcmdpbi10b3A6IDMwcHg7XHJcbiAgfVxyXG4gIFxyXG4gIGlucHV0Lm5nLWludmFsaWQubmctdG91Y2hlZCB7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCByZWQ7XHJcbiAgfVxyXG4gICJdfQ== */"
 
 /***/ }),
 

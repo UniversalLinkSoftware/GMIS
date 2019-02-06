@@ -14,6 +14,17 @@ import { DataStorageService } from '../social-info/data-storage.service';
 export class EngineeringInfoComponent implements OnInit {
   myGroup: FormGroup;
   engineeringInfo: RiverHydology;
+  public rows: Array<{bNameOfBranchCanal: string, bgca: number, bcca: number
+      bTotallength: number,
+      bLinedTypeCanalLength: number,
+      bUnlinedTypeCanalLength: number,
+      bDesignDischarge: number,
+      btertiary: string,
+      bSubBranchLength: string,
+      bCanalStructure: string, }> = [];
+ 
+  
+  
   // fieldArray: Array<any> = [];
   // newAttribute: any = {};
 
@@ -26,6 +37,27 @@ export class EngineeringInfoComponent implements OnInit {
   // deleteFieldValue(index) {
   //     this.fieldArray.splice(index, 1);
   // }
+  buttonClicked() {
+    let bNameOfBranchCanal= this.myGroup.controls['bNameOfBranchCanal'].value;
+    let bgca = this.myGroup.controls['bgca'].value;
+    let bcca=this.myGroup.controls['bcca'].value;
+    let bTotallength=this.myGroup.controls['bTotallength'].value;
+    let bLinedTypeCanalLength=this.myGroup.controls['bLinedTypeCanalLength'].value;
+    let bUnlinedTypeCanalLength=this.myGroup.controls['bUnlinedTypeCanalLength'].value;
+    let bDesignDischarge=this.myGroup.controls['bDesignDischarge'].value;
+    let btertiary=this.myGroup.controls['btertiary'].value;
+    let bSubBranchLength=this.myGroup.controls['bSubBranchLength'].value;
+    let bCanalStructure=this.myGroup.controls['bCanalStructure'].value;
+    
+   this.rows.push( {bNameOfBranchCanal: bNameOfBranchCanal, bgca:bgca, bcca: bcca,bTotallength: bTotallength,
+    bLinedTypeCanalLength: bLinedTypeCanalLength,
+    bUnlinedTypeCanalLength: bUnlinedTypeCanalLength,
+    bDesignDischarge: bDesignDischarge,
+    btertiary: btertiary,
+    bSubBranchLength: bSubBranchLength,
+    bCanalStructure: bCanalStructure, } );
+  this.myGroup.reset();}
+    
   constructor(private engineeringService: EngineeringService, private dataStorageService: DataStorageService ) {}
   onSubmit() {
       this.engineeringService.addEngineering(this.myGroup.value);
@@ -37,6 +69,7 @@ export class EngineeringInfoComponent implements OnInit {
           }
         );
       }
+      
   ngOnInit() {
 
     this.myGroup = new FormGroup({
