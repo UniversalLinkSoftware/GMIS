@@ -30,24 +30,19 @@ export class DataStorageService {
     return this.http.put('https://shopping-b94a8.firebaseio.com/implementation.json', this.implementationService.getImplementationInfo());
   }
 
-  // getSocial() {
-  //   this.http.get('https://shopping-ang7.firebaseio.com/products.json').pipe(
-  //     map(
-  //       (response: Response) => {
-  //         const products: Product[] = response.json();
-  //         // tslint:disable-next-line:prefer-const
-  //         for (let product of products) {
-  //           if (!product['info']) {
-  //               product['info'] = [];
-  //           }
-  //         }
-  //         return products;
-  //       }
-  //     ))
-  //     .subscribe(
-  //       (products: Product[]) => {
-  //         this.productService.setProducts(products);
-  //       }
-  //     );
-  // }
+  getSocial() {
+    this.http.get('https://shopping-ang7.firebaseio.com/social.json').pipe(
+      map(
+        (response: Response) => {
+          const social: Social = response.json();
+          // tslint:disable-next-line:prefer-const
+           return social;
+        }
+      ))
+      .subscribe(
+        (social: Social) => {
+          this.socialService.setSocial(social);
+        }
+      );
+  }
 }
