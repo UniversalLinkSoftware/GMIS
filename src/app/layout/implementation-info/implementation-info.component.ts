@@ -20,12 +20,12 @@ export class ImplementationInfoComponent implements OnInit {
     buttonClicked() {
       let trainingName= this.page8Form.controls['trainingName'].value;
       let trainingDate = this.page8Form.controls['trainingDate'].value;
-      let trainingPeriod=this.page8Form.controls['trainingPeriod'].value;
-      let numberOfParticipants=this.page8Form.controls['numberOfParticipants'].value;
+      let trainingPeriod = this.page8Form.controls['trainingPeriod'].value;
+      const numberOfParticipants = this.page8Form.controls['numberOfParticipants'].value;
 
-      this.rows.push( {trainingName: trainingName, trainingDate:trainingDate, trainingPeriod: trainingPeriod,numberOfParticipants: numberOfParticipants,
+      this.rows.push( {trainingName: trainingName, trainingDate: trainingDate, trainingPeriod: trainingPeriod, numberOfParticipants: numberOfParticipants,
         } );
-        this.page8Form.reset();}
+        this.page8Form.reset(); }
 
   constructor(private implementationService: ImplementationService, private dataStorageService: DataStorageService ) {}
   onSubmit() {
@@ -40,23 +40,23 @@ export class ImplementationInfoComponent implements OnInit {
       );
     }
 
-  ngOnInit(){
-    this.page8Form= 
+  ngOnInit() {
+    this.page8Form =
     new FormGroup({
-      'gonShare':new FormControl(null,[Validators.required,Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'wuaShare':new FormControl(null,[Validators.required,Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'physicalProgress':new FormControl(null,[Validators.required,]),
-      'physicalProgressDate':new FormControl(null,[Validators.required,]),
-      'finiancialProgress':new FormControl(null,[Validators.required,]),
-      'finiancialProgressDate':new FormControl(null,[Validators.required,]),
-      'wuaDevelopmentOffice':new FormControl(null,[Validators.required,]),
-      'wuaRegistrarionDate':new FormControl(null,[Validators.required,]),
-      'trainingName':new FormControl(null,[Validators.required,]),
-      'trainingDate':new FormControl(null,[Validators.required,]),
-      'trainingPeriod':new FormControl(null,[Validators.required,]),
-      'numberOfParticipants':new FormControl(null,[Validators.required,]),
-    
+      'gonShare': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'wuaShare': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'physicalProgress': new FormControl(null, [Validators.required, ]),
+      'physicalProgressDate': new FormControl(null, [Validators.required, ]),
+      'finiancialProgress': new FormControl(null, [Validators.required, ]),
+      'finiancialProgressDate': new FormControl(null, [Validators.required, ]),
+      'wuaDevelopmentOffice': new FormControl(null, [Validators.required, ]),
+      'wuaRegistrarionDate': new FormControl(null, [Validators.required, ]),
+      'trainingName': new FormControl(null, [Validators.required, ]),
+      'trainingDate': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'trainingPeriod': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'numberOfParticipants': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)])
+
     }
-    )
+    );
   }
 }

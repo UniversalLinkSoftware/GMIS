@@ -1,159 +1,233 @@
-<body>
-    <div class="jumbotron">
-        <form [formGroup]="page8Form" (ngSubmit)='onSubmit()'>
-       <h3>Implementation Information</h3><br>
-    <h4>Progress Monitoring
-      <br>
-    </h4>
-    
-      <div class="form-group " >
-        <label for="gonShare"  >GON Share : </label> 
-        <input type="text" class=" form-control" id="gonShare" formControlName="gonShare">
-        <span *ngIf="!page8Form.get('gonShare').valid && page8Form.get('gonShare').touched">
-            <span *ngIf="page8Form.get('gonShare').valid">Only Numbers Allowed.</span>
-            <span *ngIf="page8Form.get('gonShare').touched">Please Enter Valid Amount of Share In NRS</span>
-          </span> 
-      
-      <div class="form-group">
-        <label for="wuaShare">WUA Share:</label>
-        <input type="text" class="form-control" id="wuaShare" formControlName="wuaShare">
-        <span *ngIf="!page8Form.get('wuaShare').valid && page8Form.get('wuaShare').touched">
-          <span *ngIf="page8Form.get('wuaShare').valid">Only Numbers Allowed.</span>
-          <span *ngIf="page8Form.get('wuaShare').touched">Please Enter Valid Amount of Share In NRS</span>
-        </span> 
-      </div></div> 
-      
-     
-       
-      <div class="form-group">
-        <label for="comment">Physical Progress:</label>
-        <textarea class="form-control"cols="60"  rows="3" id="comment"formControlName="physicalProgress">
-          <span *ngIf="!page8Form.get('physicalProgress').valid && page8Form.get('physicalProgress').touched">
-              <span *ngIf="page8Form.get('wuaShare').valid">Only Numbers Allowed.</span>
-            <span *ngIf="page8Form.get('physicalProgress').touched">This Field Is Required.</span>
-           
-          </span> 
-          
-        </textarea>
-      </div>  
-    
-       
-        <div class="form-group " >
-          <label for="GON"  >Physical Progress Date in AD: </label> 
-          <input type="text" class=" form-control " id="GON"formControlName="physicalProgressDate">
-          <span *ngIf="!page8Form.get('physicalProgressDate').valid && page8Form.get('physicalProgressDate').touched">
-            <span *ngIf="page8Form.get('physicalProgressDate').touched">This Field Is Required.</span>
-           
-          </span>  </div> 
-    
-           
-            <div class="form-group">
-              <label for="comment">Finiancial Progress</label>
-              <textarea class="form-control"cols="60"  rows="3" id="comment"formControlName="finiancialProgress"></textarea>
-            </div>  
-    
-             
-              <div class="form-group " >
-                <label for="GON"  >Finiancial Progress Date In AD: </label> 
-                <input type="text" class=" form-control " id="GON"formControlName="finiancialProgressDate"> 
-                <span *ngIf="!page8Form.get('finiancialProgressDate').valid && page8Form.get('finiancialProgressDate').touched">
-                    <span *ngIf="page8Form.get('finiancialProgressDate').touched">This Field Is Required.</span>
-                   
-                  </span> </div> 
-                <hr>
-                <h4>Institutional Monitoring
-                  <br>
-                </h4>
-                 
-                  <div class="form-group">
-                    <label for="comment">WUA Development Office
-                      (Name,No of WUA Members):</label>
-                    <textarea class="form-control"cols="60"  rows="3" id="comment"formControlName="wuaDevelopmentOffice"></textarea>
-                  </div>  
-                   
-                    <div class="form-group " >
-                      <label for="GON"  >WUA Registration Date in AD: </label> 
-                      <input type="text" class=" form-control " id="GON"formControlName="wuaRegistrarionDate"> 
-                      <span *ngIf="!page8Form.get('wuaRegistrarionDate').valid && page8Form.get('wuaRegistrarionDate').touched">
-                          <span *ngIf="page8Form.get('wuaRegistrarionDate').touched">This Field Is Required.</span>
-                         
-                        </span> </div> 
-                      <hr>
-    
-                      <h4>WUA Training
-                        <br>
-                      </h4>
-                       
-                        <div class="form-group " >
-                          <label for="GON"  >Training Name : </label> 
-                          <input type="text" class=" form-control " id="GON"formControlName="trainingName"> 
-                          <span *ngIf="!page8Form.get('trainingName').valid && page8Form.get('trainingName').touched">
-                              <span *ngIf="page8Form.get('trainingName').touched">This Field Is Required.</span>
-                             
-                            </span>
-                           
-                            <div class="form-group " >
-                              <label for="GON"  >Training Date in AD: </label> 
-                              <input type="text" class=" form-control " id="GON"formControlName="trainingDate">
-                              <span *ngIf="!page8Form.get('trainingDate').valid && page8Form.get('trainingDate').touched">
-                                  <span *ngIf="page8Form.get('trainingDate').touched">This Field Is Required.</span>
-                                 
-                                </span>  </div>
-                             </div> 
-    
-                               
-                                <div class="form-group " >
-                                  <label for="GON"  >Training Period : </label> 
-                                  <input type="text" class=" form-control " id="GON"formControlName="trainingPeriod">
-                                  <span *ngIf="!page8Form.get('trainingPeriod').valid && page8Form.get('trainingPeriod').touched">
-                                      <span *ngIf="page8Form.get('trainingPeriod').touched">This Field Is Required.</span>
-                                     
-                                    </span> 
-                                   
-                                    <div class="form-group " >
-                                      <label for="GON"  >No. Of Participants : </label> 
-                                      <input type="text" class=" form-control " id="GON"formControlName="numberOfParticipants">
-                                      <span *ngIf="!page8Form.get('numberOfParticipants').valid && page8Form.get('numberOfParticipants').touched">
-                                          <span *ngIf="page8Form.get('numberOfParticipants').touched">This Field Is Required.</span>
-                                         
-                                        </span> </div> 
-                                      </div> 
-                                      <button type="Submit" class="btn btn-outline-success mr-2" (click)="buttonClicked()">Add</button>  
-                <button type="Reset" class="btn btn-outline-danger">Cancel</button>
-    <hr>
-    
-    <div class="table-responsive">
-      <table class="table">
-        <thead>
-          <tr>
+<div class="jumbotron">
+  <form [formGroup]="page8Form" (ngSubmit)='onSubmit()'>
+ <fieldset>
+    <legend class="col-md-3 col-form-label">Implementation Information</legend>
+    <fieldset>
+        <legend class="col-md-3 col-form-label">Progress Monitoring</legend>
+        <div class="form-group row">
+            <div class="col-sm-2">
+            <label for="inputPassword" class="col-sm-auto col-form-label">GON Share:</label>
+            </div>
+            <div class="col-sm-2">
+                <input type="text" class="form-control" formControlName="gonShare" >
+    <span *ngIf="!page8Form.get('gonShare').valid && page8Form.get('gonShare').touched"  class="text-danger">
+      <span *ngIf="page8Form.get('gonShare').errors['pattern']"><small>This is invalid! please enter number!</small></span>
+      <span *ngIf="page8Form.get('gonShare').errors['required']"><small>This field is required!</small></span>
+    </span>
+            </div>
+            <div class="col-sm-2">
+            <label for="inputPassword"  class="ml-2 col-form-label">NRs</label>
+            </div>
+
             
-            <th scope="col">Training Name</th>
-            <th scope="col">Training Date</th>
-            <th scope="col">Training Period</th>
-            <th scope="col">No. of Participants</th>
-           
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let row of rows">
-            
-            <td>{{row.trainingName}}</td>
-            <td>{{row.trainingDate}}</td>
-            <td>{{row.trainingPeriod}}</td>
-            <td>{{row.numberOfParticipants}}</td>
-            
-          </tr>
-     
-        </tbody>
-      </table>
-    </div>
+            <div class="col-sm-2">
+            <label for="inputPassword" class="col-sm-auto col-form-label">WUA share:</label>
+            </div>
+            <div class="col-sm-2">
+                <input type="text" class="form-control" formControlName="wuaShare" >
+    <span *ngIf="!page8Form.get('wuaShare').valid && page8Form.get('wuaShare').touched"  class="text-danger">
+      <span *ngIf="page8Form.get('wuaShare').errors['pattern']"><small>This is invalid! please enter number!</small></span>
+      <span *ngIf="page8Form.get('wuaShare').errors['required']"><small>This field is required!</small></span>
+    </span>
+            </div>
+            <div class="col-sm-2">
+            <label for="inputPassword" class="col-form-label">NRs</label>
+            </div>
+         </div>
+
+         <div class="form-group row">
+            <div class="col-sm-2">
+                <label for="inputPassword" class="col-sm-auto col-form-label">Physical progress:</label>
+                </div>
+                <div class="col-sm-10">
+                <textarea class="form-control"cols="60"  rows="3" id="comment"formControlName="physicalProgress">
+                    <!-- <span *ngIf="!page8Form.get('physicalProgress').valid && page8Form.get('physicalProgress').touched">
+                        <span *ngIf="page8Form.get('wuaShare').valid">Only Numbers Allowed.</span>
+                      <span *ngIf="page8Form.get('physicalProgress').touched">This This field is required!</span>
                      
-                        
-           
-    <hr>
-                <button type="button" class="btn btn-outline-success mr-2"(click)="onSaveData()">Save </button>
-                <button type="Submit" class="btn btn-outline-warning mr-2">Submit</button>  
-                <button type="Reset" class="btn btn-outline-danger">Cancel</button>
-  
+                    </span>  -->
+                    
+                  </textarea>
+                </div>
+         </div>
+
+         <div class="form-group row">
+            <div class="col-sm-2">
+                <label for="inputPassword" class="col-sm-auto">Physical progress date:</label>
+              </div>
+              <div class="col-sm-2">
+                  <input type="date" class=" form-control " id="GON"formControlName="physicalProgressDate">
+                  <!-- <span *ngIf="!page8Form.get('physicalProgressDate').valid && page8Form.get('physicalProgressDate').touched">
+                    <span *ngIf="page8Form.get('physicalProgressDate').touched">This This field is required!</span>
+                   
+                  </span>  -->
+              </div>
+              <div class="col-sm-2">
+                  <label for="inputPassword" class="col-form-label">AD</label>
+                  </div>
+
+         </div>
+         <div class="form-group row">
+            <div class="col-sm-2">
+                <label for="inputPassword" class="col-sm-auto col-form-label">Financial progress:</label>
+                </div>
+                <div class="col-sm-10">
+                <textarea class="form-control"cols="60"  rows="3" id="comment">
+                    
+                  </textarea>
+                </div>
+         </div>
+
+         <div class="form-group row">
+            <div class="col-sm-2">
+                <label for="inputPassword" class="col-sm-auto">Financial progress date:</label>
+              </div>
+              <div class="col-sm-2">
+                  <input type="date" class=" form-control " id="GON">
+              </div>
+              <div class="col-sm-2">
+                  <label for="inputPassword" class="col-form-label">AD</label>
+                  </div>
+
+         </div>
+    </fieldset>
+
+  <br>
+
+    <fieldset>
+        <legend class="col-md-3 col-form-label">Institution Monitoring</legend>
+        <div class="form-group row">
+            <div class="col-sm-2">
+                <label for="inputPassword" class="col-sm-auto">WUA Development Office
+                    (Name,No of WUA Members):</label>
+                </div>
+                <div class="col-sm-10">
+                <textarea class="form-control"cols="60"  rows="3" id="comment">
+                    
+                  </textarea>
+                </div>
+         </div>
+         <div class="form-group row">
+            <div class="col-sm-2">
+                <label for="inputPassword" class="col-sm-auto">WUA registration  date:</label>
+              </div>
+              <div class="col-sm-2">
+                  <input type="date" class=" form-control " id="GON">
+              </div>
+              <div class="col-sm-2">
+                  <label for="inputPassword" class="col-form-label">AD</label>
+                  </div>
+
+         </div>
+
+         <fieldset>
+            <legend class="col-md-3 col-form-label">WUA training</legend>
+            <div class="form-group row">
+                <div class="col-sm-2">
+                <label for="inputPassword" class="col-sm-auto col-form-label">Traiining name:</label>
+                </div>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" formControlName="trainingName" >
+    <span *ngIf="!page8Form.get('trainingName').valid && page8Form.get('trainingName').touched"  class="text-danger">
+      <!-- <span *ngIf="page8Form.get('trainingName').errors['pattern']"><small>This is invalid! please enter number!</small></span> -->
+      <span *ngIf="page8Form.get('trainingName').errors['required']"><small>This field is required!</small></span>
+    </span>
+                </div>
+                <div class="col-sm-2">
+                <label for="inputPassword"  class="ml-2 col-form-label"></label>
+                </div>
     
-       
+                
+                <div class="col-sm-2">
+                    <label for="inputPassword" class="col-sm-auto">Training date:</label>
+                  </div>
+                  <div class="col-sm-2">
+                      <input type="text" class="form-control" formControlName="trainingDate" >
+    <span *ngIf="!page8Form.get('trainingDate').valid && page8Form.get('trainingDate').touched"  class="text-danger">
+      <span *ngIf="page8Form.get('trainingDate').errors['pattern']"><small>This is invalid! please enter number!</small></span>
+      <span *ngIf="page8Form.get('trainingDate').errors['required']"><small>This field is required!</small></span>
+    </span>
+                  </div>
+                  <div class="col-sm-2">
+                      <label for="inputPassword" class="col-form-label">AD</label>
+                      </div>
+             </div>
+    
+             <div class="form-group row">
+                <div class="col-sm-2">
+                <label for="inputPassword" class="col-sm-auto col-form-label">Training period:</label>
+                </div>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" formControlName="trainingPeriod" >
+    <span *ngIf="!page8Form.get('trainingPeriod').valid && page8Form.get('trainingPeriod').touched"  class="text-danger">
+      <span *ngIf="page8Form.get('trainingPeriod').errors['pattern']"><small>This is invalid! please enter number!</small></span>
+      <span *ngIf="page8Form.get('trainingPeriod').errors['required']"><small>This field is required!</small></span>
+    </span>
+                </div>
+    
+                <div class="col-sm-2">
+                <label for="inputPassword"  class="col-form-label">days</label>
+                </div>
+    
+                
+                <div class="col-sm-2">
+                <label for="inputPassword" class="col-sm-auto col-form-label">No. of participant:</label>
+                </div>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" formControlName="numberOfParticipants" >
+    <span *ngIf="!page8Form.get('numberOfParticipants').valid && page8Form.get('numberOfParticipants').touched"  class="text-danger">
+      <span *ngIf="page8Form.get('numberOfParticipants').errors['pattern']"><small>This is invalid! please enter number!</small></span>
+      <span *ngIf="page8Form.get('numberOfParticipants').errors['required']"><small>This field is required!</small></span>
+    </span>
+                </div>
+                <div class="col-sm-2">
+                <label for="inputPassword" class="ml-2 col-form-label"></label>
+                </div>
+             </div>
+             <br>
+             <div class="btn-toolbar">
+                <div>
+                  <button class="btn btn-success ml-2 mr-4" type="button" (click)="buttonClicked()">Add</button>
+                  <button class="btn btn-danger " type="button" >Cancel</button>
+                  </div>
+              </div>
+              <br>
+
+              <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        
+                        <th scope="col">Training Name</th>
+                        <th scope="col">Training Date</th>
+                        <th scope="col">Training Period</th>
+                        <th scope="col">No. of Participants</th>
+                       
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let row of rows">
+                        
+                        <td>{{row.trainingName}}</td>
+                        <td>{{row.trainingDate}}</td>
+                        <td>{{row.trainingPeriod}}</td>
+                        <td>{{row.numberOfParticipants}}</td>
+                        
+                      </tr>
+                 
+                    </tbody>
+                  </table>
+                </div>
+
+         </fieldset>
+    </fieldset>
+    <br>
+    <div class="btn-toolbar">
+        <div>
+          <button class="btn btn-success ml-2 mr-4" type="button" >Save</button>
+          <button class="btn btn-primary mr-4" type="button" >Reset</button>
+          <button class="btn btn-danger " type="button" >Cancel</button>
+          </div>
+      </div>
+  </fieldset>
+
