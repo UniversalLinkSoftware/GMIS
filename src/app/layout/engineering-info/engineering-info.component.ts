@@ -14,7 +14,8 @@ import { DataStorageService } from '../social-info/data-storage.service';
 export class EngineeringInfoComponent implements OnInit {
   myGroup: FormGroup;
   engineeringInfo: RiverHydology;
-  public rows: Array<{bNameOfBranchCanal: string, bgca: number, bcca: number
+  public rows: Array<{
+     bNameOfBranchCanal: string, bgca: number, bcca: number
       bTotallength: number,
       bLinedTypeCanalLength: number,
       bUnlinedTypeCanalLength: number,
@@ -41,6 +42,7 @@ export class EngineeringInfoComponent implements OnInit {
     let bNameOfBranchCanal= this.myGroup.controls['bNameOfBranchCanal'].value;
     let bgca = this.myGroup.controls['bgca'].value;
     let bcca=this.myGroup.controls['bcca'].value;
+<<<<<<< HEAD
     let bTotallength=this.myGroup.controls['bTotallength'].value;
     let bLinedTypeCanalLength=this.myGroup.controls['bLinedTypeCanalLength'].value;
     let bUnlinedTypeCanalLength=this.myGroup.controls['bUnlinedTypeCanalLength'].value;
@@ -48,6 +50,15 @@ export class EngineeringInfoComponent implements OnInit {
     let btertiary=this.myGroup.controls['btertiary'].value;
     let bSubBranchLength=this.myGroup.controls['bSubBranchLength'].value;
     let bCanalStructure=this.myGroup.controls['bCanalStructure'].value;
+=======
+    let bTotallength =this.myGroup.controls['bTotallength'].value;
+    let bLinedTypeCanalLength =this.myGroup.controls['bLinedTypeCanalLength'].value;
+    const bUnlinedTypeCanalLength =this.myGroup.controls['bUnlinedTypeCanalLength'].value;
+    const bDesignDischarge =this.myGroup.controls['bDesignDischarge'].value;
+    const btertiary =this.myGroup.controls['btertiary'].value;
+    const bSubBranchLength = this.myGroup.controls['bSubBranchLength'].value;
+    const bCanalStructure = this.myGroup.controls['bCanalStructure'].value;
+>>>>>>> 7f3b4a67ebb691c91f690a6725b5b0753a43b09a
 
    this.rows.push( {bNameOfBranchCanal: bNameOfBranchCanal, bgca: bgca, bcca: bcca, bTotallength: bTotallength,
     bLinedTypeCanalLength: bLinedTypeCanalLength,

@@ -1,3 +1,4 @@
+import { EconomicService } from './../economic-info/economic.service';
 import { ImplementationService } from './../implementation-info/implementation.service';
 import { Social } from './social-info.model';
 import {SocialInfoComponent} from './social-info.component';
@@ -9,6 +10,7 @@ import { SocialService } from './social.service';
 import { EngineeringService } from '../engineering-info/engineering.service';
 import { ProjectService } from '../project-info/project.service';
 import { GroundwaterService } from '../groundwater-info/groundwater.service';
+import { Implementation } from '../implementation-info/implementation-info.model';
 
 
 
@@ -18,7 +20,7 @@ import { GroundwaterService } from '../groundwater-info/groundwater.service';
 export class DataStorageService {
   constructor(private http: Http, private socialService: SocialService, private implementationService: ImplementationService,
     // tslint:disable-next-line:max-line-length
-    private engineeringService: EngineeringService, private projectService: ProjectService, private groundwaterService: GroundwaterService) {}
+    private engineeringService: EngineeringService, private projectService: ProjectService, private groundwaterService: GroundwaterService, private economicService: EconomicService) {}
 
   storeSocial() {
        return this.http.put('https://shopping-ang7.firebaseio.com/social.json', this.socialService.getSocialInfo());
@@ -35,6 +37,9 @@ export class DataStorageService {
   storeGroundwater() {
         return this.http.put('https://serverproject-aef56.firebaseio.com/groundwater.json', this.groundwaterService.getGroundwaterInfo());
   }
+  storeEconomic() {
+    return this.http.put('https://server-test-50da6.firebaseio.com/economic.json', this.economicService.geteconomicInfo());
+}
 
   getSocial() {
     this.http.get('https://shopping-ang7.firebaseio.com/social.json').pipe(
@@ -48,6 +53,21 @@ export class DataStorageService {
       .subscribe(
         (social: Social) => {
           this.socialService.setSocial(social);
+        }
+      );
+  }
+  getImplementation() {
+    this.http.get('https://shopping-b94a8.firebaseio.com/implementation.json').pipe(
+      map(
+        (response: Response) => {
+          const implementation: Implementation = response.json();
+          // tslint:disable-next-line:prefer-const
+           return implementation;
+        }
+      ))
+      .subscribe(
+        (implementation: Implementation) => {
+          this.implementationService.setImplementation(implementation);
         }
       );
   }
