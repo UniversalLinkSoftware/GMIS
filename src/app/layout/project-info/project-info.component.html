@@ -36,29 +36,33 @@
           <label class="col-md-left col-form-label">ha</label>
         </div>
 
-        <div class="form-group col-12">
+        <div class="form-group col-10">
           <fieldset>
-          <legend  class="col-md-3 col-form-label">Management System</legend>
-
-              <div class="col-sm-2 form-check form-check-inline">
-                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
-                <label class="form-check-label" for="inlineCheckbox1">FMIS</label>
+            <legend  class="col-md-3 col-form-label">Management System</legend>
+            <div class="col-sm-2 form-check form-check-inline">
+              <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+              <label class="form-check-label" #FMIS for="inlineCheckbox1" >FMIS</label>
+            </div>
+            <div class="col-sm-2 form-check form-check-inline">
+              <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+              <label class="form-check-label" for="inlineCheckbox2" >AMIS</label>
+            </div>
+            <div class="col-sm-2 form-check form-check-inline">
+              <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" >
+              <label class="form-check-label" for="inlineCheckbox3" >JMIS</label>
+            </div>
+            <div class="col-sm-1 form-check form-check-inline">
+                <input type="radio" name="optionsRadios" id="optionsRadios4" value="option4" (click)="other=!other" >
+                <label class="form-check-label" for="inlineCheckbox4"  >{{ other ? 'other' : 'other'}}</label>
               </div>
-              <div class="col-sm-2 form-check form-check-inline">
-                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                <label class="form-check-label" for="inlineCheckbox2">AMIS</label>
-              </div>
-              <div class="col-sm-2 form-check form-check-inline">
-                <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" >
-                <label class="form-check-label" for="inlineCheckbox3">JMIS</label>
-              </div>
-              <div class="col-sm-4 form-check form-check-inline">
-                <input type="radio" name="optionsRadios" id="optionsRadios4" value="option4" >
-                <label class="form-check-label" for="inlineCheckbox4">others</label>
-                <input type="text" class="form-control ml-2" >
+              <div class="col-sm-3 form-check form-check-inline"  >
+                  <div *ngIf="other">
+                    <input type="text" class="form-control">
+                  </div>
               </div>
           </fieldset>
         </div>
+
 
         <div class="form-group row">
         <div class="col-1"></div>
@@ -224,4 +228,3 @@
     </div> -->
 
 
-    

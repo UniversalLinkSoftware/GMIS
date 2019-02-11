@@ -22,9 +22,9 @@ export class EngineeringInfoComponent implements OnInit {
       btertiary: string,
       bSubBranchLength: string,
       bCanalStructure: string, }> = [];
- 
-  
-  
+
+
+
   // fieldArray: Array<any> = [];
   // newAttribute: any = {};
 
@@ -48,16 +48,16 @@ export class EngineeringInfoComponent implements OnInit {
     let btertiary=this.myGroup.controls['btertiary'].value;
     let bSubBranchLength=this.myGroup.controls['bSubBranchLength'].value;
     let bCanalStructure=this.myGroup.controls['bCanalStructure'].value;
-    
-   this.rows.push( {bNameOfBranchCanal: bNameOfBranchCanal, bgca:bgca, bcca: bcca,bTotallength: bTotallength,
+
+   this.rows.push( {bNameOfBranchCanal: bNameOfBranchCanal, bgca: bgca, bcca: bcca, bTotallength: bTotallength,
     bLinedTypeCanalLength: bLinedTypeCanalLength,
     bUnlinedTypeCanalLength: bUnlinedTypeCanalLength,
     bDesignDischarge: bDesignDischarge,
     btertiary: btertiary,
     bSubBranchLength: bSubBranchLength,
     bCanalStructure: bCanalStructure, } );
-  this.myGroup.reset();}
-    
+  this.myGroup.reset(); }
+
   constructor(private engineeringService: EngineeringService, private dataStorageService: DataStorageService ) {}
   onSubmit() {
       this.engineeringService.addEngineering(this.myGroup.value);
@@ -69,7 +69,7 @@ export class EngineeringInfoComponent implements OnInit {
           }
         );
       }
-      
+
   ngOnInit() {
 
     this.myGroup = new FormGroup({
@@ -99,7 +99,7 @@ export class EngineeringInfoComponent implements OnInit {
       'mUnlinedTypeCanalLength': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
       'mTotalDepth': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
 
-      'bNameOfBranchCanal': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'bNameOfBranchCanal': new FormControl(null, [Validators.required]),
       'bgca': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
       'bcca': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
       'bTotallength': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),

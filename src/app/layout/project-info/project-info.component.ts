@@ -14,6 +14,7 @@ export class ProjectInfoComponent implements OnInit {
 
   project: FormGroup;
   projectInfo: Project;
+  other = false;
   constructor(private projectService: ProjectService, private dataStorageService: DataStorageService ) { }
   onSubmit() {
     this.projectService.addProject(this.project.value);
