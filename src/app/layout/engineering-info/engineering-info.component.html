@@ -521,7 +521,7 @@
         <div>
         <button class="btn btn-success ml-2 mr-5" type="submit" >Submit</button>
         <button class="btn btn-primary mr-2" type="button" (click)="onSaveData()" >Save</button>
-        <button class="btn btn-primary mr-2" (click)="buttonClicked()">Click to Insert New Row</button>
+        <button class="btn btn-primary mr-2" (click)="buttonClicked()"[disabled]="!myGroup.valid">Insert New Row</button>
         </div>
 
         <br>
