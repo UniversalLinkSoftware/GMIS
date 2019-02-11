@@ -10,6 +10,7 @@ import { SocialService } from './social.service';
 import { EngineeringService } from '../engineering-info/engineering.service';
 import { ProjectService } from '../project-info/project.service';
 import { GroundwaterService } from '../groundwater-info/groundwater.service';
+import { Implementation } from '../implementation-info/implementation-info.model';
 
 
 
@@ -52,6 +53,21 @@ export class DataStorageService {
       .subscribe(
         (social: Social) => {
           this.socialService.setSocial(social);
+        }
+      );
+  }
+  getImplementation() {
+    this.http.get('https://shopping-b94a8.firebaseio.com/implementation.json').pipe(
+      map(
+        (response: Response) => {
+          const implementation: Implementation = response.json();
+          // tslint:disable-next-line:prefer-const
+           return implementation;
+        }
+      ))
+      .subscribe(
+        (implementation: Implementation) => {
+          this.implementationService.setImplementation(implementation);
         }
       );
   }
