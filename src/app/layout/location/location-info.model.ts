@@ -10,10 +10,12 @@ export class Location {
         public majorRiverBasin: string,
         public riverSource: string,
         public province: number,
-        public distict: string,
+        public district: string,
+        public ward:number,
         public metroCity: string,
         public subMetroCity: string,
         public municipality: string,
         public ruralMunicipality: number,
+        public localBodyType:string,
          ) {}
 }
