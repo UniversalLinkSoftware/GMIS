@@ -5,7 +5,9 @@
       <fieldset>
         <legend class="col-md-3 col-form-label">River Hydrology</legend>
         <div class="form-group row">
+            <div class="col-sm-2">
           <label for="inputPassword" class="col-sm-auto col-form-label">Catchement Area:</label>
+            </div>
           <div class="col-sm-2">
             <input type="number" class="form-control" formControlName="catchmentArea" >
             <span *ngIf="!myGroup.get('catchmentArea').valid && myGroup.get('catchmentArea').touched"  class="text-danger">
@@ -13,9 +15,12 @@
               <span *ngIf="myGroup.get('catchmentArea').errors['required']"><small>This field is required!</small></span>
             </span>
           </div>
+          <div class="col-sm-2">
           <label for="inputPassword"  class="ml-2 col-form-label">Km sq.</label>
-          <div class="col-1"></div>
-          <label for="inputPassword" class="col-sm-auto col-form-label">River Width at Headworks site:</label>
+          </div>
+          <div class="col-sm-2">
+          <label for="inputPassword" class="col-sm-auto">River Width at Headworks site:</label>
+          </div>
           <div class="col-sm-2">
             <input type="number" class="form-control"  formControlName="riverWidthAtHeadworksSite" >
             <span *ngIf="!myGroup.get('riverWidthAtHeadworksSite').valid && myGroup.get('riverWidthAtHeadworksSite').touched" class="text-danger">
@@ -23,68 +28,106 @@
               <span *ngIf="myGroup.get('riverWidthAtHeadworksSite').errors['required']"><small>This field is required!</small></span>
             </span>
           </div>
+          <div class="col-sm-2">
           <label for="inputPassword" class="ml-2 col-form-label">m</label>
+          </div>
        </div>
 
         <div class="form-group row">
-          <label for="inputPassword" class="col-sm-auto col-form-label ">Longitudinal Slope of River at Headworks site: 1:</label>
-          <div class="col-sm-6">
+            <div class="col-sm-2">
+          <label for="inputPassword" class="col-sm-auto ">Longitudinal Slope of River at Headworks site: 1:</label>
+          </div>
+          <div class="col-sm-2">
             <input type="text" class="form-control" formControlName="lngSlopeOfRiverAtHeadworksSite">
             <span *ngIf="!myGroup.get('lngSlopeOfRiverAtHeadworksSite').valid && myGroup.get('lngSlopeOfRiverAtHeadworksSite').touched" class="text-danger">
               <span *ngIf="myGroup.get('lngSlopeOfRiverAtHeadworksSite').errors['pattern']"><small>This is invalid! please enter number!</small></span>
               <span *ngIf="myGroup.get('lngSlopeOfRiverAtHeadworksSite').errors['required']"><small>This field is required!</small></span>
             </span>
           </div>
+          <div class="col-sm-2">
           <label for="inputPassword" class="ml-2 col-form-label">(V:H)</label>
+          </div>
+        
+        <div class="col-sm-2">
+            <label for="inputPassword" class="col-sm-auto">Average Annual Riverfall:</label>
+              </div>
+            <div class="col-sm-2">
+              <input type="number" class="form-control"   formControlName="averageAnnualRiverfall" >
+              <span *ngIf="!myGroup.get('averageAnnualRiverfall').valid && myGroup.get('averageAnnualRiverfall').touched" class="text-danger">
+                <span *ngIf="myGroup.get('averageAnnualRiverfall').errors['pattern']"><small>This is invalid! please enter number!</small></span>
+                <span *ngIf="myGroup.get('averageAnnualRiverfall').errors['required']"><small>This field is required!</small></span>
+              </span>
+            </div>
+            <div class="col-sm-2">
+              <label for="inputPassword"  class="ml-2 col-form-label">mm</label>
+              </div>
         </div>
 
         <div class="form-group row">
-          <label for="inputPassword" class="col-sm-2 col-form-label">Flood Discharge: </label>
+            <div class="col-sm-3">
+          <label for="inputPassword" class="col-sm-auto col-form-label">Flood Discharge: </label>
+          </div>
         </div>
         <div class="form-group row">
+            <div class="col-sm-2">
           <label for="inputPassword" class="col-sm-auto col-form-label ml-2">25 Years</label>
-          <div class="col-sm-2">
+            </div>
+          <div class="col-sm-1">
             <input type="number" class="form-control" formControlName="floodDischarge25">
             <span *ngIf="!myGroup.get('floodDischarge25').valid && myGroup.get('floodDischarge25').touched" class="text-danger">
               <span *ngIf="myGroup.get('floodDischarge25').errors['pattern']"><small>This is invalid! please enter number!</small></span>
               <span *ngIf="myGroup.get('floodDischarge25').errors['required']"><small>This field is required!</small></span>
             </span>
           </div>
+          <div class="col-sm-1">
           <label class="ml-2 col-form-label">cumec</label>
-
-          <label for="inputPassword" class="col-sm-auto col-form-label">50 Years</label>
+          </div>
           <div class="col-sm-2">
+          <label for="inputPassword" class="col-sm-auto col-form-label">50 Years</label>
+          </div>
+          <div class="col-sm-1">
             <input type="number" class="form-control" formControlName="floodDischarge50" >
             <span *ngIf="!myGroup.get('floodDischarge50').valid && myGroup.get('floodDischarge50').touched" class="text-danger">
               <span *ngIf="myGroup.get('floodDischarge50').errors['pattern']"><small>This is invalid! please enter number!</small></span>
               <span *ngIf="myGroup.get('floodDischarge50').errors['required']"><small>This field is required!</small></span>
             </span>
           </div>
+          <div class="col-sm-1">
           <label for="inputPassword" class="ml-2 col-form-label" >cumec</label>
-
+          </div>
+          <div class="col-sm-2">
           <label for="inputPassword" class="col-sm-auto col-form-label">100 Years</label>
-          <div class="col-sm-2" >
+          </div>
+          <div class="col-sm-1" >
             <input type="number" class="form-control" formControlName="floodDischarge100">
             <span *ngIf="!myGroup.get('floodDischarge100').valid && myGroup.get('floodDischarge100').touched" class="text-danger">
               <span *ngIf="myGroup.get('floodDischarge100').errors['pattern']"><small>This is invalid! please enter number!</small></span>
               <span *ngIf="myGroup.get('floodDischarge100').errors['required']"><small>This field is required!</small></span>
             </span>
           </div>
+          <div class="col-sm-1">
           <label for="inputPassword" class="ml-2 col-form-label" >cumec</label>
+          </div>
         </div>
 
         <div class="form-group row">
-          <label for="inputPassword" class="col-sm-auto col-form-label">Average Annual Riverfall:</label>
+            <div class="col-sm-2">
+          <label for="inputPassword" class="col-sm-auto">Method  of Flood Calculations:</label>
+            </div>
           <div class="col-sm-2">
-            <input type="number" class="form-control"   formControlName="averageAnnualRiverfall" >
-            <span *ngIf="!myGroup.get('averageAnnualRiverfall').valid && myGroup.get('averageAnnualRiverfall').touched" class="text-danger">
-              <span *ngIf="myGroup.get('averageAnnualRiverfall').errors['pattern']"><small>This is invalid! please enter number!</small></span>
-              <span *ngIf="myGroup.get('averageAnnualRiverfall').errors['required']"><small>This field is required!</small></span>
+            <input type="number" class="form-control" formControlName="catchmentArea" >
+            <span *ngIf="!myGroup.get('catchmentArea').valid && myGroup.get('catchmentArea').touched"  class="text-danger">
+              <span *ngIf="myGroup.get('catchmentArea').errors['pattern']"><small>This is invalid! please enter number!</small></span>
+              <span *ngIf="myGroup.get('catchmentArea').errors['required']"><small>This field is required!</small></span>
             </span>
           </div>
-          <label for="inputPassword"  class="ml-2 col-form-label">mm</label>
-          <div class="col-1"></div>
-          <label for="inputPassword" class="col-sm-auto col-form-label">MIP (2016) Hydrological Region:</label>
+          <div class="col-sm-2">
+          <label for="inputPassword"  class="ml-2 col-form-label"></label>
+          </div>
+          
+          <div class="col-sm-2">
+          <label for="inputPassword" class="col-sm-auto ">MIP (2016) Hydrological Region:</label>
+          </div>
           <div class="col-sm-2">
             <select id="inputState" class="form-control">
               <option selected>-Select-</option> <!--a button to show map is needed-->
@@ -115,37 +158,29 @@
         </div>
 
         <div class="form-group row">
-          <label for="inputPassword" class="col-sm-auto col-form-label">Method of Flood Calculation:</label>
-          <div class="col-sm-7">
-            <input type="text" class="form-control" id="inputPassword" formControlName="methodOfFloodCalculation" >
-            <span *ngIf="!myGroup.get('methodOfFloodCalculation').valid && myGroup.get('methodOfFloodCalculation').touched" class="text-danger">
-              <!-- <span *ngIf="myGroup.get('methodOfFloodCalculation').errors['pattern']"><small>This is invalid! please enter number!</small></span> -->
-              <span *ngIf="myGroup.get('methodOfFloodCalculation').errors['required']"><small>This field is required!</small></span>
-            </span>
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <label for="inputPassword" class="col-sm-auto col-form-label">Name of River Source:</label>
-          <div class="col-sm-7">
+            <div class="col-sm-2">
+          <label for="inputPassword" class="col-sm-auto">Name of River Source:</label>
+            </div>
+          <div class="col-sm-2">
             <input type="text" class="form-control" id="inputPassword"  formControlName="nameOfRiverSource" >
             <span *ngIf="!myGroup.get('nameOfRiverSource').valid && myGroup.get('nameOfRiverSource').touched" class="text-danger">
               <!-- <span *ngIf="myGroup.get('nameOfRiverSource').errors['pattern']"><small>This is invalid! please enter number!</small></span> -->
               <span *ngIf="myGroup.get('nameOfRiverSource').errors['required']"><small>This field is required!</small></span>
             </span>
           </div>
-        </div>
+          <div class="col-sm-2"></div>
 
-
-        <div class="form-group row">
+          <div class="col-sm-2">
           <label for="inputPassword" class="col-sm-auto col-form-label">River Basin:</label>
-          <div class="col-sm-8">
+          </div>
+          <div class="col-sm-2">
             <input type="text" class="form-control" id="inputPassword" formControlName="riverBasin" >
             <span *ngIf="!myGroup.get('riverBasin').valid && myGroup.get('riverBasin').touched" class="text-danger">
               <span *ngIf="myGroup.get('riverBasin').errors['pattern']"><small>This is invalid! please enter number!</small></span>
             <span *ngIf="myGroup.get('riverBasin').errors['required']"><small>This field is required!</small></span>
             </span>
           </div>
+          <div class="col-sm-2"></div>
         </div>
       </fieldset>
       <!--End of River Hydrology-->
@@ -156,21 +191,28 @@
       <fieldset>
         <legend class="col-md-3 col-form-label">Main Canal</legend>
         <div class="form-group row">
+            <div class="col-sm-2">
           <label for="inputPassword" class="col-sm-auto col-form-label">Canal Direction:</label>
+            </div>
           <div class="col-sm-2">
             <select id="inputState" class="form-control">
               <option selected>Right</option>
               <option>Left</option>
             </select>
           </div>
-          <div class="col-1"></div>
+          <div class="col-sm-2"></div>
+          <div class="col-sm-2"></div>
+          <div class="col-sm-2">
           <div class="col-md-1 offset-md-5">
             <button class="btn btn-success col-auto" type="next" >Next>></button>
+          </div>
           </div>
         </div>
 
         <div class="form-group row">
+            <div class="col-sm-2">
           <label for="inputPassword" class="col-sm-auto col-form-label">Total Length:</label>
+            </div>
           <div class="col-sm-2">
             <input type="number" class="form-control" formControlName="mTotalLength" >
             <span *ngIf="!myGroup.get('mTotalLength').valid && myGroup.get('mTotalLength').touched"  class="text-danger">
@@ -178,9 +220,12 @@
               <span *ngIf="myGroup.get('mTotalLength').errors['required']"><small>This field is required!</small></span>
             </span>
           </div>
+          <div class="col-sm-2">
           <label for="inputPassword"  class="ml-2 col-form-label">m</label>
-          <div class="col-2"></div>
+          </div>
+          <div class="col-sm-2">
           <label for="inputPassword" class="col-sm-auto col-form-label">Unlined Type Canal length:</label>
+          </div>
           <div class="col-sm-2">
             <input type="number" class="form-control"  formControlName="mUnlinedTypeCanalLength" >
             <span *ngIf="!myGroup.get('mUnlinedTypeCanalLength').valid && myGroup.get('mUnlinedTypeCanalLength').touched" class="text-danger">
@@ -188,11 +233,15 @@
               <span *ngIf="myGroup.get('mUnlinedTypeCanalLength').errors['required']"><small>This field is required!</small></span>
             </span>
           </div>
+          <div class="col-sm-2">
           <label for="inputPassword"  class="ml-2 col-form-label">lps</label>
+          </div>
         </div>
 
         <div class="form-group row">
+            <div class="col-sm-2">
           <label for="inputPassword" class="col-auto col-form-label">Design Discharge:</label>
+            </div>
           <div class="col-sm-2">
             <input type="number" class="form-control"   formControlName="mDesignDischarge" >
             <span *ngIf="!myGroup.get('mDesignDischarge').valid && myGroup.get('mDesignDischarge').touched" class="text-danger">
@@ -200,9 +249,12 @@
               <span *ngIf="myGroup.get('mDesignDischarge').errors['required']"><small>This field is required!</small></span>
             </span>
           </div>
+          <div class="col-sm-2">
           <label for="inputPassword"  class="ml-2 col-form-label">Km</label>
-          <div class="col-2"></div>
+          </div>
+          <div class="col-sm-2">
           <label for="inputPassword" class="col-sm-auto col-form-label">Lined type Canal Length:</label>
+          </div>
           <div class="col-sm-2">
           <input type="number" class="form-control"   formControlName="mLinedTypeCanalLength" >
           <span *ngIf="!myGroup.get('mLinedTypeCanalLength').valid && myGroup.get('mLinedTypeCanalLength').touched" class="text-danger">
@@ -210,11 +262,15 @@
             <span *ngIf="myGroup.get('mLinedTypeCanalLength').errors['required']"><small>This field is required!</small></span>
           </span>
           </div>
+          <div class="col-sm-2">
           <label for="inputPassword"  class="ml-2 col-form-label">Km</label>
+          </div>
         </div>
 
         <div class="form-group row">
+            <div class="col-sm-2">
           <label for="inputPassword" class="col-auto col-form-label">Top Width:</label>
+            </div>
           <div class="col-sm-2">
             <input type="number" class="form-control"   formControlName="mTopWidth" >
             <span *ngIf="!myGroup.get('mTopWidth').valid && myGroup.get('mTopWidth').touched" class="text-danger">
@@ -222,9 +278,12 @@
               <span *ngIf="myGroup.get('mTopWidth').errors['required']"><small>This field is required!</small></span>
             </span>
           </div>
+          <div class="col-sm-2">
           <label for="inputPassword"  class="ml-2 col-form-label">m</label>
-          <div class="col-3"></div>
+        </div>
+        <div class="col-sm-2">
           <label for="inputPassword" class="col-sm-auto col-form-label">Slide Slope:  1:</label>
+        </div>
           <div class="col-sm-2">
             <input type="number" class="form-control"   formControlName="mSlideSlope" >
             <span *ngIf="!myGroup.get('mSlideSlope').valid && myGroup.get('mSlideSlope').touched" class="text-danger">
@@ -232,11 +291,15 @@
               <span *ngIf="myGroup.get('mSlideSlope').errors['required']"><small>This field is required!</small></span>
             </span>
           </div>
+          <div class="col-sm-2">
           <label for="inputPassword"  class="ml-2 col-form-label">(V:H)</label>
+          </div>
         </div>
 
         <div class="form-group row">
+            <div class="col-sm-2">
           <label for="inputPassword" class="col-auto col-form-label">Bottom Width:</label>
+            </div>
           <div class="col-sm-2">
             <input type="number" class="form-control"   formControlName="mBottomWidth" >
             <span *ngIf="!myGroup.get('mBottomWidth').valid && myGroup.get('mBottomWidth').touched" class="text-danger">
@@ -244,9 +307,12 @@
               <span *ngIf="myGroup.get('mBottomWidth').errors['required']"><small>This field is required!</small></span>
             </span>
           </div>
+          <div class="col-sm-2">
           <label for="inputPassword"  class="ml-2 col-form-label">m</label>
-          <div class="col-2"></div>
+          </div>
+          <div class="col-sm-2">
           <label for="inputPassword" class="col-sm-auto col-form-label">Longitudinal Slope:  1:</label>
+          </div>
           <div class="col-sm-2">
             <input type="number" class="form-control"   formControlName="mLongitudinalSlope" >
             <span *ngIf="!myGroup.get('mLongitudinalSlope').valid && myGroup.get('mLongitudinalSlope').touched" class="text-danger">
@@ -254,13 +320,17 @@
               <span *ngIf="myGroup.get('mLongitudinalSlope').errors['required']"><small>This field is required!</small></span>
             </span>
           </div>
+          <div class="col-sm-2">
           <label for="inputPassword"  class="ml-2 col-form-label">(V:H)</label>
+          </div>
         </div>
 
 
 
         <div class="form-group row">
+            <div class="col-sm-2">
           <label for="inputPassword" class="col-auto col-form-label">No. of Branch Canal:</label>
+            </div>
           <div class="col-sm-2">
             <input type="number" class="form-control"   formControlName="mNumberOfBranchCanal" >
             <span *ngIf="!myGroup.get('mNumberOfBranchCanal').valid && myGroup.get('mNumberOfBranchCanal').touched" class="text-danger">
@@ -268,8 +338,10 @@
               <span *ngIf="myGroup.get('mNumberOfBranchCanal').errors['required']"><small>This field is required!</small></span>
             </span>
           </div>
-          <div class="col-2"></div>
+          <div class="col-sm-2"></div>
+          <div class="col-sm-2">
           <label for="inputPassword" class="col-sm-auto col-form-label">Branch Canal length:</label>
+          </div>
           <div class="col-sm-2">
             <input type="number" class="form-control"   formControlName="mBranchCanalLength" >
             <span *ngIf="!myGroup.get('mBranchCanalLength').valid && myGroup.get('mBranchCanalLength').touched" class="text-danger">
@@ -277,11 +349,15 @@
               <span *ngIf="myGroup.get('mBranchCanalLength').errors['required']"><small>This field is required!</small></span>
             </span>
           </div>
+          <div class="col-sm-2">
           <label for="inputPassword"  class="ml-2 col-form-label">Km</label>
+          </div>
         </div>
 
         <div class="form-group row">
+            <div class="col-sm-2">
           <label for="inputPassword" class="col-auto col-form-label">Total Depth:</label>
+            </div>
           <div class="col-sm-2">
             <input type="number" class="form-control"   formControlName="mTotalDepth" >
             <span *ngIf="!myGroup.get('mTotalDepth').valid && myGroup.get('mTotalDepth').touched" class="text-danger">
@@ -289,7 +365,9 @@
               <span *ngIf="myGroup.get('mTotalDepth').errors['required']"><small>This field is required!</small></span>
             </span>
           </div>
+          <div class="col-sm-2">
           <label for="inputPassword"  class="ml-2">m</label>
+          </div>
         </div>
 
         <br>
@@ -407,8 +485,10 @@
       <fieldset>
         <legend class="col-md-3 col-form-label">Branch Canal</legend>
         <div class="form-group row">
+            <div class="col-sm-2">
           <label for="inputPassword" class="col-sm-auto col-form-label">Name of Branch Canal:</label>
-          <div class="col-sm-9 ">
+            </div>
+          <div class="col-sm-10 ">
             <input type="text" class="form-control" formControlName="bNameOfBranchCanal" >
             <span *ngIf="!myGroup.get('bNameOfBranchCanal').valid && myGroup.get('bNameOfBranchCanal').touched" class="text-danger">
               <!-- <span *ngIf="myGroup.get('bNameOfBranchCanal').errors['pattern']"><small>This is invalid! please enter number!</small></span> -->
@@ -418,86 +498,113 @@
         </div>
 
         <div class="form-group row">
+            <div class="col-sm-2">
           <label for="inputPassword" class="col-sm-auto col-form-label">GCA:</label>
-          <div class="col-sm-3">
+            </div>
+          <div class="col-sm-2">
             <input type="number" class="form-control" formControlName="bgca" >
             <span *ngIf="!myGroup.get('bgca').valid && myGroup.get('bgca').touched"  class="text-danger">
               <span *ngIf="myGroup.get('bgca').errors['pattern']"><small>This is invalid! please enter number!</small></span>
               <span *ngIf="myGroup.get('bgca').errors['required']"><small>This field is required!</small></span>
             </span>
           </div>
+          <div class="col-sm-2">
           <label for="inputPassword"  class="ml-2 col-form-label">ha</label>
-          <div class="col-1"></div>
+          </div>
+          <div class="col-sm-2">
           <label for="inputPassword" class="col-sm-auto col-form-label">Unlined Type Canal length:</label>
-          <div class="col-sm-3">
+          </div>
+          <div class="col-sm-2">
             <input type="number" class="form-control"  formControlName="bUnlinedTypeCanalLength" >
             <span *ngIf="!myGroup.get('bUnlinedTypeCanalLength').valid && myGroup.get('bUnlinedTypeCanalLength').touched" class="text-danger">
               <span *ngIf="myGroup.get('bUnlinedTypeCanalLength').errors['pattern']"><small>This is invalid! please enter number!</small></span>
               <span *ngIf="myGroup.get('bUnlinedTypeCanalLength').errors['required']"><small>This field is required!</small></span>
             </span>
           </div>
+          <div class="col-sm-2">
           <label for="inputPassword"  class="ml-2 col-form-label">km</label>
+          </div>
+
        </div>
 
        <div class="form-group row">
+          <div class="col-sm-2">
           <label for="inputPassword" class="col-sm-auto col-form-label">CCA:</label>
-          <div class="col-sm-3">
+          </div>
+          <div class="col-sm-2">
             <input type="number" class="form-control"  formControlName="bcca" >
             <span *ngIf="!myGroup.get('bcca').valid && myGroup.get('bcca').touched" class="text-danger">
               <span *ngIf="myGroup.get('bcca').errors['pattern']"><small>This is invalid! please enter number!</small></span>
               <span *ngIf="myGroup.get('bcca').errors['required']"><small>This field is required!</small></span>
             </span>
           </div>
+          <div class="col-sm-2">
           <label for="inputPassword" class="ml-2 col-form-label">ha</label>
+          </div>
 
-          <div class="col-1"></div>
+          <div class="col-sm-2">
           <label for="inputPassword" class="col-sm-auto col-form-label">Lined type Canal Length:</label>
-          <div class="col-sm-3">
+          </div>
+          <div class="col-sm-2">
             <input type="number" class="form-control"   formControlName="bLinedTypeCanalLength" >
             <span *ngIf="!myGroup.get('bLinedTypeCanalLength').valid && myGroup.get('bLinedTypeCanalLength').touched" class="text-danger">
               <span *ngIf="myGroup.get('bLinedTypeCanalLength').errors['pattern']"><small>This is invalid! please enter number!</small></span>
               <span *ngIf="myGroup.get('bLinedTypeCanalLength').errors['required']"><small>This field is required!</small></span>
             </span>
           </div>
+          <div class="col-sm-2">
           <label for="inputPassword"  class="ml-2 col-form-label">Km</label>
+          </div>
         </div>
 
         <div class="form-group row">
+            <div class="col-sm-2">
           <label for="inputPassword" class="col-auto col-form-label">Design Discharge:</label>
-          <div class="col-sm-3">
+            </div>
+          <div class="col-sm-2">
             <input type="number" class="form-control"   formControlName="bDesignDischarge" >
             <span *ngIf="!myGroup.get('bDesignDischarge').valid && myGroup.get('bDesignDischarge').touched" class="text-danger">
               <span *ngIf="myGroup.get('bDesignDischarge').errors['pattern']"><small>This is invalid! please enter number!</small></span>
               <span *ngIf="myGroup.get('bDesignDischarge').errors['required']"><small>This field is required!</small></span>
             </span>
           </div>
+          <div class="col-sm-2">
           <label for="inputPassword"  class="ml-2 col-form-label">cumec</label>
-          <div class="col-1"></div>
+          </div>
+          <div class="col-sm-2">
           <label for="inputPassword" class="col-sm-auto col-form-label">Total Length:</label>
-          <div class="col-sm-3">
+          </div>
+          <div class="col-sm-2">
             <input type="number" class="form-control" formControlName="bTotallength" >
             <span *ngIf="!myGroup.get('bTotallength').valid && myGroup.get('bTotallength').touched"  class="text-danger">
               <span *ngIf="myGroup.get('bTotallength').errors['pattern']"><small>This is invalid! please enter number!</small></span>
               <span *ngIf="myGroup.get('bTotallength').errors['required']"><small>This field is required!</small></span>
             </span>
           </div>
+          <div class="col-sm-2">
           <label for="inputPassword"  class="ml-2 col-form-label">km</label>
+          </div>
         </div>
 
 
         <div class="form-group row">
+            <div class="col-sm-2">
           <label for="inputPassword" class="col-auto col-form-label">Sub Branch Length:</label>
-          <div class="col-sm-3">
+            </div>
+          <div class="col-sm-2">
             <input type="number" class="form-control"   formControlName="bSubBranchLength" >
             <span *ngIf="!myGroup.get('bSubBranchLength').valid && myGroup.get('bSubBranchLength').touched" class="text-danger">
               <span *ngIf="myGroup.get('bSubBranchLength').errors['pattern']"><small>This is invalid! please enter number!</small></span>
               <span *ngIf="myGroup.get('bSubBranchLength').errors['required']"><small>This field is required!</small></span>
             </span>
           </div>
+          <div class="col-sm-2">
           <label for="inputPassword"  class="ml-2 col-form-label">km</label>
-          <div class="col-2"></div>
+          </div>
+          <div class="col-sm-2">
           <label for="inputPassword" class="col-sm-auto col-form-label">Tertiary</label>
-          <div class="col-sm-3">
+          </div>
+          <div class="col-sm-2">
             <input type="number" class="form-control" formControlName="btertiary" >
             <span *ngIf="!myGroup.get('btertiary').valid && myGroup.get('btertiary').touched"  class="text-danger">
               <span *ngIf="myGroup.get('btertiary').errors['pattern']"><small>This is invalid! please enter number!</small></span>
@@ -505,11 +612,14 @@
             </span>
           </div>
         </div>
+        <div class="col-sm-2"></div>
 
 
         <div class="form-group row">
+            <div class="col-sm-2">
           <label for="inputPassword" class="col-sm-auto col-form-label">Canal Structure:</label>
-          <div class="col-sm-10">
+            </div>
+          <div class="col-sm-2">
             <input type="number" class="form-control"  formControlName="bCanalStructure" >
             <span *ngIf="!myGroup.get('bCanalStructure').valid && myGroup.get('bCanalStructure').touched" class="text-danger">
               <span *ngIf="myGroup.get('bCanalStructure').errors['pattern']"><small>This is invalid! please enter number!</small></span>
@@ -521,7 +631,7 @@
         <div>
         <button class="btn btn-success ml-2 mr-5" type="submit" >Submit</button>
         <button class="btn btn-primary mr-2" type="button" (click)="onSaveData()" >Save</button>
-        <button class="btn btn-primary mr-2" (click)="buttonClicked()"[disabled]="!myGroup.valid">Insert New Row</button>
+        <button class="btn btn-primary mr-2" (click)="buttonClicked()">Click to Insert New Row</button>
         </div>
 
         <br>

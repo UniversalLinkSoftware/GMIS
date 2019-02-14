@@ -10,6 +10,7 @@ import { EngineeringService } from '../engineering-info/engineering.service';
 import { ProjectService } from '../project-info/project.service';
 import { GroundwaterService } from '../groundwater-info/groundwater.service';
 import { Implementation } from '../implementation-info/implementation-info.model';
+import { Groundwater } from '../groundwater-info/groundwater-info.model';
 
 
 
@@ -68,3 +69,4 @@ export class DataStorageService {
       );
   }
 }
+

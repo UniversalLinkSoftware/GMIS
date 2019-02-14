@@ -380,8 +380,11 @@ var GroundwaterService = /** @class */ (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ImplementationService", function() { return ImplementationService; });
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+
 var ImplementationService = /** @class */ (function () {
     function ImplementationService() {
+        this.implementationChanged = new rxjs__WEBPACK_IMPORTED_MODULE_0__["Subject"]();
     }
     ImplementationService.prototype.ngOnInit = function () { };
     ImplementationService.prototype.addImplementation = function (implementation) {
@@ -390,6 +393,11 @@ var ImplementationService = /** @class */ (function () {
     };
     ImplementationService.prototype.getImplementationInfo = function () {
         return this.implementationInfo;
+    };
+    ImplementationService.prototype.setImplementation = function (implementation) {
+        this.implementationInfo = implementation;
+        console.log(this.implementationInfo);
+        this.implementationChanged.next(this.implementationInfo);
     };
     return ImplementationService;
 }());
@@ -439,11 +447,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _implementation_info_implementation_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../implementation-info/implementation.service */ "./src/app/layout/implementation-info/implementation.service.ts");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-/* harmony import */ var _social_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./social.service */ "./src/app/layout/social-info/social.service.ts");
-/* harmony import */ var _engineering_info_engineering_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../engineering-info/engineering.service */ "./src/app/layout/engineering-info/engineering.service.ts");
-/* harmony import */ var _project_info_project_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../project-info/project.service */ "./src/app/layout/project-info/project.service.ts");
-/* harmony import */ var _groundwater_info_groundwater_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../groundwater-info/groundwater.service */ "./src/app/layout/groundwater-info/groundwater.service.ts");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _social_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./social.service */ "./src/app/layout/social-info/social.service.ts");
+/* harmony import */ var _engineering_info_engineering_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../engineering-info/engineering.service */ "./src/app/layout/engineering-info/engineering.service.ts");
+/* harmony import */ var _project_info_project_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../project-info/project.service */ "./src/app/layout/project-info/project.service.ts");
+/* harmony import */ var _groundwater_info_groundwater_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../groundwater-info/groundwater.service */ "./src/app/layout/groundwater-info/groundwater.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -453,6 +462,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -487,10 +497,32 @@ var DataStorageService = /** @class */ (function () {
     DataStorageService.prototype.storeGroundwater = function () {
         return this.http.put('https://serverproject-aef56.firebaseio.com/groundwater.json', this.groundwaterService.getGroundwaterInfo());
     };
+    DataStorageService.prototype.getSocial = function () {
+        var _this = this;
+        this.http.get('https://shopping-ang7.firebaseio.com/social.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (response) {
+            var social = response.json();
+            // tslint:disable-next-line:prefer-const
+            return social;
+        }))
+            .subscribe(function (social) {
+            _this.socialService.setSocial(social);
+        });
+    };
+    DataStorageService.prototype.getImplementation = function () {
+        var _this = this;
+        this.http.get('https://shopping-b94a8.firebaseio.com/implementation.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (response) {
+            var implementation = response.json();
+            // tslint:disable-next-line:prefer-const
+            return implementation;
+        }))
+            .subscribe(function (implementation) {
+            _this.implementationService.setImplementation(implementation);
+        });
+    };
     DataStorageService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
-        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_2__["Http"], _social_service__WEBPACK_IMPORTED_MODULE_4__["SocialService"], _implementation_info_implementation_service__WEBPACK_IMPORTED_MODULE_0__["ImplementationService"],
-            _engineering_info_engineering_service__WEBPACK_IMPORTED_MODULE_5__["EngineeringService"], _project_info_project_service__WEBPACK_IMPORTED_MODULE_6__["ProjectService"], _groundwater_info_groundwater_service__WEBPACK_IMPORTED_MODULE_7__["GroundwaterService"]])
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_2__["Http"], _social_service__WEBPACK_IMPORTED_MODULE_5__["SocialService"], _implementation_info_implementation_service__WEBPACK_IMPORTED_MODULE_0__["ImplementationService"],
+            _engineering_info_engineering_service__WEBPACK_IMPORTED_MODULE_6__["EngineeringService"], _project_info_project_service__WEBPACK_IMPORTED_MODULE_7__["ProjectService"], _groundwater_info_groundwater_service__WEBPACK_IMPORTED_MODULE_8__["GroundwaterService"]])
     ], DataStorageService);
     return DataStorageService;
 }());
@@ -509,8 +541,19 @@ var DataStorageService = /** @class */ (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SocialService", function() { return SocialService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
 var SocialService = /** @class */ (function () {
     function SocialService() {
+        this.socialChanged = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
     }
     SocialService.prototype.ngOnInit = function () { };
     SocialService.prototype.addSocial = function (social) {
@@ -518,8 +561,17 @@ var SocialService = /** @class */ (function () {
         this.socialInfo = social;
     };
     SocialService.prototype.getSocialInfo = function () {
+        console.log(this.socialInfo);
         return this.socialInfo;
     };
+    SocialService.prototype.setSocial = function (social) {
+        this.socialInfo = social;
+        console.log(this.socialInfo);
+        this.socialChanged.next(this.socialInfo);
+    };
+    SocialService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])()
+    ], SocialService);
     return SocialService;
 }());
 
@@ -973,7 +1025,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\uzz\Project Angular\GMIS DEV\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\ST lawerence\Angular\GMISdev\src\main.ts */"./src/main.ts");
 
 
 /***/ })
