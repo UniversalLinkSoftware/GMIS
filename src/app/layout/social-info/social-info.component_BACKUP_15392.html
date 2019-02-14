@@ -1,0 +1,487 @@
+
+<div class="jumbotron">
+    <form [formGroup]="page3Form" (ngSubmit)='onSubmit()'>
+
+        <fieldset>
+                <div class="form-group row">
+                        <div class="col-sm-2" >
+                        <label for="inputPassword" class="col-sm-auto col-form-label">No. of household:</label>
+                        </div>
+                        <div class="col-sm-2">
+                                <input type="text" class=" form-control " id="NOH" formControlName="numberOfHousehold">
+                                <span *ngIf="!page3Form.get('numberOfHousehold').valid && page3Form.get('numberOfHousehold').touched">
+                            <span *ngIf="page3Form.get('numberOfHousehold').valid">Only Numbers Allowed.</span>
+                                <span *ngIf="page3Form.get('numberOfHousehold').touched">Please Enter Valid text</span>
+                                </span>
+                        </div>
+                        
+            
+                        
+                        <div class="col-sm-2">
+                        <label for="inputPassword" class="col-sm-auto">Womem headed household:</label>
+                        </div>
+                        <div class="col-sm-2" >
+                                <input type="text" class="form-control" id="womenInHousehold" formControlName="womenInHousehold">
+                                <span *ngIf="!page3Form.get('womenInHousehold').valid && page3Form.get('womenInHousehold').touched">
+                          <span *ngIf="page3Form.get('womenInHousehold').valid">Only Numbers Allowed.</span>
+                                <span *ngIf="page3Form.get('womenInHousehold').touched">Please Enter Valid text</span>
+                                </span>
+                        </div>
+            
+
+                        <div class="col-sm-2">
+                        <label for="inputPassword" class="col-sm-auto col-form-label">Year of survey:</label>
+                        </div>
+                        <div class="col-sm-2">
+                                <input type="date" class="form-control">
+                        </div>
+                        
+                        
+                     </div>
+                     <div class="form-group row">
+                            <div class="col-sm-2">
+                            <label for="inputPassword" class="col-sm-auto col-form-label">Female</label>
+                            </div>
+                            <div class="col-sm-2">
+                                    <input type="text" class="form-control" id="F" formControlName="female">
+                                    <span *ngIf="!page3Form.get('female').valid && page3Form.get('female').touched">
+                            <span *ngIf="page3Form.get('female').valid">Only Numbers Allowed.</span>
+                                    <span *ngIf="page3Form.get('female').touched">Please Enter Valid text</span>
+                                    </span>
+                            </div>
+                           
+                
+                            
+                            <div class="col-sm-2">
+                            <label for="inputPassword" class="col-sm-auto col-form-label">Male:</label>
+                            </div>
+                            <div class="col-sm-2">
+                                    <input type="text" class="form-control" id="M" formControlName="male">
+                                        <span *ngIf="!page3Form.get('male').valid && page3Form.get('male').touched">
+                                    <span *ngIf="page3Form.get('male').valid">Only Numbers Allowed.</span>
+                                        <span *ngIf="page3Form.get('male').touched">Please Enter Valid text</span>
+                                        </span>
+                            </div>
+                            <div class="col-sm-2">
+                                    <label for="inputPassword" class="col-sm-auto col-form-label">Total population:</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                            <input type="text" class="form-control" id="totalPopulation" formControlName="totalPopulation">
+                                                    <span *ngIf="!page3Form.get('totalPopulation').valid && page3Form.get('totalPopulation').touched">
+                                            <span *ngIf="page3Form.get('totalPopulation').valid">Only Numbers Allowed.</span>
+                                                    <span *ngIf="page3Form.get('totalPopulation').touched">Please Enter Valid text</span>
+                                                    </span>
+                                    </div>
+                            
+                     </div>
+                            <div class="form-group row">  
+                                    <div class="col-sm-2">
+                                    <label for="inputPassword" class="col-sm-auto">Major source of income:</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                            <select class="col-md-auto col-form-label" >
+                                                    <option>government job</option>
+                                                    <option>private job</option>
+                                                    <option>agriculture</option> 
+                                                    <option>remittance from foreign countries</option> 
+                                                    </select>
+                                    </div>
+                                   
+                         </div>
+
+                         <div class="form-group row">
+                                <div class="col-sm-2" >
+                                <label for="inputPassword" class="col-sm-auto">Annual income per family:</label>
+                                </div>
+                                <div class="col-sm-2">
+                                        <input type="text" class="form-control" id="annualIncomePerFamily" formControlName="annualIncomePerFamily">
+                <span *ngIf="!page3Form.get('annualIncomePerFamily').valid && page3Form.get('annualIncomePerFamily').touched">
+      <span *ngIf="page3Form.get('annualIncomePerFamily').valid">Only Numbers Allowed.</span>
+                <span *ngIf="page3Form.get('annualIncomePerFamily').touched">Please Enter Valid text</span>
+                </span>
+                                </div>
+                                
+                    
+                                
+                                <div class="col-sm-2">
+                                <label for="inputPassword" class="col-sm-auto col-form-label">From agriculture:</label>
+                                </div>
+                                <div class="col-sm-2" >
+                                        <input type="text" class="form-control" id="fromAgriculture" formControlName="fromAgriculture">
+                    <span *ngIf="!page3Form.get('fromAgriculture').valid && page3Form.get('fromAgriculture').touched">
+      <span *ngIf="page3Form.get('fromAgriculture').valid">Only Numbers Allowed.</span>
+                    <span *ngIf="page3Form.get('fromAgriculture').touched">Please Enter Valid text</span>
+                    </span>
+                                </div>
+                    
+        
+                                <div class="col-sm-2">
+                                <label for="inputPassword" class="col-sm-auto col">From other source:</label>
+                                </div>
+                                <div class="col-sm-2">
+                                        <input type="text" class="form-control" id="fromOtherSource" formControlName="fromOtherSource">
+                    <span *ngIf="!page3Form.get('fromOtherSource').valid && page3Form.get('fromOtherSource').touched">
+      <span *ngIf="page3Form.get('fromOtherSource').valid">Only Numbers Allowed.</span>
+                    <span *ngIf="page3Form.get('fromOtherSource').touched">Please Enter Valid text</span>
+                    </span>
+                                </div>
+                                
+                                
+                             </div>
+                       
+                             <div class="form-group row">
+                                    <div class="col-sm-2" >
+                                    <label for="inputPassword" class="col-sm-auto col-form-label">Literacy rate:</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                            <input type="text" class="form-control" id="literacyRate" formControlName="literacyRate">
+                    <span *ngIf="!page3Form.get('literacyRate').valid && page3Form.get('literacyRate').touched">
+    <span *ngIf="page3Form.get('literacyRate').valid">Only Numbers Allowed.</span>
+                    <span *ngIf="page3Form.get('literacyRate').touched">Please Enter Valid text</span>
+                    </span>
+                                    </div>
+                                    
+                        
+                                    
+                                    <div class="col-sm-2">
+                                    <label for="inputPassword" class="col-sm-auto col-form-label">Female:</label>
+                                    </div>
+                                    <div class="col-sm-2" >
+                                            <input type="text" class="form-control" id="F" formControlName="literacyFemale">
+                                    <span *ngIf="!page3Form.get('literacyFemale').valid && page3Form.get('literacyFemale').touched">
+                            <span *ngIf="page3Form.get('literacyFemale').valid">Only Numbers Allowed.</span>
+                                    <span *ngIf="page3Form.get('literacyFemale').touched">Please Enter Valid text</span>
+                                    </span>
+                                    </div>
+                        
+            
+                                    <div class="col-sm-2">
+                                    <label for="inputPassword" class="col-sm-auto col-form-label">Male:</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                            <input type="text" class="form-control" id="M" formControlName="literacyMale">
+                                            <span *ngIf="!page3Form.get('literacyMale').valid && page3Form.get('literacyMale').touched">
+                                        <span *ngIf="page3Form.get('literacyMale').valid">Only Numbers Allowed.</span>
+                                            <span *ngIf="page3Form.get('literacyMale').touched">Please Enter Valid text</span>
+                                            </span>
+                                    </div>
+                                    
+                                    
+                                 </div>
+
+                                <div class="form-group row">
+                                        <div class="col-sm-2">
+                                                <label for="inputPassword" class="col-sm-auto col-form-label">Ethnic groups:</label>
+                                        </div>
+                                        <div class="col-sm-10">
+                                                <div class="card-body table-responsive">
+                                                        <table class="table table-hover table table-bordered table-striped">
+                                                          <thead>
+                                                            <tr>
+                                                              <th>Name</th>
+                                                              <th>Total text</th>
+                                                              <th>Percentage</th>
+                                                            </tr>
+                                                          </thead>
+                                                          <tbody>
+                                                            <tr>
+                                                              <td><input type="text"></td>
+                                                              <td><input type="text"></td>
+                                                              <td><input type="text"></td>
+                                                            </tr>
+                                                            <tr>
+                                            
+                                                              <td><input type="text"></td>
+                                                              <td><input type="text"></td>
+                                                              <td><input type="text"></td>
+                        
+                                                            </tr>
+                                                            <tr>
+                                            
+                                                              <td><input type="text"></td>
+                                                              <td><input type="text"></td>
+                                                              <td><input type="text"></td>
+                                                            </tr>
+                                            
+                                                          </tbody>
+                                                        </table>
+                                                      </div>
+                                        </div>
+                                </div>
+
+                                <div class="form-group row">
+                                        <div class="col-sm-2">
+                                        <label for="inputPassword" class="col-sm-auto">Annual population migration in:</label>
+                                        </div>
+                                        <div class="col-sm-2">
+                                                <input type="text" class="form-control" id="populationMigrationIn" formControlName="populationMigrationIn">
+
+                                                <span *ngIf="!page3Form.get('populationMigrationIn').valid && page3Form.get('populationMigrationIn').touched">
+                              <span *ngIf="page3Form.get('populationMigrationIn').valid">Only Numbers Allowed.</span>
+                                                <span *ngIf="page3Form.get('populationMigrationIn').touched">Please Enter Valid text</span>
+                                                </span>
+                                        </div>
+                                        
+                            
+                                        
+                                        <div class="col-sm-2">
+                                        <label for="inputPassword" class="col-sm-auto">Annual population migration out:</label>
+                                        </div>
+                                        <div class="col-sm-2">
+                                                <input type="text" class="form-control" id="populationMigrationOut" formControlName="populationMigrationOut">
+
+                                                <span *ngIf="!page3Form.get('populationMigrationOut').valid && page3Form.get('populationMigrationOut').touched">
+                          <span *ngIf="page3Form.get('populationMigrationOut').valid">Only Numbers Allowed.</span>
+                                                <span *ngIf="page3Form.get('populationMigrationOut').touched">Please Enter Valid text</span>
+                                                </span>
+                                        </div>
+                                        <div class="col-sm-2"></div>
+                                        <div class="col-sm-2"></div>
+                                        
+                                     </div>
+
+                                     <div class="form-group row">
+                                            <div class="col-sm-2">
+                                                    <label for="inputPassword" class="col-sm-auto">Land tenure(household no's):</label>
+                                            </div>
+                                            <div class="col-sm-10">
+                                                    <div class="card-body table-responsive">
+                                                            <table class="table table-hover table table-bordered table-striped">
+                                                              <thead>
+                                                                <tr>
+                                                                  <th></th>
+                                                                  <th>Total text</th>
+                                                                  <th>Percentage</th>
+                                                                </tr>
+                                                              </thead>
+                                                              <tbody>
+                                                                <tr>
+                                                                  <td><label>Land oweners</label></td>
+                                                                  <td><input type="text"></td>
+                                                                  <td><input type="text"></td>
+                                                                </tr>
+                                                                <tr>
+                                                
+                                                                        <td><label >Tenants</label></td>
+                                                                  <td><input type="text"></td>
+                                                                  <td><input type="text"></td>
+                            
+                                                                </tr>
+                                                                <tr>
+                                                
+                                                                        <td><label >Oweners with tenants</label></td>
+                                                                  <td><input type="text"></td>
+                                                                  <td><input type="text"></td>
+                                                                </tr>
+                                                                <tr>
+                                                
+                                                                        <td><label >Landless</label></td>
+                                                                        <td><input type="text"></td>
+                                                                        <td><input type="text"></td>
+                                                                      </tr>
+                                                                      <tr>
+                                                
+                                                                            <td><label >Total</label></td>
+                                                                            <td><input type="text"></td>
+                                                                            <td><input type="text"></td>
+                                                                          </tr>
+                                                
+                                                              </tbody>
+                                                            </table>
+                                                          </div>
+                                            </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                            <div class="col-sm-2">
+                                                    <label for="inputPassword" class="col-sm-auto">Farm size(household no's):</label>
+                                            </div>
+                                            <div class="col-sm-10">
+                                                    <div class="card-body table-responsive">
+                                                            <table class="table table-hover table table-bordered table-striped">
+                                                              <thead>
+                                                                <tr>
+                                                                  <th>Category</th>
+                                                                  <th>text</th>
+                                                                  <th>Percentage</th>
+                                                                </tr>
+                                                              </thead>
+                                                              <tbody>
+                                                                <tr>
+                                                                  <td><label>small(less then 0.5 hectare)</label></td>
+                                                                  <td><input type="text"></td>
+                                                                  <td><input type="text"></td>
+                                                                </tr>
+                                                                <tr>
+                                                
+                                                                        <td><label >medium(0.5-1.0 hectare)</label></td>
+                                                                  <td><input type="text"></td>
+                                                                  <td><input type="text"></td>
+                            
+                                                                </tr>
+                                                                <tr>
+                                                
+                                                                        <td><label >large(1.0-1.5 hectare)</label></td>
+                                                                  <td><input type="text"></td>
+                                                                  <td><input type="text"></td>
+                                                                </tr>
+                                                                <tr>
+                                                
+                                                                        <td><label >very large(more then 1.5 hectare)</label></td>
+                                                                        <td><input type="text"></td>
+                                                                        <td><input type="text"></td>
+                                                                      </tr>
+                                                                      <tr>
+                                                
+                                                                            <td><label >Total</label></td>
+                                                                            <td><input type="text"></td>
+                                                                            <td><input type="text"></td>
+                                                                          </tr>
+                                                
+                                                              </tbody>
+                                                            </table>
+                                                          </div>
+                                            </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-3 ">
+                                                <label for="inputPassword" class="col-sm-auto col-form-label">Annual food sufficiency:</label>
+                                        </div>
+                                        <div class="col-sm-2 form-check form-check-inline">
+                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">Surplus</label>
+                                              </div>
+                                              <div class="col-sm-2 form-check form-check-inline">
+                                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                                <label class="form-check-label" for="inlineCheckbox2">Deficit</label>
+                                              </div>
+                                    </div>
+
+                                    <br>
+
+                                    <div class="btn-toolbar">
+                                            <div>
+                                              <button class="btn btn-success ml-2 mr-4" type="button" >Save</button>
+                                              <button class="btn btn-primary mr-4" type="button" >Reset</button>
+                                              <button class="btn btn-danger " type="button" >Cancel</button>
+                                              </div>
+                                          </div>
+
+                                          <br>
+
+                                          <button type="Submit" class="btn btn-outline-success mr-2">Submit</button>
+                    <button type="button" class="btn btn-outline-success mr-2" (click)="onEditData()">Edit</button>
+                    <button type="button" class="btn btn-outline-warning" (click)="onSaveData()">save</button>
+                    <button type="button" class="btn btn-outline-warning" (click)="onFetch()">Fetch</button>
+
+                                          
+
+        </fieldset>
+
+
+</form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<<<<<<< HEAD
+=======
+                    <!-- <div class="form-group">
+                        <label for="M">Male:</label>
+                        <input type="number" class="form-control" id="M" formControlName="M">
+                        <span *ngIf="!page3Form.get('male').valid && page3Form.get('male').touched">
+    <span *ngIf="page3Form.get('male').valid">Only Numbers Allowed.</span>
+                        <span *ngIf="page3Form.get('male').touched">Please Enter Valid Number</span>
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <label for="F">Female:</label>
+                        <input type="number" class="form-control" id="F" formControlName="F">
+                        <span *ngIf="!page3Form.get('F').valid && page3Form.get('F').touched">
+    <span *ngIf="page3Form.get('F').valid">Only Numbers Allowed.</span>
+                        <span *ngIf="page3Form.get('F').touched">Please Enter Valid Number</span>
+                        </span>
+                    </div> -->
+
+                    <br>
+                    <label for="EG">Ethnic Groups:</label>
+
+                    <div class="table-responsive">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              
+                              <th scope="col">Training Name</th>
+                              <th scope="col">Training Date</th>
+                              <th scope="col">Training Period</th>
+                              <th scope="col">No. of Participants</th>
+                             
+                            </tr>
+                            <tr>
+                        
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                
+                              </tr>
+                          </thead>
+
+                        
+                    <br>
+
+                    <div class="form-group">
+                        <label for="populationMigrationIn">Annual Population Migration In:</label>
+                        <input type="number" class="form-control" id="populationMigrationIn" formControlName="populationMigrationIn">
+
+                        <span *ngIf="!page3Form.get('populationMigrationIn').valid && page3Form.get('populationMigrationIn').touched">
+      <span *ngIf="page3Form.get('populationMigrationIn').valid">Only Numbers Allowed.</span>
+                        <span *ngIf="page3Form.get('populationMigrationIn').touched">Please Enter Valid Number</span>
+                        </span>
+
+                        <div class="form-group">
+                            <label for="populationMigrationOut">Annual Population Migration Out:</label>
+                            <input type="number" class="form-control" id="populationMigrationOut" formControlName="populationMigrationOut">
+
+                            <span *ngIf="!page3Form.get('populationMigrationOut').valid && page3Form.get('populationMigrationOut').touched">
+      <span *ngIf="page3Form.get('populationMigrationOut').valid">Only Numbers Allowed.</span>
+                            <span *ngIf="page3Form.get('populationMigrationOut').touched">Please Enter Valid Number</span>
+                            </span>
+                        </div>
+                    </div>
+>>>>>>> 33dcd7cf35d3bf6c09379af81a8b028874034873
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
