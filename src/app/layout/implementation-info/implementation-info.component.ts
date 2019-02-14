@@ -59,7 +59,6 @@ export class ImplementationInfoComponent implements OnInit {
     onEditData() {
       const implementationInfo = this.implementationService.getImplementationInfo();
       this.page8Form.setValue(implementationInfo);
-    
         }
 
   ngOnInit() {

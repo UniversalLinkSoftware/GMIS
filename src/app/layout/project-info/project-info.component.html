@@ -1,232 +1,262 @@
 <div id="home">
-    <div class="jumbotron">
-      <form [formGroup]="project" (ngSubmit)='onSubmit()'>
-        <div class="form-group row">
-          <label class="col-md-auto col-form-label">Sub-Project Name:</label>
-          <div class="col-sm-8">
-            <input type="text" class="form-control"  formControlName="subProjectName" >
-            <span *ngIf="!project.get('subProjectName').valid && project.get('subProjectName').touched"  class="text-danger">
-              <span *ngIf="project.get('subProjectName').errors['required']"><small>This field is required!</small></span>
+  <div class="jumbotron">
+    <fieldset>
+    <form [formGroup]="project" (ngSubmit)='onSubmit()'>
+      <div class="form-group row">
+          <div class="col-sm-2">
+        <label class="col-md-auto col-form-label">Sub-Project Name:</label>
+          </div>
+        <div class="col-sm-8">
+          <input type="text" class="form-control"  formControlName="subProjectName" >
+          <span *ngIf="!project.get('subProjectName').valid && project.get('subProjectName').touched"  class="text-danger">
+            <span *ngIf="project.get('subProjectName').errors['required']"><small>This field is required!</small></span>
+          </span>
+        </div>
+        <div class="col-sm-2">
+          <button type="submit" class="btn btn-primary">Edit</button>
+        </div>
+      </div>
+
+      <div class="form-group row">
+          <div class="col-sm-2">
+        <label class="col-md-auto col-form-label">Command Area:</label>
+          </div>
+        <div class="col-md-auto col-form-label">GCA</div>
+        <div class="col-sm-2">
+          <input type="number" class="form-control" formControlName="commandAreagca">
+          <span *ngIf="!project.get('commandAreagca').valid && project.get('commandAreagca').touched"  class="text-danger">
+              <span *ngIf="project.get('commandAreagca').errors['pattern']"><small>This is invalid! please enter number!</small></span>
+              <span *ngIf="project.get('commandAreagca').errors['required']"><small>This field is required!</small></span>
             </span>
-          </div>
-          <div class="col-sm-1">
-            <button type="submit" class="btn btn-primary">Edit</button>
-          </div>
+        </div>
+        <div class="col-sm-1">
+        <label class="col-md-left col-form-label">ha</label>
         </div>
 
-        <div class="form-group row">
-          <label class="col-md-auto col-form-label">Command Area:</label>
-          <div class="col-md-auto col-form-label">GCA</div>
-          <div class="col-sm-3">
-            <input type="number" class="form-control" formControlName="commandAreagca">
-            <span *ngIf="!project.get('commandAreagca').valid && project.get('commandAreagca').touched"  class="text-danger">
-                <span *ngIf="project.get('commandAreagca').errors['pattern']"><small>This is invalid! please enter number!</small></span>
-                <span *ngIf="project.get('commandAreagca').errors['required']"><small>This field is required!</small></span>
-              </span>
-          </div>
-          <label class="col-md-left col-form-label">ha</label>
-          <label class="col-md-auto col-form-label">NCA</label>
-          <div class="col-sm-3">
-            <input type="text" class="form-control" formControlName="commandAreanca" >
-            <span *ngIf="!project.get('commandAreanca').valid && project.get('commandAreanca').touched"  class="text-danger">
-                <span *ngIf="project.get('commandAreanca').errors['pattern']"><small>This is invalid! please enter number!</small></span>
-                <span *ngIf="project.get('commandAreanca').errors['required']"><small>This field is required!</small></span>
-              </span>
-          </div>
-          <label class="col-md-left col-form-label">ha</label>
+        <div class="col-sm-2">
+        <label class="col-md-auto col-form-label">NCA</label>
+        </div>
+        <div class="col-sm-2">
+          <input type="text" class="form-control" formControlName="commandAreanca" >
+          <span *ngIf="!project.get('commandAreanca').valid && project.get('commandAreanca').touched"  class="text-danger">
+              <span *ngIf="project.get('commandAreanca').errors['pattern']"><small>This is invalid! please enter number!</small></span>
+              <span *ngIf="project.get('commandAreanca').errors['required']"><small>This field is required!</small></span>
+            </span>
+        </div>
+        <div class="col-sm-1">
+        <label class="col-md-left col-form-label">ha</label>
         </div>
 
-        <div class="form-group col-10">
-          <fieldset>
-            <legend  class="col-md-3 col-form-label">Management System</legend>
+      </div>
+
+      <div class="form-group col-12">
+        <fieldset>
+        <legend  class="col-md-3 col-form-label">Management System</legend>
+
             <div class="col-sm-2 form-check form-check-inline">
               <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
-              <label class="form-check-label" #FMIS for="inlineCheckbox1" >FMIS</label>
+              <label class="form-check-label" for="inlineCheckbox1">FMIS</label>
             </div>
             <div class="col-sm-2 form-check form-check-inline">
               <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-              <label class="form-check-label" for="inlineCheckbox2" >AMIS</label>
+              <label class="form-check-label" for="inlineCheckbox2">AMIS</label>
             </div>
             <div class="col-sm-2 form-check form-check-inline">
               <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" >
-              <label class="form-check-label" for="inlineCheckbox3" >JMIS</label>
+              <label class="form-check-label" for="inlineCheckbox3">JMIS</label>
             </div>
-            <div class="col-sm-1 form-check form-check-inline">
-                <input type="radio" name="optionsRadios" id="optionsRadios4" value="option4" (click)="other=!other" >
-                <label class="form-check-label" for="inlineCheckbox4"  >{{ other ? 'other' : 'other'}}</label>
-              </div>
-              <div class="col-sm-3 form-check form-check-inline"  >
-                  <div *ngIf="other">
-                    <input type="text" class="form-control">
-                  </div>
-              </div>
-          </fieldset>
-        </div>
-
-
-        <div class="form-group row">
-        <div class="col-1"></div>
-        <label class="col-2-auto col-form-label">Program:</label>
-        <div class="col-4">
-          <select id="inputState" class="form-control" placeholder="Select One">
-            <option>CMIASP</option>
-            <option>IISP</option>
-            <option>IWRMP</option>
-            <option>MIP</option>
-            <option>NITP</option>
-            <option>SIP</option>
-          </select>
-        </div>
-        <div class="col-4">
-          <input type="file" class="form-control-file" id="exampleFormControlFile1">
-        </div>
-        <div class="col-1"></div>
+            <div class="col-sm-4 form-check form-check-inline">
+              <input type="radio" name="optionsRadios" id="optionsRadios4" value="option4" >
+              <label class="form-check-label" for="inlineCheckbox4">others</label>
+              <input type="text" class="form-control ml-2" >
+            </div>
+        </fieldset>
       </div>
 
-        <div class="form-group row ">
-          <label class="col-md-auto col-form-label ">Sub Project Type:</label>
-          <div class=" form-check form-check-inline">
-              <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" >
-            <label class="form-check-label" for="inlineCheckbox1">new</label>
+      <div class="form-group row">
+          <div class="col-sm-2">
+      <label class="col-sm-auto col-form-label">Program:</label>
           </div>
-          <div class="form-check form-check-inline">
-              <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" >
-            <label class="form-check-label" for="inlineCheckbox3">Rehabilaton</label>
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <label class="col-md-auto col-form-label">Status of Project:</label>
-          <div class="col-4">
-            <select id="inputState" class="form-control">
-              <option>-Select One-</option>
-              <option>Identification</option>
-              <option>Feasibility/Pre-feasibility</option>
-              <option>Detail Design</option>
-              <option>Under Construction</option>
-              <option>Operation</option>
-              <option>Rehabilitation</option>
-              <option>Demand Form</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <label class="col-md-auto col-form-label">Sub Project Comment:</label>
-          <div class="col-7">
-          <textarea class="form-control" rows="3"></textarea>
-          </div>
-          <div class="col-1">
-            <button type="submit" class="btn btn-primary ">search</button>
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <label class="col-md-auto col-form-label">Other Information:</label>
-        </div>
-        <div class="form-group row">
-          <div class="col-2-auto">
-            <label class="col-md-auto col-form-label">Prepared By:</label>
-          </div>
-          <div class="col-2-auto">
-            <input type="text" class="form-control" formControlName="preparedBy">
-            <span *ngIf="!project.get('preparedBy').valid && project.get('preparedBy').touched"  class="text-danger" >
-                <span *ngIf="project.get('preparedBy').errors['required']"><small>This field is required!</small></span>
-              </span>
-          </div>
-          <div class="col-1"></div>
-          <div class="col-4-auto">
-            <label class="col-md-auto col-form-label">Recommended By:</label>
-          </div>
-          <div class="col-2-auto">
-            <input type="text" class="form-control" formControlName="recomendedBy">
-            <span *ngIf="!project.get('recomendedBy').valid && project.get('recomendedBy').touched"  class="text-danger">
-                <span *ngIf="project.get('recomendedBy').errors['required']"><small>This field is required!</small></span>
-              </span>
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <div class="col-2-auto">
-            <label class="col-md-auto col-form-label">Approved By:</label>
-          </div>
-          <div class="col-2-auto">
-            <input type="text" class="form-control" formControlName="approvedBy">
-            <span *ngIf="!project.get('approvedBy').valid && project.get('approvedBy').touched"  class="text-danger">
-                <span *ngIf="project.get('approvedBy').errors['required']"><small>This field is required!</small></span>
-              </span>
-          </div>
-          <div class="col-1"></div>
-          <div class="col-4-auto">
-            <label class="col-md-auto col-form-label ml-1">Approved Date:</label>
-          </div>
-          <div class="col-2-auto">
-            <input type="date" class="form-control ml-1" formControlName="approvedDate">
-            <span *ngIf="!project.get('approvedDate').valid && project.get('approvedDate').touched"  class="text-danger">
-                <span *ngIf="project.get('approvedDate').errors['required']"><small>This field is required!</small></span>
-              </span>
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <label class="col-md-auto col-form-label">Approved Date:</label>
-          <div class="col-3">
-            <input type="date" class="form-control"formControlName="approvedDate1" >
-            <span *ngIf="!project.get('approvedDate1').valid && project.get('approvedDate1').touched"  class="text-danger">
-                <span *ngIf="project.get('approvedDate1').errors['required']"><small>This field is required!</small></span>
-              </span>
-          </div>
-          <label class="col-md-left col-form-label">AD</label>
-          <div class="col-1"></div>
-          <label class="col-md-auto col-form-label">End Date:</label>
-          <div class="col-3  ">
-            <input type="date" class="form-control" formControlName="endDate" >
-            <span *ngIf="!project.get('endDate').valid && project.get('endDate').touched"  class="text-danger">
-               <span *ngIf="project.get('endDate').errors['required']"><small>This field is required!</small></span>
-              </span>
-          </div>
-          <label class="col-md-left col-form-label">AD</label>
-        </div>
-
-        <div  class="col-md-auto">
-          <button class="btn btn-primary ml-2 mr-4" type="button" (click)="onSaveData()" >Save</button>
-          <button class="btn btn-primary ml-2 mr-4" type="submit" >Submit</button>
-          <button class="btn btn-danger mr-4" type="button" >Reset</button>
-          <button type="button" class="btn btn-outline-success mr-2" (click)="onEditData()">Edit</button>
-          <button type="button" class="btn btn-outline-warning" (click)="onFetch()">Fetch</button>
-        </div>
-      </form>
+          <div class="col-sm-2">
+        <select id="inputState" class="form-control" placeholder="Select One">
+          <option>CMIASP</option>
+          <option>IISP</option>
+          <option>IWRMP</option>
+          <option>MIP</option>
+          <option>NITP</option>
+          <option>SIP</option>
+        </select>
+      </div>
+      <div class="col-sm-2"></div>
+      <div class="col-sm-2">
+      </div>
+      <div class="col-sm-2">
+          <button type="submit" class="btn btn-primary">Add/Edit</button>
+      </div>
+      
     </div>
-  </div>
 
+      <div class="form-group row ">
+          <div class="col-sm-2">
+        <label class="col-md-auto col-form-label ">Sub Project Type:</label>
+          </div>
+        <div class=" form-check form-check-inline">
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" >
+          <label class="form-check-label" for="inlineCheckbox1">new</label>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="form-check form-check-inline">
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" >
+          <label class="form-check-label" for="inlineCheckbox3">Rehabilaton</label>
+        </div>
+      </div>
 
-  <!-- <fieldset>
-      <legend> legend </legend>
-      <label for="id"> label </label>
-      <input type="text" id="id" name="name" ng-model="fieldSetHasValue" ng-change="fieldSetHasValue = true">
-      <label for="id2"> label </label>
-      <input type="text" id="id2" name="name2" ng-model="fieldSetHasValue" ng-change="fieldSetHasValue = true">
-    </fieldset>
+      <div class="form-group row">
+          <div class="col-sm-2">
+        <label class="col-md-auto col-form-label">Status of Project:</label>
+          </div>
+          <div class="col-sm-8">
+          <select id="inputState" class="form-control">
+            <option>-Select One-</option>
+            <option>Identification</option>
+            <option>Feasibility/Pre-feasibility</option>
+            <option>Detail Design</option>
+            <option>Under Construction</option>
+            <option>Operation</option>
+            <option>Rehabilitation</option>
+            <option>Demand Form</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group row">
+          <div class="col-sm-2">
+        <label class="col-md-auto col-form-label">Sub Project Comment:</label>
+          </div>
+        <div class="col-8">
+        <textarea class="form-control" rows="3"></textarea>
+        </div>
+        <div class="col-2">
+          <button type="submit" class="btn btn-primary ">search</button>
+        </div>
+      </div>
+
+      <div class="form-group row">
+          <div class="col-sm-2">
+        <label class="col-md-auto col-form-label">Other Information:</label>
+        </div>
+      </div>
+      <div class="form-group row">
+          <div class="col-sm-2">
+          <label class="col-md-auto col-form-label">Prepared By:</label>
+        </div>
+        <div class="col-sm-2">
+          <input type="text" class="form-control" formControlName="preparedBy">
+          <span *ngIf="!project.get('preparedBy').valid && project.get('preparedBy').touched"  class="text-danger" >
+              <span *ngIf="project.get('preparedBy').errors['required']"><small>This field is required!</small></span>
+            </span>
+        </div>
+        <div class="col-sm-2">
+        </div>
+        <div class="col-sm-2">
+          <label class="col-md-auto">Recommended By:</label>
+        </div>
+        <div class="col-sm-2">
+          <input type="text" class="form-control" formControlName="recomendedBy">
+          <span *ngIf="!project.get('recomendedBy').valid && project.get('recomendedBy').touched"  class="text-danger">
+              <span *ngIf="project.get('recomendedBy').errors['required']"><small>This field is required!</small></span>
+            </span>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-sm-2">
+          <label class="col-md-auto col-form-label">Approved By:</label>
+        </div>
+        <div class="col-sm-2">
+          <input type="text" class="form-control" formControlName="approvedBy">
+          <span *ngIf="!project.get('approvedBy').valid && project.get('approvedBy').touched"  class="text-danger">
+              <span *ngIf="project.get('approvedBy').errors['required']"><small>This field is required!</small></span>
+            </span>
+        </div>
+        <div class="col-sm-2"></div>
+        <div class="col-sm-2">
+          <label class="col-md-auto col-form-label ml-1">Approved Date:</label>
+        </div>
+        <div class="col-sm-2">
+          <input type="date" class="form-control ml-1" formControlName="approvedDate">
+          <span *ngIf="!project.get('approvedDate').valid && project.get('approvedDate').touched"  class="text-danger">
+              <span *ngIf="project.get('approvedDate').errors['required']"><small>This field is required!</small></span>
+            </span>
+        </div>
+        <div class="col-sm-2"></div>
+      </div>
+
+      <div class="form-group row">
+          <div class="col-sm-2">
+        <label class="col-md-auto col-form-label">Approved Date:</label>
+          </div>
+          <div class="col-sm-2">
+          <input type="date" class="form-control"formControlName="approvedDate1" >
+          <span *ngIf="!project.get('approvedDate1').valid && project.get('approvedDate1').touched"  class="text-danger">
+              <span *ngIf="project.get('approvedDate1').errors['required']"><small>This field is required!</small></span>
+            </span>
+        </div>
+        <div class="col-sm-2">
+        <label class="col-md-left col-form-label">AD</label>
+        </div>
+        <div class="col-sm-2">
+        <label class="col-md-auto col-form-label">End Date:</label>
+        </div>
+        <div class="col-sm-2">
+          <input type="date" class="form-control" formControlName="endDate" >
+          <span *ngIf="!project.get('endDate').valid && project.get('endDate').touched"  class="text-danger">
+             <span *ngIf="project.get('endDate').errors['required']"><small>This field is required!</small></span>
+            </span>
+        </div>
+        <div class="col-sm-2">
+        <label class="col-md-left col-form-label">AD</label>
+        </div>
+      </div>
       <br>
-      <div class="panel panel-default">
 
-          <div class="panel-heading">Fieldset Exemple</div>
-          <div class="panel-body">
+      <div  class="col-md-auto">
+        <button class="btn btn-primary ml-2 mr-4" type="button" (click)="onSaveData()" >Save</button>
+        <button class="btn btn-primary ml-2 mr-4" type="submit" >Submit</button>
+        <button class="btn btn-danger mr-4" type="button" >Reset</button>
+      </div>
+    </form>
+    </fieldset>
+  </div>
+</div>
+<!-- <fieldset>
+    <legend> legend </legend>
+    <label for="id"> label </label>
+    <input type="text" id="id" name="name" ng-model="fieldSetHasValue" ng-change="fieldSetHasValue = true">
+    <label for="id2"> label </label>
+    <input type="text" id="id2" name="name2" ng-model="fieldSetHasValue" ng-change="fieldSetHasValue = true">
+  </fieldset>
+    <br>
+    <div class="panel panel-default">
 
-                <fieldset class="col-md-6">
-              <legend>Fieldset Title</legend>
+        <div class="panel-heading">Fieldset Exemple</div>
+        <div class="panel-body">
 
-              <div class="panel panel-default">
-                <div class="panel-body">
-                  <p>Fieldset content...</p>
-                </div>
+              <fieldset class="col-md-6">
+            <legend>Fieldset Title</legend>
+
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <p>Fieldset content...</p>
+              </div>
+            </div>
+
+          </fieldset>
+
+          <div class="clearfix"></div>
               </div>
 
-            </fieldset>
-
-            <div class="clearfix"></div>
-                </div>
-
-    </div> -->
+  </div> -->
 
 
+  

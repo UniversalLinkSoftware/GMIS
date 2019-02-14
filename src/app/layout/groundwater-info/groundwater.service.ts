@@ -1,11 +1,14 @@
 import { OnInit } from '@angular/core';
 import { Groundwater } from './groundwater-info.model';
+import { Subject } from 'rxjs';
 export class GroundwaterService implements OnInit {
-    ngOnInit() {}
 
 
     // tslint:disable-next-line:member-ordering
     private groundwaterInfo: Groundwater;
+    groundwaterChanged = new Subject<Groundwater>();
+    ngOnInit() {}
+
 
     addGroundwater(groundwater: Groundwater) {
         console.log(groundwater);
@@ -15,6 +18,8 @@ export class GroundwaterService implements OnInit {
       getGroundwaterInfo() {
           return this.groundwaterInfo;
       }
+     
+
 
 
 }

@@ -4,6 +4,7 @@ import { Groundwater } from './groundwater-info.model';
 import { GroundwaterService } from './groundwater.service';
 import { DataStorageService } from '../social-info/data-storage.service';
 import { Response } from '@angular/http';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-groundwater-info',
@@ -26,7 +27,7 @@ export class GroundwaterInfoComponent implements OnInit {
         }
       );
     }
-
+  
 
   ngOnInit() {
     this.page6Form = new FormGroup({
