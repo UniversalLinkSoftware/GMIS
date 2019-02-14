@@ -326,17 +326,28 @@ var AppModule = /** @class */ (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EconomicService", function() { return EconomicService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
 var EconomicService = /** @class */ (function () {
     function EconomicService() {
     }
     EconomicService.prototype.ngOnInit = function () { };
-    EconomicService.prototype.addGroundwater = function (economic) {
+    EconomicService.prototype.addEconomic = function (economic) {
         console.log(economic);
         this.economicInfo = economic;
     };
     EconomicService.prototype.geteconomicInfo = function () {
         return this.economicInfo;
     };
+    EconomicService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])()
+    ], EconomicService);
     return EconomicService;
 }());
 
@@ -354,8 +365,11 @@ var EconomicService = /** @class */ (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EngineeringService", function() { return EngineeringService; });
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+
 var EngineeringService = /** @class */ (function () {
     function EngineeringService() {
+        this.engineeringChanged = new rxjs__WEBPACK_IMPORTED_MODULE_0__["Subject"]();
     }
     EngineeringService.prototype.ngOnInit = function () { };
     EngineeringService.prototype.addEngineering = function (rHydrology) {
@@ -364,6 +378,11 @@ var EngineeringService = /** @class */ (function () {
     };
     EngineeringService.prototype.getEngineeringInfo = function () {
         return this.engineeringInfo;
+    };
+    EngineeringService.prototype.setEngineering = function (rHydrology) {
+        this.engineeringInfo = rHydrology;
+        console.log(this.engineeringInfo);
+        this.engineeringChanged.next(this.engineeringInfo);
     };
     return EngineeringService;
 }());
@@ -410,8 +429,11 @@ var GroundwaterService = /** @class */ (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ImplementationService", function() { return ImplementationService; });
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+
 var ImplementationService = /** @class */ (function () {
     function ImplementationService() {
+        this.implementationChanged = new rxjs__WEBPACK_IMPORTED_MODULE_0__["Subject"]();
     }
     ImplementationService.prototype.ngOnInit = function () { };
     ImplementationService.prototype.addImplementation = function (implementation) {
@@ -420,6 +442,11 @@ var ImplementationService = /** @class */ (function () {
     };
     ImplementationService.prototype.getImplementationInfo = function () {
         return this.implementationInfo;
+    };
+    ImplementationService.prototype.setImplementation = function (implementation) {
+        this.implementationInfo = implementation;
+        console.log(this.implementationInfo);
+        this.implementationChanged.next(this.implementationInfo);
     };
     return ImplementationService;
 }());
@@ -438,8 +465,11 @@ var ImplementationService = /** @class */ (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProjectService", function() { return ProjectService; });
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+
 var ProjectService = /** @class */ (function () {
     function ProjectService() {
+        this.projectChanged = new rxjs__WEBPACK_IMPORTED_MODULE_0__["Subject"]();
     }
     ProjectService.prototype.ngOnInit = function () { };
     ProjectService.prototype.addProject = function (rproject) {
@@ -448,6 +478,11 @@ var ProjectService = /** @class */ (function () {
     };
     ProjectService.prototype.getProjectInfo = function () {
         return this.projectInfo;
+    };
+    ProjectService.prototype.setProject = function (rproject) {
+        this.projectInfo = rproject;
+        console.log(this.projectInfo);
+        this.projectChanged.next(this.projectInfo);
     };
     return ProjectService;
 }());
@@ -511,10 +546,10 @@ var DataStorageService = /** @class */ (function () {
         return this.http.put('https://shopping-ang7.firebaseio.com/social.json', this.socialService.getSocialInfo());
     };
     DataStorageService.prototype.storeEngineering = function () {
-        return this.http.put('https://server1-345f5.firebaseio.com//engineering.json', this.engineeringService.getEngineeringInfo());
+        return this.http.put('https://server1-345f5.firebaseio.com/engineering.json', this.engineeringService.getEngineeringInfo());
     };
     DataStorageService.prototype.storeProject = function () {
-        return this.http.put('https://server1-345f5.firebaseio.com//project.json', this.projectService.getProjectInfo());
+        return this.http.put('https://server1-345f5.firebaseio.com/project.json', this.projectService.getProjectInfo());
     };
     DataStorageService.prototype.storeImplementation = function () {
         return this.http.put('https://shopping-b94a8.firebaseio.com/implementation.json', this.implementationService.getImplementationInfo());
@@ -523,7 +558,7 @@ var DataStorageService = /** @class */ (function () {
         return this.http.put('https://serverproject-aef56.firebaseio.com/groundwater.json', this.groundwaterService.getGroundwaterInfo());
     };
     DataStorageService.prototype.storeEconomic = function () {
-        return this.http.put('https://serverproject-aef56.firebaseio.com/economic.json', this.economicService.geteconomicInfo());
+        return this.http.put('https://server-test-50da6.firebaseio.com/economic.json', this.economicService.geteconomicInfo());
     };
     DataStorageService.prototype.getSocial = function () {
         var _this = this;
@@ -534,6 +569,37 @@ var DataStorageService = /** @class */ (function () {
         }))
             .subscribe(function (social) {
             _this.socialService.setSocial(social);
+        });
+    };
+    DataStorageService.prototype.getImplementation = function () {
+        var _this = this;
+        this.http.get('https://shopping-b94a8.firebaseio.com/implementation.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (response) {
+            var implementation = response.json();
+            // tslint:disable-next-line:prefer-const
+            return implementation;
+        }))
+            .subscribe(function (implementation) {
+            _this.implementationService.setImplementation(implementation);
+        });
+    };
+    DataStorageService.prototype.getEngineering = function () {
+        var _this = this;
+        this.http.get('https://server1-345f5.firebaseio.com/engineering.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (response) {
+            var rHydrology = response.json();
+            return rHydrology;
+        }))
+            .subscribe(function (rHydrology) {
+            _this.engineeringService.setEngineering(rHydrology);
+        });
+    };
+    DataStorageService.prototype.getProject = function () {
+        var _this = this;
+        this.http.get('https://server1-345f5.firebaseio.com/project.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (response) {
+            var rproject = response.json();
+            return rproject;
+        }))
+            .subscribe(function (rproject) {
+            _this.projectService.setProject(rproject);
         });
     };
     DataStorageService = __decorate([
@@ -1042,7 +1108,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\GMIS\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\Project1\gmisproject\src\main.ts */"./src/main.ts");
 
 
 /***/ })

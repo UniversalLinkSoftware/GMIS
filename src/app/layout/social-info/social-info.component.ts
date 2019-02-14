@@ -21,6 +21,8 @@ export class SocialInfoComponent implements OnInit {
    fag = 0;
    fOs = 0;
    lr = 0;
+   lm = 0;
+   lf = 0;
    popMin = 0;
    popMout = 0;
    numhh = 0;
@@ -61,6 +63,8 @@ ngOnInit() {
     'fromAgriculture': new FormControl(this.fag, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
     'fromOtherSource': new FormControl(this.fOs, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
     'literacyRate': new FormControl(this.lr, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+    'literacyMale': new FormControl(this.lm, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+    'literacyFemale': new FormControl(this.lf, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
     'populationMigrationIn': new FormControl(this.popMin, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
     'populationMigrationOut': new FormControl(this.popMout, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
     'womenInHousehold': new FormControl(this.wihh, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)],
