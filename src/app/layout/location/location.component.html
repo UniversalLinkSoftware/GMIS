@@ -6,7 +6,7 @@
        <label for="inputPassword" class="col-sm-auto col-form-label">Province:</label>
       </div>
       <div class="col-sm-2">
-        <select class="col-md-auto col-form-label" formControlName="province" >
+        <select class="form-control" formControlName="province" >
           <span *ngIf="!pageForm.get('province').valid && pageForm.get('province').touched"  class="text-danger">
             <!-- <span *ngIf="pageForm.get('province').errors['pattern']"><small>This is invalid! please enter number!</small></span> -->
             <span *ngIf="pageForm.get('province').errors['required']"><small>This field is required!</small></span>
@@ -23,7 +23,7 @@
         <label for="inputPassword" class="col-sm-auto col-form-label">Local body type:</label>
       </div>
       <div class="col-sm-2">
-        <select class="col-md-auto col-form-label" formControlName="localBodyType" >
+        <select class="form-control" formControlName="localBodyType" >
             <span *ngIf="!pageForm.get('localBodyType').valid && pageForm.get('localBodyType').touched"  class="text-danger">
               <!-- <span *ngIf="pageForm.get('localBodyType').errors['pattern']"><small>This is invalid! please enter number!</small></span> -->
               <span *ngIf="pageForm.get('localBodyType').errors['required']"><small>This field is required!</small></span>
@@ -42,7 +42,7 @@
         <label for="inputPassword" class="col-sm-auto col-form-label">District:</label>
       </div>
       <div class="col-sm-2">
-        <select class="col-md-auto col-form-label" formControlName="district" >
+        <select class="form-control" formControlName="district" >
             <span *ngIf="!pageForm.get('district').valid && pageForm.get('district').touched"  class="text-danger">
               <!-- <span *ngIf="pageForm.get('district').errors['pattern']"><small>This is invalid! please enter number!</small></span> -->
               <span *ngIf="pageForm.get('district').errors['required']"><small>This field is required!</small></span>
@@ -59,7 +59,7 @@
           <label for="inputPassword" class="col-sm-auto col-form-label">Ward:</label>
         </div>
       <div class="col-sm-2">
-          <select class="col-md-auto col-form-label" formControlName="ward" >
+          <select class="form-control" formControlName="ward" >
               <span *ngIf="!pageForm.get('ward').valid && pageForm.get('ward').touched"  class="text-danger">
                 <!-- <span *ngIf="pageForm.get('Ward').errors['pattern']"><small>This is invalid! please enter number!</small></span> -->
                 <span *ngIf="pageForm.get('ward').errors['required']"><small>This field is required!</small></span>
@@ -104,7 +104,7 @@
         <label for="inputPassword" class="col-sm-auto col-form-label">Ecological region:</label>
       </div>
       <div class="col-sm-2">
-        <select class="col-md-auto col-form-label" formControlName="ecologicalRegion" >
+        <select class="form-control" formControlName="ecologicalRegion" >
             <span *ngIf="!pageForm.get('ecologicalRegion').valid && pageForm.get('ecologicalRegion').touched"  class="text-danger">
               <!-- <span *ngIf="pageForm.get('ecologicalRegion').errors['pattern']"><small>This is invalid! please enter number!</small></span> -->
               <span *ngIf="pageForm.get('ecologicalRegion').errors['required']"><small>This field is required!</small></span>
@@ -210,7 +210,7 @@
         <label for="inputPassword" class="col-sm-auto col-form-label">Major River Basin::</label>
       </div>
       <div class="col-sm-2">
-        <select class="col-md-auto col-form-label" formControlName="majorRiverBasin" >
+        <select class="form-control" formControlName="majorRiverBasin" >
             <span *ngIf="!pageForm.get('majorRiverBasin').valid && pageForm.get('majorRiverBasin').touched"  class="text-danger">
               <!-- <span *ngIf="pageForm.get('majorRiverBasin').errors['pattern']"><small>This is invalid! please enter number!</small></span> -->
               <span *ngIf="pageForm.get('majorRiverBasin').errors['required']"><small>This field is required!</small></span>
@@ -256,11 +256,14 @@
     </div>
     <div class="btn-toolbar">
       <div>
-        <button class="btn btn-success ml-2 mr-4" type="button" >Save</button>
-        <button class="btn btn-primary mr-4" type="button" >Reset</button>
-        <button class="btn btn-danger " type="button" >Cancel</button>
+        <button class="btn btn-success ml-2 mr-4" type="save" >Save</button>
+        <button class="btn btn-primary ml-2 mr-4" type="submit" >Submit</button>
+        <button class="btn ml-2 mr-4" type="fetch">Fetch</button>
+        <button class="btn btn-info ml-2 mr-4" type="edit">Edit</button>
+        <button class="btn btn-warning ml-2 mr-4" type="reset" >Reset</button>
+        <button class="btn btn-danger ml-2 mr-4" type="cancel" >Cancel</button>
+        </div>
       </div>
-    </div>
     <br>
     <br>
   </fieldset>

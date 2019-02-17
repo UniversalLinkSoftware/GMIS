@@ -571,8 +571,8 @@
         </div>
         <br>
         <div>
-        <button class="btn btn-success ml-2 mr-5" type="submit" >Submit</button>
-        <button class="btn btn-primary mr-2" type="button" (click)="onSaveData()" >Save</button>
+        <!-- <button class="btn btn-success ml-2 mr-5" type="submit" >Submit</button>
+        <button class="btn btn-primary mr-2" type="button" (click)="onSaveData()" >Save</button> -->
         <button class="btn btn-primary mr-2" (click)="buttonClicked()">Click to Insert New Row</button>
         </div>
 
@@ -618,13 +618,18 @@
        </div>
         <br>
 
-        <div>
-        <button class="btn btn-success ml-2 mr-4" type="button" >Save</button>
-        <button class="btn btn-primary mr-4" type="button" >Reset</button>
-        <button class="btn btn-danger " type="button" >Cancel</button>
-        <button type="button" class="btn btn-outline-success mr-2" (click)="onEditData()">Edit</button>
-        <button type="button" class="btn btn-outline-warning" (click)="onFetch()">Fetch</button>
-        </div>
+        <div class="btn-toolbar">
+          <div>
+            <button class="btn btn-success ml-2 mr-4" type="save" (click)="onSaveData()" >Save</button>
+            <button class="btn btn-primary ml-2 mr-4" type="submit" >Submit</button>
+            <button class="btn ml-2 mr-4" type="fetch" (click)="onFetch()">Fetch</button>
+            <button class="btn btn-info ml-2 mr-4" type="edit" (click)="onEditData()" >Edit</button>
+            <button class="btn btn-warning ml-2 mr-4" type="reset" >Reset</button>
+            <button class="btn btn-danger ml-2 mr-4" type="cancel" >Cancel</button>
+            </div>
+          </div>
+
+        
       </fieldset>
       <br>
     </form>
