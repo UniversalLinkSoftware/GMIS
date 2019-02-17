@@ -164,36 +164,95 @@
                               <div class="card mb-3">
                                 <div class="card-header">Ethnic groups:</div>
                                             <div class="card-body table-responsive">
-                                                    <table class="table table-hover table table-bordered table-striped">
-                                                      <thead>
-                                                        <tr>
-                                                          <th>Name</th>
-                                                          <th>Total text</th>
-                                                          <th>Percentage</th>
-                                                        </tr>
-                                                      </thead>
-                                                      <tbody>
-                                                        <tr>
-                                                          <td><input type="text"></td>
-                                                          <td><input type="text"></td>
-                                                          <td><input type="text"></td>
-                                                        </tr>
-                                                        <tr>
-
-                                                          <td><input type="text"></td>
-                                                          <td><input type="text"></td>
-                                                          <td><input type="text"></td>
-
-                                                        </tr>
-                                                        <tr>
-
-                                                          <td><input type="text"></td>
-                                                          <td><input type="text"></td>
-                                                          <td><input type="text"></td>
-                                                        </tr>
-
-                                                      </tbody>
-                                                    </table>
+                                              <table class="table table-hover table table-bordered table-striped">
+                                                <thead>
+                                                  <tr>
+                                                    <th>Name</th>
+                                                    <th>Total number</th>
+                                                    <th>Percentage</th>
+                                                    <th>Action</th>
+                                                  </tr>
+                                                </thead>
+                                                <tbody >
+                                                  <tr *ngFor="let tablerow of page3Form.controls.tableRows.controls; let i = index" [formGroupName] = "i" >
+                                                    <td>
+                                                      <select type="text" id="inputState" class="form-control" formControlsName="Select" >
+                                                        <option selected>--Select--</option> <!--a button to show map is needed-->
+                                                        <option>Awadhis</option>
+                                                        <option>Badi People</option>
+                                                        <option>Bahing</option>
+                                                        <option>Baitada</option>
+                                                        <option>Bedia (tribe)</option>
+                                                        <option>Bhotiya</option>
+                                                        <option>Bhujel</option>
+                                                        <option>Bhutia</option>
+                                                        <option>Brahman-Hill</option>
+                                                        <option>Chepang</option>
+                                                        <option>Chhantyal</option>
+                                                        <option>Chhetri</option>
+                                                        <option>Dalit</option>
+                                                        <option>Dawadi</option>
+                                                        <option>Dhanuk</option>
+                                                        <option>Dhimal</option>
+                                                        <option>Gandarbha</option>
+                                                        <option>Ghale</option>
+                                                        <option>Gurkha</option>
+                                                        <option>Gurung people</option>
+                                                        <option>Hayu</option>
+                                                        <option>Japanese people in Nepal</option>
+                                                        <option>Jirel</option>
+                                                        <option>Kamai</option>
+                                                        <option>Kami (caste)</option>
+                                                        <option>Kham Magar</option>
+                                                        <option>Khungkhani</option>
+                                                        <option>Kirat</option>
+                                                        <option>Kirat Yakthung Chumkung</option>
+                                                        <option>Kusunda</option>
+                                                        <option>Lepcha people</option>
+                                                        <option>Lhotshampa</option>
+                                                        <option>Limbu clans and tribes</option>
+                                                        <option>Limbu people</option>
+                                                        <option>Luhar</option>
+                                                        <option>Magars</option>
+                                                        <option>Mankhim</option>
+                                                        <option>Mugali</option>
+                                                        <option>Mukur (tribe)</option>
+                                                        <option>Musahar</option>
+                                                        <option>Muslim</option>
+                                                        <option>Nachhirring</option>
+                                                        <option>Nepalese people of Indian</option>
+                                                        <option>Newa people</option>
+                                                        <option>Oad</option>
+                                                        <option>Paswan</option>
+                                                        <option>Rai people</option>
+                                                        <option>Ranjitkar</option>
+                                                        <option>Raute</option>
+                                                        <option>Sherpa</option>
+                                                        <option>Sunwar</option>
+                                                        <option>Tamang people</option>
+                                                        <option>Thakali</option>
+                                                        <option>Thakurai</option>
+                                                        <option>Thami</option>
+                                                        <option>Tharu people</option>
+                                                        <option>Walungs</option>
+                                                        <option>Yakkha</option>
+                                                        <option>Dhami</option>
+                                                      </select>
+                                                    </td>
+                                                    <td>
+                                                        <input  class="form-control" type="text" formControlsName="Number" />
+                                                    </td>
+                                                    <td>
+                                                      <input  class="form-control" type="text" formControlsName="Percentage" />
+                                                  </td>
+                              
+                                                    <td>
+                                                      <button class="btn btn-success ml-2 "  type="button" (click)="addNewRows()" >Add</button>
+                                                      <button class="btn btn-danger ml-2"  type="button" (click)="deleteRows(i)">Delete</button>
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
                                                   </div>
                                             </div>
                                     
@@ -246,33 +305,33 @@
                                                           <tbody>
                                                             <tr>
                                                               <td><label>Land oweners</label></td>
-                                                              <td><input type="text"></td>
-                                                              <td><input type="text"></td>
+                                                              <td><input  class="form-control" type="text"></td>
+                                                              <td><input  class="form-control" type="text"></td>
                                                             </tr>
                                                             <tr>
 
                                                                     <td><label >Tenants</label></td>
-                                                              <td><input type="text"></td>
-                                                              <td><input type="text"></td>
+                                                              <td><input  class="form-control" type="text"></td>
+                                                              <td><input  class="form-control" type="text"></td>
 
                                                             </tr>
                                                             <tr>
 
                                                                     <td><label >Oweners with tenants</label></td>
-                                                              <td><input type="text"></td>
-                                                              <td><input type="text"></td>
+                                                              <td><input  class="form-control" type="text"></td>
+                                                              <td><input  class="form-control" type="text"></td>
                                                             </tr>
                                                             <tr>
 
                                                                     <td><label >Landless</label></td>
-                                                                    <td><input type="text"></td>
-                                                                    <td><input type="text"></td>
+                                                                    <td><input  class="form-control" type="text"></td>
+                                                                    <td><input  class="form-control" type="text"></td>
                                                                   </tr>
                                                                   <tr>
 
                                                                         <td><label >Total</label></td>
-                                                                        <td><input type="text"></td>
-                                                                        <td><input type="text"></td>
+                                                                        <td><input  class="form-control" type="text"></td>
+                                                                        <td><input  class="form-control" type="text"></td>
                                                                       </tr>
 
                                                           </tbody>
@@ -295,33 +354,33 @@
                                                           <tbody>
                                                             <tr>
                                                               <td><label>small(less then 0.5 hectare)</label></td>
-                                                              <td><input type="text"></td>
-                                                              <td><input type="text"></td>
+                                                              <td><input  class="form-control" type="text"></td>
+                                                              <td><input  class="form-control" type="text"></td>
                                                             </tr>
                                                             <tr>
 
                                                                     <td><label >medium(0.5-1.0 hectare)</label></td>
-                                                              <td><input type="text"></td>
-                                                              <td><input type="text"></td>
+                                                              <td><input  class="form-control" type="text"></td>
+                                                              <td><input  class="form-control" type="text"></td>
 
                                                             </tr>
                                                             <tr>
 
                                                                     <td><label >large(1.0-1.5 hectare)</label></td>
-                                                              <td><input type="text"></td>
-                                                              <td><input type="text"></td>
+                                                              <td><input  class="form-control" type="text"></td>
+                                                              <td><input  class="form-control" type="text"></td>
                                                             </tr>
                                                             <tr>
 
                                                                     <td><label >very large(more then 1.5 hectare)</label></td>
-                                                                    <td><input type="text"></td>
-                                                                    <td><input type="text"></td>
+                                                                    <td><input  class="form-control" type="text"></td>
+                                                                    <td><input  class="form-control" type="text"></td>
                                                                   </tr>
                                                                   <tr>
 
                                                                         <td><label >Total</label></td>
-                                                                        <td><input type="text"></td>
-                                                                        <td><input type="text"></td>
+                                                                        <td><input  class="form-control" type="text"></td>
+                                                                        <td><input  class="form-control" type="text"></td>
                                                                       </tr>
 
                                                           </tbody>
