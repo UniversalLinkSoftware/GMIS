@@ -4,10 +4,10 @@ import { CommonModule } from '@angular/common';
 import {ImplementationRoutingModule } from './implementation-routing.module';
 import { ImplementationInfoComponent } from './implementation-info.component';
 import { PageHeaderModule } from './../../shared';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
-    imports: [CommonModule,ReactiveFormsModule, ImplementationRoutingModule, PageHeaderModule],
+    imports: [CommonModule,ReactiveFormsModule,FormsModule ,ImplementationRoutingModule, PageHeaderModule],
     declarations: [ImplementationInfoComponent]
 })
 export class ImplementationModule {}

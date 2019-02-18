@@ -19,7 +19,7 @@ import { GroundwaterInfoComponent } from './layout/groundwater-info/groundwater-
 import { EconomicInfoComponent } from './layout/economic-info/economic-info.component';
 import { ImplementationInfoComponent } from './layout/implementation-info/implementation-info.component';
 import { MapInfoComponent } from './layout/map-info/map-info.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SocialService } from './layout/social-info/social.service';
 import { DataStorageService } from './layout/social-info/data-storage.service';
 import { HttpModule } from '@angular/http';
@@ -48,6 +48,7 @@ export const createTranslateLoader = (http: HttpClient) => {
         BrowserAnimationsModule,
         HttpClientModule,
         HttpModule,
+        FormsModule,
         ReactiveFormsModule,
         TranslateModule.forRoot({
             loader: {

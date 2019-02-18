@@ -1,3 +1,4 @@
+
 import { SocialService } from './social.service';
 import { Social } from './social-info.model';
 import { Component, OnInit } from '@angular/core';
@@ -67,14 +68,5 @@ ngOnInit() {
 
   )
   });
-
-
-
-
-
-
-
 }
-
-
 }
