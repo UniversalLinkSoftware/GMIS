@@ -1,6 +1,6 @@
 import { EngineeringService } from './engineering.service';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder, FormArray } from '@angular/forms';
 import { RiverHydology } from './engineering-info.model';
 import { Response } from '@angular/http';
 import { DataStorageService } from '../social-info/data-storage.service';
@@ -14,6 +14,7 @@ import { Subscription } from 'rxjs';
 
 export class EngineeringInfoComponent implements OnInit {
   myGroup: FormGroup;
+  TotalRow: number;
   engineeringInfo: RiverHydology;
   subscription: Subscription;
     ca = 0;
@@ -105,7 +106,7 @@ export class EngineeringInfoComponent implements OnInit {
     bCanalStructure: bCanalStructure, } );
   this.myGroup.reset(); }
 
-  constructor(private engineeringService: EngineeringService, private dataStorageService: DataStorageService ) {}
+  constructor(private engineeringService: EngineeringService, private dataStorageService: DataStorageService, private _fb: FormBuilder ) {}
   onSubmit() {
       this.engineeringService.addEngineering(this.myGroup.value);
     }
@@ -128,6 +129,7 @@ export class EngineeringInfoComponent implements OnInit {
   ngOnInit() {
 
     this.myGroup = new FormGroup({
+      tableRows: this._fb.array([this.initTableRows()]),
       // firstName: new FormControl(),
       'catchmentArea': new FormControl(this.ca, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/ )]),
       'lngSlopeOfRiverAtHeadworksSite': new FormControl(this.lsrahw, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
@@ -139,7 +141,7 @@ export class EngineeringInfoComponent implements OnInit {
       'riverWidthAtHeadworksSite': new FormControl(this.rwahs, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
       'averageAnnualRiverfall': new FormControl(this.aarf, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
       'hydrologicalRegion': new FormControl(this.hr, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'riverBasin': new FormControl(this.rb, [Validators.required]),
+      'riverBasin': new FormControl(this.rb, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
 
       'mCanalDirection': new FormControl(this.mcd, [Validators.required]),
       'mTotalLength': new FormControl(this.mtl, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
@@ -154,7 +156,7 @@ export class EngineeringInfoComponent implements OnInit {
       'mUnlinedTypeCanalLength': new FormControl(this.mutcl, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
       'mTotalDepth': new FormControl(this.mtd, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
 
-      'bNameOfBranchCanal': new FormControl(this.bnobc, [Validators.required]),
+      'bNameOfBranchCanal': new FormControl(this.bnobc, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
       'bgca': new FormControl(this.gca, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
       'bcca': new FormControl(this.cca, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
       'bTotallength': new FormControl(this.btl, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
@@ -167,4 +169,28 @@ export class EngineeringInfoComponent implements OnInit {
    });
   }
 
+  initTableRows() {
+    return this._fb.group({
+      Select: [''],
+      Name: [''],
+    });
+  }
+
+  addNewRows() {
+    const control = <FormArray>this.myGroup.controls['tableRows'];
+    control.push(this.initTableRows());
+}
+
+deleteRows(index: number) {
+  const control = <FormArray>this.myGroup.controls['tableRows'];
+  if (control != null) {
+    this.TotalRow = control.value.length;
+  }
+  if (this.TotalRow > 1) {
+    control.removeAt(index);
+  } else {
+    alert('one record is mandatory.');
+    return false;
+  }
+}
 }

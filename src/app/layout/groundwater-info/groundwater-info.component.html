@@ -147,7 +147,7 @@
       <label for="inputPassword" class="col-sm-auto col-form-label">Type of tubewells::</label>
       </div>
       <div class="col-sm-2">
-        <select class="col-md-auto col-form-label" >
+        <select class="form-control" >
           <option>deep tubewell</option>
           <option>power drill shallow tubewell</option>
           <option>shallow tubewell</option> 
@@ -164,7 +164,7 @@
       <label for="inputPassword" class="col-sm-auto col-form-label">Screen length:</label>
       </div>
       <div class="col-sm-2">
-        <select class="col-md-auto col-form-label" >
+        <select class="form-control" >
           <option>Jonnon and Jonson</option>
           <option>L.C.G Jonson </option>
           <option>slotted</option> 
@@ -541,7 +541,7 @@
       <label for="inputPassword" class="col-sm-auto col-form-label">Column type:</label>
       </div>
       <div class="col-sm-2">
-        <select class="col-md-auto col-form-label" >
+        <select class="form-control" >
           <option>MS</option>
           <option>GI</option>
           </select>
@@ -676,7 +676,7 @@
           <label for="inputPassword" class="col-sm-auto">Type of distribution system:</label>
           </div>
           <div class="col-sm-2">
-            <select class="col-md-auto col-form-label" >
+            <select class="form-control" >
               <option>open channel</option>
               <option>buried pipe</option>
               </select>
@@ -792,12 +792,18 @@
       <br>
       <br>
 
+      <div class="btn-toolbar">
+        <div>
+          <button class="btn btn-success ml-2 mr-4" type="save" (click)="onSaveData()" >Save</button>
+          <button class="btn btn-primary ml-2 mr-4" type="submit" >Submit</button>
+          <button class="btn ml-2 mr-4" type="fetch" >Fetch</button>
+          <button class="btn btn-info ml-2 mr-4" type="edit" >Edit</button>
+          <button class="btn btn-warning ml-2 mr-4" type="reset" >Reset</button>
+          <button class="btn btn-danger ml-2 mr-4" type="cancel" >Cancel</button>
+          </div>
+        </div>
 
-
-
-
-  <button type="Submit" class="btn btn-outline-success mr-2">Submit</button>
-  <button type="button" class="btn btn-outline-warning" (click)="onSaveData()">save</button>
+      
 </fieldset>
   </div>
 </form>
