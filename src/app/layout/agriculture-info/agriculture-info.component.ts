@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ExistingAgriculture } from './agriculture-info.model';
+//import { ExistingAgriculture } from './agriculture-info.model';
 
 @Component({
   selector: 'app-agriculture-info',
@@ -9,7 +9,7 @@ import { ExistingAgriculture } from './agriculture-info.model';
 })
 export class AgricultureInfoComponent implements OnInit { 
   page4Form:FormGroup;
-  agricultureInfo: ExistingAgriculture;
+  //agricultureInfo: ExistingAgriculture;
 
   public rows: Array<{
      existingCropName: string,
@@ -87,20 +87,20 @@ export class AgricultureInfoComponent implements OnInit {
     this.page4Form = new FormGroup({
       'existingCropName':new FormControl(null,[Validators.required,Validators.pattern(/^[1-9]+[0-9]*$/)]),
       'existingPlantingDate':new FormControl(null,[Validators.required,Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'existingPlantingWeek':new FormControl(null,[Validators.required,Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'existingCropArea':new FormControl(null,[Validators.required,Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'existingHarvestingDate':new FormControl(null,[Validators.required,Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'existingHarvestingWeek':new FormControl(null,[Validators.required,Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'existingAverageCropYield':new FormControl(null,[Validators.required,Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'existingAvgSeed':new FormControl(null,[Validators.required,Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'existingAvgDAP':new FormControl(null, [Validators.required,Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'existingAvgHumanLabour':new FormControl(null,[Validators.required,Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'existingAvgOrganicManure':new FormControl(null,[Validators.required,Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'existingAvgPotash':new FormControl(null,[Validators.required,Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'existingAvgAnimalLabour':new FormControl(null,[Validators.required,Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'existingAvgUrea':new FormControl(null,[Validators.required,Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'existingAvgMachineLabour':new FormControl(null,[Validators.required,Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'proposedCropName':new FormControl(null,[Validators.required,Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'existingPlantingWeek':new FormControl(null,[Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'existingCropArea': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'existingHarvestingDate': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'existingHarvestingWeek': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'existingAverageCropYield': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'existingAvgSeed': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'existingAvgDAP': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'existingAvgHumanLabour': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'existingAvgOrganicManure': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'existingAvgPotash': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'existingAvgAnimalLabour': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'existingAvgUrea': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'existingAvgMachineLabour': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'proposedCropName': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
       'proposedPlantingDate': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
       'proposedPlantingWeek': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
       'proposedCropArea': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
