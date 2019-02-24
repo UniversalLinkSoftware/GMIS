@@ -16,8 +16,6 @@ export class AgricultureViewComponent implements OnInit {
     ngOnInit() {
     this.doiService.getAll().subscribe(data => {
       this.agricultures = data;
-      console.log(data);
-      console.log(this.agricultures[0]);
     });
   }
 

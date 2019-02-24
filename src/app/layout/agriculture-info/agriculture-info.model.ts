@@ -4,7 +4,7 @@ export class Agriculture {
         public cropName: string,
         public plantingDate: string,
         public plantingWeek: string,
-        public propArea: number,
+        public cropArea: number,
         public harvestingDate: string,
         public harvestingWeek: string,
         public averageCropYield: number,
@@ -16,7 +16,11 @@ export class Agriculture {
         public avgAnimalLabour: number,
         public avgUrea: number,
         public avgMachineLabour: number,
-        public existing: boolean
+        public existing: boolean,
+        public neareastAgricultureExtensionOffice: string,
+        public extensionOfficeDistance: number,
+        public neareastAgrovetOffice: string,
+        public agrovetOfficeDistance: number
         ) {}
 }
 // export class ProposedAgriculture {

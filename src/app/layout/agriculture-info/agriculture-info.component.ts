@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { DoiService } from './../../shared/api/doi.service';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-//import { ExistingAgriculture } from './agriculture-info.model';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+// import { ExistingAgriculture } from './agriculture-info.model';
 
 @Component({
   selector: 'app-agriculture-info',
   templateUrl: './agriculture-info.component.html',
   styleUrls: ['./agriculture-info.component.scss']
 })
-export class AgricultureInfoComponent implements OnInit { 
-  page4Form:FormGroup;
-  //agricultureInfo: ExistingAgriculture;
+export class AgricultureInfoComponent implements OnInit, OnDestroy {
+  page4Form: FormGroup;
+  id: string;
+  editMode = false;
+  sub: Subscription;
+  // agricultureInfo: ExistingAgriculture;
 
   public rows: Array<{
      existingCropName: string,
@@ -80,26 +86,84 @@ export class AgricultureInfoComponent implements OnInit {
          } );
       this.page4Form.reset(); }
 
-  constructor() { }
-
-
+  constructor(private route: ActivatedRoute , private doiService: DoiService, private router: Router, ) { }
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
   ngOnInit() {
+    this.route.params
+    .subscribe(
+      (params: Params) => {
+        this.id = params['id'];
+       // console.log(this.id);
+        this.editMode = params['id'] != null;
+       // console.log(this.editMode);
+        this.initForm();
+      }
+    );
+}
+onSubmit() {
+  this.doiService.save(this.page4Form.value).subscribe(
+    result => {
+      this.gotoList();
+    },
+    error => console.error(error)
+  );
+}
+gotoList() {
+  this.router.navigate(['/agriculture']);
+}
+  private initForm() {
+
+       // tslint:disable-next-line:prefer-const
+       let CropName = '';
+       // tslint:disable-next-line:prefer-const
+       let  PlantingDate = '' ;
+       // tslint:disable-next-line:prefer-const
+       let PlantingWeek = '';
+       // tslint:disable-next-line:prefer-const
+       let CropArea = 0;
+       // tslint:disable-next-line:prefer-const
+       let HarvestingDate = '';
+       // tslint:disable-next-line:prefer-const
+       let HarvestingWeek = 0;
+       // tslint:disable-next-line:prefer-const
+       let AverageCropYield = 0;
+       // tslint:disable-next-line:prefer-const
+       let AvgSeed = 0;
+       // tslint:disable-next-line:prefer-const
+       let AvgDAP = 0;
+       // tslint:disable-next-line:prefer-const
+       let AvgHumanLabour = 0;
+       // tslint:disable-next-line:prefer-const
+       let AvgOrganicManure = 0;
+       // tslint:disable-next-line:prefer-const
+       let AvgPotash = 0;
+       // tslint:disable-next-line:prefer-const
+       let AvgAnimalLabour = 0;
+       // tslint:disable-next-line:prefer-const
+       let AvgUrea = 0;
+       // tslint:disable-next-line:prefer-const
+       let AvgMachineLabour = 0;
+
+
+
     this.page4Form = new FormGroup({
-      'existingCropName':new FormControl(null,[Validators.required,Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'existingPlantingDate':new FormControl(null,[Validators.required,Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'existingPlantingWeek':new FormControl(null,[Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'existingCropArea': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'existingHarvestingDate': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'existingHarvestingWeek': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'existingAverageCropYield': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'existingAvgSeed': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'existingAvgDAP': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'existingAvgHumanLabour': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'existingAvgOrganicManure': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'existingAvgPotash': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'existingAvgAnimalLabour': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'existingAvgUrea': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
-      'existingAvgMachineLabour': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'existingCropName': new FormControl(CropName, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'existingPlantingDate': new FormControl(PlantingDate, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'existingPlantingWeek': new FormControl(PlantingWeek, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'existingCropArea': new FormControl(CropArea, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'existingHarvestingDate': new FormControl(HarvestingDate, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'existingHarvestingWeek': new FormControl(HarvestingWeek, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'existingAverageCropYield': new FormControl(AverageCropYield, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'existingAvgSeed': new FormControl(AvgSeed, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'existingAvgDAP': new FormControl(AvgDAP, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'existingAvgHumanLabour': new FormControl(AvgHumanLabour, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'existingAvgOrganicManure': new FormControl(AvgOrganicManure, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'existingAvgPotash': new FormControl(AvgPotash, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'existingAvgAnimalLabour': new FormControl(AvgAnimalLabour, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'existingAvgUrea': new FormControl(AvgUrea, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'existingAvgMachineLabour': new FormControl(AvgMachineLabour, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
       'proposedCropName': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
       'proposedPlantingDate': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
       'proposedPlantingWeek': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
@@ -120,5 +184,41 @@ export class AgricultureInfoComponent implements OnInit {
       'neareastAgrovetOffice': new FormControl(null, [Validators.required]),
       'agrovetOfficeDistance': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)])
     });
+
+    if (this.editMode) {
+      this.sub = this.doiService.get(this.id).subscribe((agricultures: any) => {
+        const agriculture = agricultures;
+        console.log(agriculture);
+        if (agriculture) {
+          console.log(agriculture.cropName);
+          if (agriculture.existing) {
+          this.page4Form.patchValue({
+          existingCropName: agriculture.cropName,
+          existingPlantingDate : agriculture.plantingDate,
+          existingPlantingWeek : agriculture.plantingWeek,
+          existingCropArea : agriculture.cropArea,
+          existingHarvestingDate : agriculture.harvestingDate,
+          existingHarvestingWeek : agriculture.harvestingWeek,
+          existingAverageCropYield : agriculture.averageCropYield,
+          existingAvgSeed : agriculture.avgSeed,
+          existingAvgDAP : agriculture.avgDAP,
+          existingAvgHumanLabour : agriculture.avgHumanLabour,
+          existingAvgOrganicManure : agriculture.avgOrganicManure,
+          existingAvgPotash : agriculture.avgPotash,
+          existingAvgAnimalLabour : agriculture.avgAnimalLabour,
+          existingAvgUrea : agriculture.avgUrea,
+          existingAvgMachineLabour : agriculture.avgMachineLabour});
+        }
+
+      } else {
+        console.log(
+          `Agriculture with id '${this.id}' not found `
+        );
+
+      }
+    });
   }
+  }
+
+
   }
