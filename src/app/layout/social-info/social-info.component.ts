@@ -97,7 +97,7 @@ if (control != null) {
 if (this.TotalRow > 1) {
   control.removeAt(index);
 } else {
-  alert('one record is mandatory.');
+  alert('One record is mandatory.');
   return false;
 }
 }
