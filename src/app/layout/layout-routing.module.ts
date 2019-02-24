@@ -18,8 +18,8 @@ const routes: Routes = [
             { path: 'economic', loadChildren: './economic-info/economic.module#EconomicModule' },
             { path: 'location', loadChildren: './location/location.module#LocationModule' },
             { path: 'implementation', loadChildren: './implementation-info/implementation.module#ImplementationModule' },
-            { path: 'groundwater', loadChildren: './groundwater-info/groundwater.module#GroundwaterModule' }
-        ]
+            { path: 'groundwater', loadChildren: './groundwater-info/groundwater.module#GroundwaterModule' },
+                       ]
     }
 ];
 

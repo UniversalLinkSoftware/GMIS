@@ -1,0 +1,7 @@
+<div *ngFor="let agriculture of agricultures">
+    <h3>
+        <a [routerLink]="['agriculture-edit/', agriculture.id]">{{agriculture.cropName}} {{agriculture.plantingDate}} </a>
+    </h3>
+
+</div>
+<h1>This is the view component</h1>

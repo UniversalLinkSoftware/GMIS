@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AgricultureInfoComponent } from './agriculture-info.component';
+import { AgricultureViewComponent } from './agriculture-view/agriculture-view.component';
 
 const routes: Routes = [
     {
-        path: '', component: AgricultureInfoComponent
+        path: '', component: AgricultureViewComponent
+    },
+    {
+        path: 'agriculture-edit/:id', component: AgricultureInfoComponent
     }
+
 ];
 
 @NgModule({

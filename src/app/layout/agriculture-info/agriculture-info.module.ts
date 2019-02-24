@@ -6,9 +6,10 @@ import { PageHeaderModule } from '../../shared';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AgricultureInfoComponent } from './agriculture-info.component';
 import { AgricultureRoutingModule } from './agriculture-routing.module';
+import { AgricultureViewComponent } from './agriculture-view/agriculture-view.component';
 
 @NgModule({
     imports: [CommonModule, AgricultureRoutingModule, PageHeaderModule, ReactiveFormsModule],
-    declarations: [AgricultureInfoComponent]
+    declarations: [AgricultureInfoComponent, AgricultureViewComponent]
 })
 export class AgricultureModule {}
