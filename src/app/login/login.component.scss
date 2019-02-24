@@ -1,7 +1,8 @@
-$topnav-background-color: #222;
+$topnav-background-color: #1976d2;
 :host {
     display: block;
 }
+
 .login-page {
     position: absolute;
     top: 0;
@@ -53,7 +54,6 @@ $topnav-background-color: #222;
         border: 2px solid rgba(255, 255, 255, 1);
         outline: none;
     }
-
     h1 {
         font-weight: 300;
         margin-top: 20px;
@@ -63,23 +63,19 @@ $topnav-background-color: #222;
             color: rgba(255, 255, 255, 0.7);
         }
     }
-
     .form-group {
         padding: 8px 0;
         input::-webkit-input-placeholder {
             color: rgba(255, 255, 255, 0.6) !important;
         }
-
         input:-moz-placeholder {
             /* Firefox 18- */
             color: rgba(255, 255, 255, 0.6) !important;
         }
-
         input::-moz-placeholder {
             /* Firefox 19+ */
             color: rgba(255, 255, 255, 0.6) !important;
         }
-
         input:-ms-input-placeholder {
             color: rgba(255, 255, 255, 0.6) !important;
         }
