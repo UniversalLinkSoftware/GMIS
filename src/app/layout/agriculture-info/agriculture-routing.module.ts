@@ -9,6 +9,9 @@ const routes: Routes = [
     },
     {
         path: 'agriculture-edit/:id', component: AgricultureInfoComponent
+    },
+    {
+        path: 'agriculture-new', component: AgricultureInfoComponent
     }
 
 ];

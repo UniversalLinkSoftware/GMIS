@@ -15,7 +15,7 @@ export class DoiService {
   }
 
   get(id: string) {
-    return this.http.get(`${this.DOI_API}/${id}`);
+    return this.http.get<Agriculture>(`${this.DOI_API}/${id}`);
   }
 
   save(agriculture: Agriculture): Observable<Agriculture> {
