@@ -1,6 +1,32 @@
+#header{
+    margin :0px;
+    height: 200px;
+    // background-color: red;
+    // background: url(../../../../assets/images/slider3.jpg);
+    // background-repeat: no-repeat;
+    width:100%;
+    position: relative;
+}
+#responsive-image {  
+    width: 100%;  
+    height: 200px; 
+    object-fit: fill;
+    position: relative;
+} 
+#gif{
+    width: 130px;  
+    height: 135px; 
+    position: absolute;
+    top: 30px;
+    left: 1300px;
+    
+    
+}
 $topnav-background-color: #0d385b;
 :host {
     .navbar {
+        
+        position: relative;
         background-color: $topnav-background-color;
         .navbar-brand {
             color: #fff;
