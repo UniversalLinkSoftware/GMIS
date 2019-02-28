@@ -19,6 +19,7 @@ const routes: Routes = [
             { path: 'location', loadChildren: './location/location.module#LocationModule' },
             { path: 'implementation', loadChildren: './implementation-info/implementation.module#ImplementationModule' },
             { path: 'groundwater', loadChildren: './groundwater-info/groundwater.module#GroundwaterModule' },
+            { path: 'map', loadChildren: './map-info/map.module#MapModule' }
                        ]
     }
 ];
