@@ -55,9 +55,9 @@ export class EconomicInfoComponent implements OnInit {
 
   constructor(private economicService: EconomicService, private dataStorageService: DataStorageService) { }
 
-  onSubmit() {
-    this.economicService.addEconomic(this.page7Form.value);
-  }
+  // onSubmit() {
+  //   this.economicService.addEconomic(this.page7Form.value);
+  // }
 
   // onAddInfo() {
   //   (<FormArray > this.page7Form.get('info')).push(
