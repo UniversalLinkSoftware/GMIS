@@ -2,7 +2,7 @@ import { Implementation } from './implementation-info.model';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ImplementationService } from './implementation.service';
-import { DataStorageService } from '../social-info/data-storage.service';
+// import { DataStorageService } from '../social-info/data-storage.service';
 import { Response } from '@angular/http';
 import { Subscription } from 'rxjs';
 
@@ -37,25 +37,26 @@ export class ImplementationInfoComponent implements OnInit {
       let trainingPeriod = this.page8Form.controls['trainingPeriod'].value;
       const numberOfParticipants = this.page8Form.controls['numberOfParticipants'].value;
 
+      // tslint:disable-next-line:max-line-length
       this.rows.push( {trainingName: trainingName, trainingDate: trainingDate, trainingPeriod: trainingPeriod, numberOfParticipants: numberOfParticipants,
         } );
         this.page8Form.reset(); }
 
-  constructor(private implementationService: ImplementationService, private dataStorageService: DataStorageService ) {}
+  constructor(private implementationService: ImplementationService, ) {}
   onSubmit() {
       this.implementationService.addImplementation(this.page8Form.value);
     }
 
-    onSaveData() {
-      this.dataStorageService.storeImplementation().subscribe(
-        (response: Response) => {
-          console.log(response);
-        }
-      );
-    }
-    onFetch() {
-      console.log(this.dataStorageService.getImplementation());
-    }
+    // onSaveData() {
+    //   this.dataStorageService.storeImplementation().subscribe(
+    //     (response: Response) => {
+    //       console.log(response);
+    //     }
+    //   );
+    // }
+    // onFetch() {
+    //   console.log(this.dataStorageService.getImplementation());
+    // }
     onEditData() {
       const implementationInfo = this.implementationService.getImplementationInfo();
       this.page8Form.setValue(implementationInfo);
