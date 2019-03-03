@@ -32,10 +32,6 @@ import { EconomicService } from './layout/economic-info/economic.service';
 import { DoiService } from './shared/api/doi.service';
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> caf63785c014abdb2b96130bc3e650295d0ba49a
 // AoT requires an exported function for factories
 export const createTranslateLoader = (http: HttpClient) => {
     /* for development
