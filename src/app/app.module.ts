@@ -16,7 +16,6 @@ import { SocialInfoComponent } from './layout/social-info/social-info.component'
 import { AgricultureInfoComponent } from './layout/agriculture-info/agriculture-info.component';
 import { EngineeringInfoComponent } from './layout/engineering-info/engineering-info.component';
 import { GroundwaterInfoComponent } from './layout/groundwater-info/groundwater-info.component';
-import { EconomicInfoComponent } from './layout/economic-info/economic-info.component';
 import { ImplementationInfoComponent } from './layout/implementation-info/implementation-info.component';
 import { MapInfoComponent } from './layout/map-info/map-info.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -30,6 +29,7 @@ import { ProjectService } from './layout/project-info/project.service';
 import { GroundwaterService } from './layout/groundwater-info/groundwater.service';
 import { EconomicService } from './layout/economic-info/economic.service';
 import { DoiService } from './shared/api/doi.service';
+import { ImplementationViewComponent } from './src/layout/implementation-info/implementation-view/implementation-view.component';
 
 
 // AoT requires an exported function for factories
@@ -62,9 +62,9 @@ export const createTranslateLoader = (http: HttpClient) => {
         AppRoutingModule
     ],
     // tslint:disable-next-line:max-line-length
-    declarations: [AppComponent],
+    declarations: [AppComponent, ImplementationViewComponent],
     // tslint:disable-next-line:max-line-length
-    providers: [AuthGuard, SocialService, ImplementationService, EngineeringService, ProjectService, GroundwaterService, EconomicService, DoiService],
+    providers: [AuthGuard, SocialService, ImplementationService,  EngineeringService, ProjectService, GroundwaterService, EconomicService, DoiService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

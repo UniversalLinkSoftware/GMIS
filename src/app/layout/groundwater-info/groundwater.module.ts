@@ -6,11 +6,10 @@ import { PageHeaderModule } from '../../shared';
 import { ReactiveFormsModule } from '@angular/forms';
 import { GroundwaterRoutingModule } from './groundwater-info.routing.module';
 import { GroundwaterInfoComponent } from './groundwater-info.component';
-import { GroundwaterViewComponent } from './groundwater-view/groundwater-view.component';
 
 
 @NgModule({
     imports: [CommonModule, GroundwaterRoutingModule, PageHeaderModule, ReactiveFormsModule],
-    declarations: [GroundwaterInfoComponent, GroundwaterViewComponent]
+    declarations: [GroundwaterInfoComponent]
 })
 export class GroundwaterModule {}

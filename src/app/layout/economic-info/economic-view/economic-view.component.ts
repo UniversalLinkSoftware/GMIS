@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Economic } from '../economic-info.model';
-import { EconomicService } from '../economic.service';
 
 @Component({
   selector: 'app-economic-view',
@@ -9,14 +7,9 @@ import { EconomicService } from '../economic.service';
 })
 export class EconomicViewComponent implements OnInit {
 
-  constructor(private economicService: EconomicService) {
+  constructor() { }
 
+  ngOnInit() {
   }
-   economic: Array<Economic>;
-   ngOnInit() {
-   this.economicService.getAll().subscribe(data => {
-     this.economic = data;
-   });
- }
 
 }

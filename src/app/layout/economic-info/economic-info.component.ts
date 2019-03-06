@@ -2,7 +2,7 @@ import { Economic } from './economic-info.model';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { EconomicService } from './economic.service';
-// import { DataStorageService } from '../social-info/data-storage.service';
+
 import { Response } from '@angular/http';
 
 @Component({
@@ -53,11 +53,11 @@ export class EconomicInfoComponent implements OnInit {
   this.page7Form.reset(); }
 
 
-  constructor(private economicService: EconomicService, ) { }
+  constructor(private economicService: EconomicService) { }
 
-  // onSubmit() {
-  //   this.economicService.addEconomic(this.page7Form.value);
-  // }
+  onSubmit() {
+    this.economicService.addEconomic(this.page7Form.value);
+  }
 
   // onAddInfo() {
   //   (<FormArray > this.page7Form.get('info')).push(
