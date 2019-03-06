@@ -2,11 +2,16 @@ import { Economic } from './economic-info.model';
 import { Component, OnInit , OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { EconomicService } from './economic.service';
+<<<<<<< HEAD
 import { DataStorageService } from '../social-info/data-storage.service';
 
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
+=======
+// import { DataStorageService } from '../social-info/data-storage.service';
+import { Response } from '@angular/http';
+>>>>>>> 3f787e0118041d94b7b96d4d88170e888f0095ca
 
 @Component({
   selector: 'app-economic-info',
@@ -59,6 +64,7 @@ export class EconomicInfoComponent implements OnInit, OnDestroy {
   this.page7Form.reset(); }
 
 
+<<<<<<< HEAD
   constructor(private route: ActivatedRoute , private economicService: EconomicService, private router: Router) { }
 
   ngOnInit() {
@@ -149,6 +155,13 @@ export class EconomicInfoComponent implements OnInit, OnDestroy {
 
   }
 
+=======
+  constructor(private economicService: EconomicService, ) { }
+
+  // onSubmit() {
+  //   this.economicService.addEconomic(this.page7Form.value);
+  // }
+>>>>>>> 3f787e0118041d94b7b96d4d88170e888f0095ca
 
   // onAddInfo() {
   //   (<FormArray > this.page7Form.get('info')).push(
@@ -158,13 +171,18 @@ export class EconomicInfoComponent implements OnInit, OnDestroy {
   //   );
   // }
 
+<<<<<<< HEAD
   // onSaveData(); {
+=======
+  // onSaveData() {
+>>>>>>> 3f787e0118041d94b7b96d4d88170e888f0095ca
   //   this.dataStorageService.storeEconomic().subscribe(
   //     (response: Response) => {
   //       console.log(response);
   //     }
   //   );
   // }
+<<<<<<< HEAD
   // ngOnInit(); {
   //   this.page7Form = new FormGroup({
   //     'totalProjectCost': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
@@ -177,3 +195,17 @@ export class EconomicInfoComponent implements OnInit, OnDestroy {
   //   });
   // }
 
+=======
+  ngOnInit() {
+    this.page7Form = new FormGroup({
+      'totalProjectCost': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'bcRatio1': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'costingYear': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'discountRate1': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'eirr': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'bcRatio2': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+      'discountRatio2': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
+    });
+  }
+  }
+>>>>>>> 3f787e0118041d94b7b96d4d88170e888f0095ca

@@ -37,11 +37,17 @@ export class DataStorageService {
     return this.http.put('https://shopping-b94a8.firebaseio.com/implementation.json', this.implementationService.getImplementationInfo());
   }
   storeGroundwater() {
-        return this.http.put('https://serverproject-aef56.firebaseio.com/groundwater.json', this.groundwaterService.getGroundwaterInfo());
+      //  return this.http.put('https://serverproject-aef56.firebaseio.com/groundwater.json', this.groundwaterService.getGroundwaterInfo());
   }
+<<<<<<< HEAD
 //   storeEconomic() {
 //     return this.http.put('https://server-test-50da6.firebaseio.com/economic.json', this.economicService.geteconomicInfo());
 // }
+=======
+  storeEconomic() {
+    // return this.http.put('https://server-test-50da6.firebaseio.com/economic.json', this.economicService.geteconomicInfo());
+}
+>>>>>>> 3f787e0118041d94b7b96d4d88170e888f0095ca
 
   getSocial() {
     this.http.get('https://shopping-ang7.firebaseio.com/social.json').pipe(

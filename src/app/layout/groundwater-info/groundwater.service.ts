@@ -1,25 +1,38 @@
-import { OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Groundwater } from './groundwater-info.model';
-import { Subject } from 'rxjs';
-export class GroundwaterService implements OnInit {
 
 
-    // tslint:disable-next-line:member-ordering
-    private groundwaterInfo: Groundwater;
-    groundwaterChanged = new Subject<Groundwater>();
-    ngOnInit() {}
+@Injectable()
+export class GroundwaterService {
+  public API = 'http://localhost:8080/api';
+  public GROUNDWATER_API = `${this.API}/GroundwaterInfoes`;
 
+  constructor(private http: HttpClient) {}
 
-    addGroundwater(groundwater: Groundwater) {
-        console.log(groundwater);
-        this.groundwaterInfo = groundwater;
-      }
+  getAll(): Observable<Array<Groundwater>> {
+    return this.http.get<Array<Groundwater>>(this.GROUNDWATER_API);
+  }
 
-      getGroundwaterInfo() {
-          return this.groundwaterInfo;
-      }
-     
+  get(id: string) {
+    return this.http.get<Groundwater>(`${this.GROUNDWATER_API}/${id}`);
+  }
 
+  save(groundwater: Groundwater): Observable<Groundwater> {
+    let result: Observable<Groundwater>;
+    if (groundwater.id) {
+      result = this.http.put<Groundwater>(
+        `${this.GROUNDWATER_API}/${groundwater.id}`,
+        groundwater
+      );
+    } else {
+      result = this.http.post<Groundwater>(this.GROUNDWATER_API, groundwater);
+    }
+    return result;
+  }
 
-
+  remove(id: number) {
+    return this.http.delete(`${this.GROUNDWATER_API}/${id.toString()}`);
+  }
 }

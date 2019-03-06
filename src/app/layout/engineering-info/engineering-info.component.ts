@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder, FormArray } from '@angular/forms';
 import { RiverHydology } from './engineering-info.model';
 import { Response } from '@angular/http';
-import { DataStorageService } from '../social-info/data-storage.service';
+// import { DataStorageService } from '../social-info/data-storage.service';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -106,21 +106,21 @@ export class EngineeringInfoComponent implements OnInit {
     bCanalStructure: bCanalStructure, } );
   this.myGroup.reset(); }
 
-  constructor(private engineeringService: EngineeringService, private dataStorageService: DataStorageService, private _fb: FormBuilder ) {}
+  constructor(private engineeringService: EngineeringService, private _fb: FormBuilder ) {}
   onSubmit() {
       this.engineeringService.addEngineering(this.myGroup.value);
     }
-      onSaveData() {
-        this.dataStorageService.storeEngineering().subscribe(
-          (response: Response) => {
-            console.log(response);
-          }
-        );
-      }
+      // onSaveData() {
+      //   this.dataStorageService.storeEngineering().subscribe(
+      //     (response: Response) => {
+      //       console.log(response);
+      //     }
+      //   );
+      // }
 
-      onFetch() {
-        console.log(this.dataStorageService.getEngineering());
-      }
+      // onFetch() {
+      //   console.log(this.dataStorageService.getEngineering());
+      // }
       onEditData() {
     const engineeringInfo = this.engineeringService.getEngineeringInfo();
     this.myGroup.setValue(engineeringInfo);
