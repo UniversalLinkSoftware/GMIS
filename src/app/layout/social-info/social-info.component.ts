@@ -2,7 +2,6 @@ import { SocialService } from './social.service';
 import { Social } from './social-info.model';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray, FormBuilder } from '@angular/forms';
-import { DataStorageService } from './data-storage.service';
 import { Response } from '@angular/http';
 import { Subscription } from 'rxjs';
 @Component({
@@ -30,28 +29,28 @@ export class SocialInfoComponent implements OnInit {
    wihh = 0;
 
 
-  constructor(private socialService: SocialService, private dataStorageService: DataStorageService, private _fb: FormBuilder ) {}
-  onSubmit() {
-      this.socialService.addSocial(this.page3Form.value);
-    }
+  constructor(private socialService: SocialService,  private _fb: FormBuilder ) {}
+  // onSubmit() {
+  //     this.socialService.addSocial(this.page3Form.value);
+  //   }
 
-    onSaveData() {
-      this.dataStorageService.storeSocial().subscribe(
-        (response: Response) => {
-          console.log(response);
-        }
-      );
-    }
-    onFetch() {
-      console.log(this.dataStorageService.getSocial());
-    }
-    onEditData() {
-  const socialInfo = this.socialService.getSocialInfo();
-  this.page3Form.setValue(socialInfo);
+  //   onSaveData() {
+  //     this.dataStorageService.storeSocial().subscribe(
+  //       (response: Response) => {
+  //         console.log(response);
+  //       }
+  //     );
+  //   }
+  //   onFetch() {
+  //     console.log(this.dataStorageService.getSocial());
+  //   }
+  //   onEditData() {
+  // const socialInfo = this.socialService.getSocialInfo();
+  // this.page3Form.setValue(socialInfo);
 
-    }
+  //   }
 ngOnInit() {
-  console.log(this.dataStorageService.getSocial());
+  // console.log(this.dataStorageService.getSocial());
   // tslint:disable-next-line:prefer-const
 
         this.page3Form =

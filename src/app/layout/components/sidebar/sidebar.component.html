@@ -10,9 +10,9 @@
             <span>{{ 'Forms' | translate }}</span>
         </a>
         <a [routerLink]="['/project']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-          <i class="fa fa-fw fa-edit"></i>&nbsp;
-          <span>{{ 'Project' | translate }}</span>
-      </a>
+            <i class="fa fa-fw fa-edit"></i>&nbsp;
+            <span>{{ 'Project' | translate }}</span>
+        </a>
         <a [routerLink]="['/social']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-edit"></i>&nbsp;
             <span>{{ 'Social' | translate }}</span>
@@ -40,6 +40,10 @@
         <a [routerLink]="['/implementation']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-edit"></i>&nbsp;
             <span>{{ 'Implementation' | translate }}</span>
+        </a>
+        <a [routerLink]="['/map']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-edit"></i>&nbsp;
+            <span>{{ 'Map' | translate }}</span>
         </a>
         <div class="nested-menu">
             <a class="list-group-item" (click)="addExpandClass('pages')">
