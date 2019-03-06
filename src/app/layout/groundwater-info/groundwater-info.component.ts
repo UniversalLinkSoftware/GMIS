@@ -13,7 +13,7 @@ import { Groundwater } from './groundwater-info.model';
 export class GroundwaterInfoComponent implements OnInit, OnDestroy {
 
   page6Form: FormGroup;
-  id: string;
+  id: number;
   editMode = false;
   sub: Subscription;
   groundwaterInfo: Groundwater;
@@ -52,14 +52,15 @@ save(form: any) {
     error => console.error(error)
   );
 }
-// remove(id: number) {
-//   this.groundwaterService.remove(id).subscribe(
-//     result => {
-//       this.gotoList();
-//     },
-//     error => console.error(error)
-//   );
-// }
+remove(id: number) {
+  console.log(id);
+  this.groundwaterService.remove(id).subscribe(
+    result => {
+      this.gotoList();
+    },
+    error => console.error(error)
+  );
+}
 
     // onSaveData() {
     //   this.dataStorageService.storeGroundwater().subscribe(

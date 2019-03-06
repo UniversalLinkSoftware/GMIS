@@ -1,6 +1,6 @@
 export class Groundwater {
     constructor (
-        public id: string,
+        public id: number,
         public tubewellNo: number,
         public location: string,
         public aquiferMaterial: string,

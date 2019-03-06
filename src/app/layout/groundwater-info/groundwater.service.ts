@@ -15,7 +15,7 @@ export class GroundwaterService {
     return this.http.get<Array<Groundwater>>(this.GROUNDWATER_API);
   }
 
-  get(id: string) {
+  get(id: number) {
     return this.http.get<Groundwater>(`${this.GROUNDWATER_API}/${id}`);
   }
 
@@ -33,6 +33,6 @@ export class GroundwaterService {
   }
 
   remove(id: number) {
-    return this.http.delete(`${this.GROUNDWATER_API}/${id.toString()}`);
+    return this.http.delete(`${this.GROUNDWATER_API}/${id}`);
   }
 }
