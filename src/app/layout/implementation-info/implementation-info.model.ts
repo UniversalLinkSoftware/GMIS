@@ -1,7 +1,5 @@
 export class Implementation {
-    constructor(
-        public id: string,
-        public  gonShare: number,
+    constructor(public  gonShare: number,
          public wuaShare: number,
          public physicalProgress: string,
          public physicalProgressDate: Date,
