@@ -39,9 +39,9 @@ export class DataStorageService {
   storeGroundwater() {
         return this.http.put('https://serverproject-aef56.firebaseio.com/groundwater.json', this.groundwaterService.getGroundwaterInfo());
   }
-  storeEconomic() {
-    return this.http.put('https://server-test-50da6.firebaseio.com/economic.json', this.economicService.geteconomicInfo());
-}
+//   storeEconomic() {
+//     return this.http.put('https://server-test-50da6.firebaseio.com/economic.json', this.economicService.geteconomicInfo());
+// }
 
   getSocial() {
     this.http.get('https://shopping-ang7.firebaseio.com/social.json').pipe(
@@ -103,6 +103,19 @@ export class DataStorageService {
         }
       );
   }
-
+  // getEconomic() {
+  //   this.http.get('https://server1-345f5.firebaseio.com/project.json').pipe(
+  //     map(
+  //       (response: Response) => {
+  //         const economic: Economic = response.json();
+  //         return economic;
+  //       }
+  //     ))
+  //     .subscribe(
+  //       (economic: Economic) => {
+  //         this.economicService.setEconomic(economic);
+  //       }
+  //     );
+  // }
 }
 // my name is uzzwal
