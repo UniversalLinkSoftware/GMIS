@@ -1,20 +1,19 @@
 $topnav-background-color: #0d385b;
 .sidebar {
-    
-
-    height: 100%;
     border-radius: 0;
-    position: absolute;
+    position: fixed;
     z-index: 1000;
-    top: 256px;
+    top: 56px;
     left: 235px;
     width: 235px;
     margin-left: -235px;
-    margin-bottom: 0px;
+    margin-bottom: 48px;
     border: none;
     border-radius: 0;
+    overflow-y: auto;
     background-color: $topnav-background-color;
     bottom: 0;
+    overflow-x: hidden;
     padding-bottom: 40px;
     white-space: nowrap;
     -webkit-transition: all 0.2s ease-in-out;
@@ -22,7 +21,7 @@ $topnav-background-color: #0d385b;
     -ms-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    // border-top: 1px solid rgba(255,255,255,0.3);
     .list-group {
         a.list-group-item {
             background: $topnav-background-color;
@@ -81,7 +80,7 @@ $topnav-background-color: #0d385b;
             background: darken($topnav-background-color, 5%);
         }
         .panel-collapse {
-            border-radius: 0;
+            border-radious: 0;
             border: none;
             .panel-body {
                 .list-group-item {
@@ -164,7 +163,7 @@ $topnav-background-color: #0d385b;
 }
 
 .toggle-button {
-    position: absolute;
+    position: fixed;
     width: 236px;
     cursor: pointer;
     padding: 12px;

@@ -1,4 +1,4 @@
-// import { DataStorageService } from '../social-info/data-storage.service';
+
 import { ProjectService } from './project.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
@@ -27,7 +27,7 @@ export class ProjectInfoComponent implements OnInit {
   apdate = 0;
   edate = 0;
 
-  constructor(private projectService: ProjectService, ) { }
+  constructor(private projectService: ProjectService ) { }
   onSubmit() {
     this.projectService.addProject(this.project.value);
   }

@@ -1,5 +1,7 @@
 export class Social {
-    constructor(public  numberOfHousehold: number,
+    constructor(
+        public id: number,
+        public  numberOfHousehold: number,
          public womenInHousehold: number,
         public yearOfSurvey: number,
          public male: number,
@@ -14,5 +16,6 @@ export class Social {
          public literacyFemale: number,
          public populationMigrationIn: number,
          public populationMigrationOut: number,
+         public annualfoodSufficiency: string,
          ) {}
 }
