@@ -1,7 +1,13 @@
 <div id="home">
   <div class="jumbotron">
     <form [formGroup]="myGroup" (ngSubmit)='onSubmit()'>
-
+      <div>
+       <h3>River Hydrology</h3>
+      </div>
+      <button class="btn btn-primary ml-2 mr-4" (click)="riverHydrology()" >Expand/Collapse</button>
+      <br>
+      <div *ngIf="!isCollapsed1">
+          <br>
       <fieldset>
         <legend class="col-md-3 col-form-label">River Hydrology</legend>
         <div class="form-group row">
@@ -183,11 +189,19 @@
           <div class="col-sm-2"></div>
         </div>
       </fieldset>
+      </div>
       <!--End of River Hydrology-->
 
       <br>
 
       <!--start of Main Canal-->
+      <div>
+        <h3>Main Canal</h3>
+       </div>
+       <button class="btn btn-primary ml-2 mr-4" (click)="mainCanal()" >Expand/Collapse</button>
+       <br>
+       <div *ngIf="!isCollapsed2">
+          <br>
       <fieldset>
         <legend class="col-md-3 col-form-label">Main Canal</legend>
         <div class="form-group row">
@@ -418,12 +432,19 @@
             </div>
         </div>
       </fieldset>
+      </div>
 
       <!--End of Main Canal-->
       <br>
 
       <!--Start of Branch Canal-->
-
+      <div>
+        <h3>Branch Canal</h3>
+       </div>
+       <button class="btn btn-primary ml-2 mr-4" (click)="branchCanal()" >Expand/Collapse</button>
+       <br>
+       <div *ngIf="!isCollapsed3">
+          <br>
       <fieldset>
         <legend class="col-md-3 col-form-label">Branch Canal</legend>
         <div class="form-group row">
@@ -631,6 +652,7 @@
 
         
       </fieldset>
+      </div>
       <br>
     </form>
   </div>

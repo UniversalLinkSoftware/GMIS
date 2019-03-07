@@ -13,6 +13,9 @@ import { Subscription } from 'rxjs';
 })
 
 export class EngineeringInfoComponent implements OnInit {
+  isCollapsed1 = true;
+  isCollapsed2 = true;
+  isCollapsed3 = true;
   myGroup: FormGroup;
   TotalRow: number;
   engineeringInfo: RiverHydology;
@@ -107,6 +110,15 @@ export class EngineeringInfoComponent implements OnInit {
   this.myGroup.reset(); }
 
   constructor(private engineeringService: EngineeringService, private _fb: FormBuilder ) {}
+  riverHydrology() {
+    this.isCollapsed1 = !this.isCollapsed1;
+  }
+  mainCanal() {
+    this.isCollapsed2 = !this.isCollapsed2;
+  }
+  branchCanal() {
+    this.isCollapsed3 = !this.isCollapsed3;
+  }
   onSubmit() {
       this.engineeringService.addEngineering(this.myGroup.value);
     }
