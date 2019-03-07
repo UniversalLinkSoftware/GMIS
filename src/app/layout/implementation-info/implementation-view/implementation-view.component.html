@@ -102,10 +102,12 @@
                 {{implementations.wuaRegistrarionDate}}
               </div>
               <div class="col-sm-2">
+                
                   <label for="inputPassword" class="col-form-label">AD</label>
                   </div>
 
          </div>
+         
 
          <fieldset>
             <legend class="col-md-3 col-form-label">WUA training</legend>
@@ -174,7 +176,7 @@
                     <thead>
                       <tr>
                         
-                        <th scope="col">Training Name</th>
+                        <th scope="col">Training Name </th>
                         <th scope="col">Training Date</th>
                         <th scope="col">Training Period</th>
                         <th scope="col">No. of Participants</th>
@@ -182,12 +184,12 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr *ngFor="let row of rows">
+                      <tr >
                         
-                        <td>{{row.trainingName}}</td>
-                        <td>{{row.trainingDate}}</td>
-                        <td>{{row.trainingPeriod}}</td>
-                        <td>{{row.numberOfParticipants}}</td>
+                        <td>{{imptables.trainingName}}</td>
+                        <td>{{imptables.trainingDate}}</td>
+                        <td>{{imptables.trainingPeriod}}</td>
+                        <td>{{imptables.numberOfParticipants}}</td>
                         
                       </tr>
                  
@@ -199,7 +201,7 @@
     </fieldset>
     <br>
 
-    <div class="btn-toolbar">
+    <!-- <div class="btn-toolbar">
       <div>
         <button class="btn btn-success ml-2 mr-4" type="save" (click)="onSaveData()" >Save</button>
         <button class="btn btn-primary ml-2 mr-4" type="submit" >Submit</button>
@@ -208,7 +210,7 @@
         <button class="btn btn-warning ml-2 mr-4" type="reset" >Reset</button>
         <button class="btn btn-danger ml-2 mr-4" type="cancel" >Cancel</button>
         </div>
-      </div>
+      </div> -->
 
 
   </fieldset>
