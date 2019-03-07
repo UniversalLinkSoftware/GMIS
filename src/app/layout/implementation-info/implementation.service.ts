@@ -1,30 +1,40 @@
+
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Implementation } from './implementation-info.model';
-import { Subject } from 'rxjs';
-
-import { OnInit } from '@angular/core';
-export class ImplementationService implements OnInit {
-    ngOnInit() {}
 
 
-    // tslint:disable-next-line:member-ordering
-    private implementationInfo: Implementation;
-    implementationChanged = new Subject<Implementation>();
+@Injectable()
+export class ImplementationService {
+  public API = 'http://localhost:26468/api';
+  public IMPLEMENTATION_API = `${this.API}/Implementations`;
 
-    addImplementation(implementation: Implementation) {
-        console.log(implementation);
-        this.implementationInfo = implementation;
-      }
+  constructor(private http: HttpClient) {}
 
-      getImplementationInfo() {
-          return this.implementationInfo;
-      }
+  getAll(): Observable<Array<Implementation>> {
+    return this.http.get<Array<Implementation>>(this.IMPLEMENTATION_API);
 
-      setImplementation(implementation: Implementation) {
-        this.implementationInfo = implementation;
-        console.log(this.implementationInfo);
-        this.implementationChanged.next( this.implementationInfo);
   }
 
+  get(id: string) {
+    return this.http.get<Implementation>(`${this.IMPLEMENTATION_API}/${id}`);
+  }
+
+  save(implementation: Implementation): Observable<Implementation> {
+    let result: Observable<Implementation>;
+    if (implementation.id) {
+      result = this.http.put<Implementation>(
+        `${this.IMPLEMENTATION_API}/${implementation.id}`,
+        implementation
+      );
+    } else {
+      result = this.http.post<Implementation>(this.IMPLEMENTATION_API, implementation);
+    }
+    return result;
+  }
+
+  remove(id: number) {
+    return this.http.delete(`${this.IMPLEMENTATION_API}/${id.toString()}`);
+  }
 }
-
-
