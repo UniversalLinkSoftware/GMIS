@@ -65,7 +65,7 @@ export class SocialService {
   get(id: number) {
     return this.http.get<Social>(`${this.SOCIAL_API}/${id}`);
   }
- 
+
   save(social: Social): Observable<Social> {
     let result: Observable<Social>;
     if (social.id) {

@@ -1,11 +1,11 @@
 <h1>This is the view component</h1>
 <div *ngFor="let implementations of implementation">
+    <div *ngFor="let imptables of imptable">
   <h3>
       <a [routerLink]="['implementation-edit/', implementations.id]"><button class="btn btn-info ml-2 mr-4" type="edit">Edit</button></a>
   </h3>
 
 
-<h1>This is the view component</h1>
 
 <div class="jumbotron">
   <form>
@@ -114,7 +114,7 @@
                 <label for="inputPassword" class="col-sm-auto col-form-label">Training name:</label>
                 </div>
                 <div class="col-sm-2">
-                  {{implementations.trainingName}}
+                  {{imptables.trainingName}}
                 </div>
                 <div class="col-sm-2">
                 <label for="inputPassword"  class="ml-2 col-form-label"></label>
@@ -125,7 +125,7 @@
                     <label for="inputPassword" class="col-sm-auto">Training date:</label>
                   </div>
                   <div class="col-sm-2">
-                    {{implementations.trainingDate}}
+                    {{imptables.trainingDate}}
     
                   </div>
                   <div class="col-sm-2">
@@ -138,7 +138,7 @@
                 <label for="inputPassword" class="col-sm-auto col-form-label">Training period:</label>
                 </div>
                 <div class="col-sm-2">
-                  {{implementations.trainingPeriod}}
+                  {{imptables.trainingPeriod}}
                 </div>
     
                 <div class="col-sm-2">
@@ -150,7 +150,7 @@
                 <label for="inputPassword" class="col-sm-auto col-form-label">No. of participant:</label>
                 </div>
                 <div class="col-sm-2">
-                  {{implementations.numberOfParticipants}}
+                  {{imptables.numberOfParticipants}}
                 </div>
                 <div class="col-sm-2">
                 <label for="inputPassword" class="ml-2 col-form-label"></label>
@@ -163,8 +163,8 @@
                    && !page8Form.get('trainingDate').valid && page8Form.get('trainingDate').touched
                   && !page8Form.get('trainingPeriod').valid && page8Form.get('trainingPeriod').touched
                   && !page8Form.get('numberOfParticipants').valid && page8Form.get('numberOfParticipants').touched ">Add </button>  -->
-                  <button class="btn btn-success ml-2 mr-4" type="button" (click)="buttonClicked()"[disabled]="!page8Form.valid">Add</button>
-                  <button class="btn btn-danger " type="button" >Cancel</button>
+                  <!-- <button class="btn btn-success ml-2 mr-4" type="button" (click)="buttonClicked()"[disabled]="!page8Form.valid">Add</button>
+                  <button class="btn btn-danger " type="button" >Cancel</button> -->
                   </div>
               </div>
               <br>

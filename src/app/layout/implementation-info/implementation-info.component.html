@@ -56,7 +56,7 @@
                 <label for="inputPassword" class="col-sm-auto">Physical progress date:</label>
               </div>
               <div class="col-sm-2">
-                  <input type="date" class=" form-control " id="GON"formControlName="physicalProgressDate">
+                  <input type="text" class=" form-control " id="GON"formControlName="physicalProgressDate">
                   <!-- <span *ngIf="!page8Form.get('physicalProgressDate').valid && page8Form.get('physicalProgressDate').touched"> -->
                     <span *ngIf="page8Form.get('physicalProgressDate').touched"><small> This field is required!</small></span>
                    
@@ -84,7 +84,7 @@
                 <label for="inputPassword" class="col-sm-auto">Financial progress date:</label>
               </div>
               <div class="col-sm-2">
-                  <input type="date" class=" form-control " id="GON" formControlName="finiancialProgressDate">
+                  <input type="text" class=" form-control " id="GON" formControlName="finiancialProgressDate">
                   <span *ngIf="page8Form.get('finiancialProgressDate').touched"><small> This field is required!</small></span>
               </div>
               <div class="col-sm-2">
@@ -115,7 +115,7 @@
                 <label for="inputPassword" class="col-sm-auto">WUA registration  date:</label>
               </div>
               <div class="col-sm-2">
-                  <input type="date" class=" form-control " id="GON" formControlName="wuaRegistrarionDate">
+                  <input type="text" class=" form-control " id="GON" formControlName="wuaRegistrarionDate">
                   <span *ngIf="page8Form.get('wuaRegistrarionDate').touched"><small> This field is required!</small></span>
               </div>
               <div class="col-sm-2">
@@ -146,7 +146,7 @@
                     <label for="inputPassword" class="col-sm-auto">Training date:</label>
                   </div>
                   <div class="col-sm-2">
-                      <input type="date" class="form-control" formControlName="trainingDate" >
+                      <input type="text" class="form-control" formControlName="trainingDate" >
     <!-- <span *ngIf="!page8Form.get('trainingDate').valid && page8Form.get('trainingDate').touched"  class="text-danger"> -->
       <!-- <span *ngIf="page8Form.get('trainingDate').errors['pattern']"><small>This is invalid! please enter number!</small></span> -->
       <span *ngIf="page8Form.get('trainingDate').touched"><small> This field is required!</small></span>
