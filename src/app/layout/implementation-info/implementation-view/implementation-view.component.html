@@ -1,5 +1,14 @@
+<h1>This is the view component</h1>
+<div *ngFor="let implementations of implementation">
+    <div *ngFor="let imptables of imptable">
+  <h3>
+      <a [routerLink]="['implementation-edit/', implementations.id]"><button class="btn btn-info ml-2 mr-4" type="edit">Edit</button></a>
+  </h3>
+
+
+
 <div class="jumbotron">
-  <form [formGroup]="page8Form" (ngSubmit)='onSubmit()'>
+  <form>
  <fieldset>
     <legend class="col-md-3 col-form-label">Implementation Information</legend>
     <fieldset>
@@ -9,11 +18,7 @@
             <label for="inputPassword" class="col-sm-auto col-form-label">GON Share:</label>
             </div>
             <div class="col-sm-2">
-                <input type="text" class="form-control" formControlName="gonShare" >
-    <span *ngIf="!page8Form.get('gonShare').valid && page8Form.get('gonShare').touched"  class="text-danger">
-      <span *ngIf="page8Form.get('gonShare').errors['pattern']"><small>This is invalid! please enter number!</small></span>
-      <span *ngIf="page8Form.get('gonShare').errors['required']"><small>This field is required!</small></span>
-    </span>
+             {{implementations.gonShare}}
             </div>
             <div class="col-sm-2">
             <label for="inputPassword"  class="ml-2 col-form-label">NRs</label>
@@ -24,11 +29,7 @@
             <label for="inputPassword" class="col-sm-auto col-form-label">WUA share:</label>
             </div>
             <div class="col-sm-2">
-                <input type="text" class="form-control" formControlName="wuaShare" >
-    <span *ngIf="!page8Form.get('wuaShare').valid && page8Form.get('wuaShare').touched"  class="text-danger">
-      <span *ngIf="page8Form.get('wuaShare').errors['pattern']"><small>This is invalid! please enter number!</small></span>
-      <span *ngIf="page8Form.get('wuaShare').errors['required']"><small>This field is required!</small></span>
-    </span>
+              {{implementations.wuaShare}}
             </div>
             <div class="col-sm-2">
             <label for="inputPassword" class="col-form-label">NRs</label>
@@ -40,14 +41,7 @@
                 <label for="inputPassword" class="col-sm-auto col-form-label">Physical progress:</label>
                 </div>
                 <div class="col-sm-10">
-                <textarea class="form-control"cols="60"  rows="3" id="comment"formControlName="physicalProgress">
-                    <!-- <span *ngIf="!page8Form.get('physicalProgress').valid && page8Form.get('physicalProgress').touched">
-                        <span *ngIf="page8Form.get('wuaShare').valid">Only Numbers Allowed.</span>
-                      <span *ngIf="page8Form.get('physicalProgress').touched">This This field is required!</span>
-                     
-                    </span>  -->
-                    
-                  </textarea>
+                  {{implementations.physicalProgress}}
                 </div>
          </div>
 
@@ -56,10 +50,7 @@
                 <label for="inputPassword" class="col-sm-auto">Physical progress date:</label>
               </div>
               <div class="col-sm-2">
-                  <input type="text" class=" form-control " id="GON"formControlName="physicalProgressDate">
-                  <!-- <span *ngIf="!page8Form.get('physicalProgressDate').valid && page8Form.get('physicalProgressDate').touched"> -->
-                    <span *ngIf="page8Form.get('physicalProgressDate').touched"><small> This field is required!</small></span>
-                   
+                {{implementations.physicalProgressDate}}
                  
               </div>
               <div class="col-sm-2">
@@ -72,10 +63,7 @@
                 <label for="inputPassword" class="col-sm-auto col-form-label">Financial progress:</label>
                 </div>
                 <div class="col-sm-10">
-                <textarea class="form-control"cols="60"  rows="3" id="comment" formControlName="finiancialProgress">
-                    <span *ngIf="page8Form.get('finiancialProgress').touched"><small> This field is required!</small></span>
-                    
-                  </textarea>
+                  {{implementations.finiancialProgress}}
                 </div>
          </div>
 
@@ -84,8 +72,7 @@
                 <label for="inputPassword" class="col-sm-auto">Financial progress date:</label>
               </div>
               <div class="col-sm-2">
-                  <input type="text" class=" form-control " id="GON" formControlName="finiancialProgressDate">
-                  <span *ngIf="page8Form.get('finiancialProgressDate').touched"><small> This field is required!</small></span>
+                {{implementations.finiancialProgressDate}}
               </div>
               <div class="col-sm-2">
                   <label for="inputPassword" class="col-form-label">AD</label>
@@ -104,10 +91,7 @@
                     (Name,No of WUA Members):</label>
                 </div>
                 <div class="col-sm-10">
-                <textarea class="form-control"cols="60"  rows="3" id="comment" formControlName="wuaDevelopmentOffice">
-                    <span *ngIf="page8Form.get('wuaRegistrarionDate').touched"><small> This field is required!</small></span>
-                    
-                  </textarea>
+                  {{implementations.wuaDevelopmentOffice}}
                 </div>
          </div>
          <div class="form-group row">
@@ -115,8 +99,7 @@
                 <label for="inputPassword" class="col-sm-auto">WUA registration  date:</label>
               </div>
               <div class="col-sm-2">
-                  <input type="text" class=" form-control " id="GON" formControlName="wuaRegistrarionDate">
-                  <span *ngIf="page8Form.get('wuaRegistrarionDate').touched"><small> This field is required!</small></span>
+                {{implementations.wuaRegistrarionDate}}
               </div>
               <div class="col-sm-2">
                   <label for="inputPassword" class="col-form-label">AD</label>
@@ -131,11 +114,7 @@
                 <label for="inputPassword" class="col-sm-auto col-form-label">Training name:</label>
                 </div>
                 <div class="col-sm-2">
-                    <input type="text" class="form-control" formControlName="trainingName" >
-    <span *ngIf="!page8Form.get('trainingName').valid && page8Form.get('trainingName').touched"  class="text-danger">
-      <!-- <span *ngIf="page8Form.get('trainingName').errors['pattern']"><small>This is invalid! please enter number!</small></span> -->
-      <span *ngIf="page8Form.get('trainingName').errors['required']"><small>This field is required!</small></span>
-    </span>
+                  {{imptables.trainingName}}
                 </div>
                 <div class="col-sm-2">
                 <label for="inputPassword"  class="ml-2 col-form-label"></label>
@@ -146,10 +125,7 @@
                     <label for="inputPassword" class="col-sm-auto">Training date:</label>
                   </div>
                   <div class="col-sm-2">
-                      <input type="text" class="form-control" formControlName="trainingDate" >
-    <!-- <span *ngIf="!page8Form.get('trainingDate').valid && page8Form.get('trainingDate').touched"  class="text-danger"> -->
-      <!-- <span *ngIf="page8Form.get('trainingDate').errors['pattern']"><small>This is invalid! please enter number!</small></span> -->
-      <span *ngIf="page8Form.get('trainingDate').touched"><small> This field is required!</small></span>
+                    {{imptables.trainingDate}}
     
                   </div>
                   <div class="col-sm-2">
@@ -162,11 +138,7 @@
                 <label for="inputPassword" class="col-sm-auto col-form-label">Training period:</label>
                 </div>
                 <div class="col-sm-2">
-                    <input type="text" class="form-control" formControlName="trainingPeriod" >
-    <span *ngIf="!page8Form.get('trainingPeriod').valid && page8Form.get('trainingPeriod').touched"  class="text-danger">
-      <span *ngIf="page8Form.get('trainingPeriod').errors['pattern']"><small>This is invalid! please enter number!</small></span>
-      <span *ngIf="page8Form.get('trainingPeriod').errors['required']"><small>This field is required!</small></span>
-    </span>
+                  {{imptables.trainingPeriod}}
                 </div>
     
                 <div class="col-sm-2">
@@ -178,11 +150,7 @@
                 <label for="inputPassword" class="col-sm-auto col-form-label">No. of participant:</label>
                 </div>
                 <div class="col-sm-2">
-                    <input type="text" class="form-control" formControlName="numberOfParticipants" >
-    <span *ngIf="!page8Form.get('numberOfParticipants').valid && page8Form.get('numberOfParticipants').touched"  class="text-danger">
-      <span *ngIf="page8Form.get('numberOfParticipants').errors['pattern']"><small>This is invalid! please enter number!</small></span>
-      <span *ngIf="page8Form.get('numberOfParticipants').errors['required']"><small>This field is required!</small></span>
-    </span>
+                  {{imptables.numberOfParticipants}}
                 </div>
                 <div class="col-sm-2">
                 <label for="inputPassword" class="ml-2 col-form-label"></label>
@@ -195,8 +163,8 @@
                    && !page8Form.get('trainingDate').valid && page8Form.get('trainingDate').touched
                   && !page8Form.get('trainingPeriod').valid && page8Form.get('trainingPeriod').touched
                   && !page8Form.get('numberOfParticipants').valid && page8Form.get('numberOfParticipants').touched ">Add </button>  -->
-                  <button class="btn btn-success ml-2 mr-4" type="button" (click)="buttonClicked()"[disabled]="!page8Form.valid">Add</button>
-                  <button class="btn btn-danger " type="button" >Cancel</button>
+                  <!-- <button class="btn btn-success ml-2 mr-4" type="button" (click)="buttonClicked()"[disabled]="!page8Form.valid">Add</button>
+                  <button class="btn btn-danger " type="button" >Cancel</button> -->
                   </div>
               </div>
               <br>
@@ -244,4 +212,5 @@
 
 
   </fieldset>
+</form>
 
