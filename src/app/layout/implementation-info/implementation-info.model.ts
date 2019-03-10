@@ -1,16 +1,14 @@
 export class Implementation {
-    constructor(
-        public id: string,
-        public  gonShare: number,
+    constructor(public  gonShare: number,
          public wuaShare: number,
          public physicalProgress: string,
-         public physicalProgressDate: string,
+         public physicalProgressDate: Date,
          public finiancialProgress: string,
-         public finiancialProgressDate: string,
+         public finiancialProgressDate: Date,
          public wuaDevelopmentOffice: string,
-         public wuaRegistrarionDate: string,
+         public wuaRegistrarionDate: Date,
          public trainingName: string,
-         public trainingDate: string,
+         public trainingDate: Date,
          public trainingPeriod: number,
          public numberOfParticipants: number,
          ) {}
