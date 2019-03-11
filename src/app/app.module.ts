@@ -33,6 +33,7 @@ import { DoiService } from './shared/api/doi.service';
 
 
 
+
 // AoT requires an exported function for factories
 export const createTranslateLoader = (http: HttpClient) => {
     /* for development
@@ -62,7 +63,7 @@ export const createTranslateLoader = (http: HttpClient) => {
         AppRoutingModule
     ],
     // tslint:disable-next-line:max-line-length
-    declarations: [AppComponent],
+    declarations: [AppComponent ],
     // tslint:disable-next-line:max-line-length
     providers: [AuthGuard, SocialService, ImplementationService, EngineeringService, ProjectService, GroundwaterService, EconomicService, DoiService],
     bootstrap: [AppComponent]
