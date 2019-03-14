@@ -2,11 +2,13 @@
     <h3>
         <a [routerLink]="['economic-edit/', economics.id]">
             <button class="btn btn-info ml-2 mr-4" type="edit">Edit</button>
+            <button class="btn btn-info ml-2 mr-4" (click)="captureScreen()" >Print</button>
         </a>
     </h3>
 
 
     <h1>This is the view component</h1>
+    <div id='a'>
     <div id="home">
         <div class="jumbotron">
 

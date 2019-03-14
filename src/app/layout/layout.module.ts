@@ -7,8 +7,7 @@ import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
-import { InvoiceComponent } from './invoice/invoice.component';
-import { PrintLayoutComponent } from './print-layout/print-layout.component';
+
 
 @NgModule({
     imports: [
@@ -17,6 +16,6 @@ import { PrintLayoutComponent } from './print-layout/print-layout.component';
         TranslateModule,
         NgbDropdownModule
     ],
-    declarations: [LayoutComponent, SidebarComponent, HeaderComponent, InvoiceComponent, PrintLayoutComponent]
+    declarations: [LayoutComponent, SidebarComponent, HeaderComponent, ]
 })
 export class LayoutModule {}

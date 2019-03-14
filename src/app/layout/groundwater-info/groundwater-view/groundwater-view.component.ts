@@ -24,7 +24,7 @@ export class GroundwaterViewComponent implements OnInit {
       const pdf = new jspdf('p', 'mm', 'a4');
       const position = 0;
       pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight);
-      pdf.save('implementation.pdf');
+      pdf.save('groundwater.pdf');
     });
   }
 
