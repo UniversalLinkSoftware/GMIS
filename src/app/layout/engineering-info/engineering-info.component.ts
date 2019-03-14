@@ -1,3 +1,4 @@
+import { MainTable } from './../../../../../GMIS DEV/src/app/layout/engineering-info/maintable.model';
 import { EngineeringService } from './engineering.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder, FormArray } from '@angular/forms';
@@ -19,7 +20,10 @@ export class EngineeringInfoComponent implements OnInit {
   myGroup: FormGroup;
   TotalRow: number;
   engineeringInfo: RiverHydology;
-  subscription: Subscription;
+  // subscription: Subscription;
+  id: string;
+  editMode = false;
+  sub: Subscription;
     ca = 0;
     lsrahw = 0;
     fd25 = 0;
@@ -119,9 +123,9 @@ export class EngineeringInfoComponent implements OnInit {
   branchCanal() {
     this.isCollapsed3 = !this.isCollapsed3;
   }
-  onSubmit() {
-      this.engineeringService.addEngineering(this.myGroup.value);
-    }
+  // onSubmit() {
+  //     this.engineeringService.addEngineering(this.myGroup.value);
+  //   }
       // onSaveData() {
       //   this.dataStorageService.storeEngineering().subscribe(
       //     (response: Response) => {
@@ -133,16 +137,17 @@ export class EngineeringInfoComponent implements OnInit {
       // onFetch() {
       //   console.log(this.dataStorageService.getEngineering());
       // }
-      onEditData() {
-    const engineeringInfo = this.engineeringService.getEngineeringInfo();
-    this.myGroup.setValue(engineeringInfo);
-      }
+    //   onEditData() {
+    // const engineeringInfo = this.engineeringService.getEngineeringInfo();
+    // this.myGroup.setValue(engineeringInfo);
+    //   }
 
   ngOnInit() {
 
     this.myGroup = new FormGroup({
       tableRows: this._fb.array([this.initTableRows()]),
       // firstName: new FormControl(),
+      'id':  new FormControl(),
       'catchmentArea': new FormControl(this.ca, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/ )]),
       'lngSlopeOfRiverAtHeadworksSite': new FormControl(this.lsrahw, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
       'floodDischarge25': new FormControl(this.fd25, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
@@ -179,8 +184,22 @@ export class EngineeringInfoComponent implements OnInit {
       'bSubBranchLength': new FormControl(this.bsbl, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
       'bCanalStructure': new FormControl(this.bcs, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
    });
-  }
+   if (this.editMode) {
+    this.sub = this.engineeringService.get(this.id).subscribe((riverHydrology: any) => {
 
+
+      console.log(riverHydrology);
+        if (riverHydrology) {
+          console.log(riverHydrology.catchmentArea);
+        this.myGroup.patchValue({
+          catchmentArea: riverHydrology.catchmentArea,
+        });
+      }
+
+
+  });
+}
+}
   initTableRows() {
     return this._fb.group({
       Select: [''],
