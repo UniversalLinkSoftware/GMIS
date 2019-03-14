@@ -30,6 +30,8 @@ import { ProjectService } from './layout/project-info/project.service';
 import { GroundwaterService } from './layout/groundwater-info/groundwater.service';
 import { EconomicService } from './layout/economic-info/economic.service';
 import { DoiService } from './shared/api/doi.service';
+import { LocationService } from './layout/location/location.service';
+
 
 
 
@@ -65,7 +67,7 @@ export const createTranslateLoader = (http: HttpClient) => {
     // tslint:disable-next-line:max-line-length
     declarations: [AppComponent ],
     // tslint:disable-next-line:max-line-length
-    providers: [AuthGuard, SocialService, ImplementationService, EngineeringService, ProjectService, GroundwaterService, EconomicService, DoiService],
+    providers: [AuthGuard, SocialService, ImplementationService, EngineeringService, ProjectService, GroundwaterService, EconomicService, DoiService, LocationService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

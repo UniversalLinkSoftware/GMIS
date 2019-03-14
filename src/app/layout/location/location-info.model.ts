@@ -1,5 +1,7 @@
 export class Location {
-    constructor(public  ecologicalRegion: string,
+    constructor(
+        public id: number,
+        public  ecologicalRegion: string,
         public nearestRoad: string,
         public distance: Date,
         public nearestAirport: string,
@@ -11,11 +13,11 @@ export class Location {
         public riverSource: string,
         public province: number,
         public district: string,
-        public ward:number,
+        public ward: number,
         public metroCity: string,
         public subMetroCity: string,
         public municipality: string,
         public ruralMunicipality: number,
-        public localBodyType:string,
+        public localBodyType: string,
          ) {}
 }
