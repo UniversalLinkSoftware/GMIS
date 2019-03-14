@@ -11,11 +11,11 @@ export class Location {
         public riverSource: string,
         public province: number,
         public district: string,
-        public ward:number,
+        public ward: number,
         public metroCity: string,
         public subMetroCity: string,
         public municipality: string,
         public ruralMunicipality: number,
-        public localBodyType:string,
+        public localBodyType: string,
          ) {}
 }
