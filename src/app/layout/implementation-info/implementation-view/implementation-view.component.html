@@ -2,11 +2,13 @@
 <div *ngFor="let implementations of implementation">
     <div *ngFor="let imptables of imptable">
   <h3>
-      <a [routerLink]="['implementation-edit/', implementations.id]"><button class="btn btn-info ml-2 mr-4" type="edit">Edit</button></a>
+      <a [routerLink]="['implementation-edit/', implementations.id]">
+        <button class="btn btn-info ml-2 mr-4" type="edit">Edit</button></a>
+        <button class="btn btn-info ml-2 mr-4" (click)="captureScreen()" >Print</button>
   </h3>
 
 
-
+<div id="a">
 <div class="jumbotron">
   <form>
  <fieldset>
@@ -201,18 +203,5 @@
     </fieldset>
     <br>
 
-    <!-- <div class="btn-toolbar">
-      <div>
-        <button class="btn btn-success ml-2 mr-4" type="save" (click)="onSaveData()" >Save</button>
-        <button class="btn btn-primary ml-2 mr-4" type="submit" >Submit</button>
-        <button class="btn ml-2 mr-4" type="fetch" (click)="onFetch()">Fetch</button>
-        <button class="btn btn-info ml-2 mr-4" type="edit" (click)="onEditData()" >Edit</button>
-        <button class="btn btn-warning ml-2 mr-4" type="reset" >Reset</button>
-        <button class="btn btn-danger ml-2 mr-4" type="cancel" >Cancel</button>
-        </div>
-      </div> -->
-
-
-  </fieldset>
-</form>
+    
 
