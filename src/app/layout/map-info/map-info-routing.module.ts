@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ProjectMgmtComponent } from './project-mgmt.component';
+import { MapInfoComponent } from './map-info.component';
+
+
+
 
 const routes: Routes = [
     {
-        path: '', component: ProjectMgmtComponent
+        path: '', component: MapInfoComponent
     }
 ];
 
@@ -12,7 +15,5 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule]
 })
-export class ProjectMgmtRoutingModule {
+export class MapinfoRoutingModule {
 }
-
-
