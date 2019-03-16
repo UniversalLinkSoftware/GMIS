@@ -5,9 +5,10 @@ import { LocationRoutingModule } from './location-routing.module';
 import { LocationComponent } from './location.component';
 import { PageHeaderModule } from './../../shared';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LocationViewComponent } from './location-view/location-view.component';
 
 @NgModule({
     imports: [CommonModule, LocationRoutingModule, PageHeaderModule,ReactiveFormsModule],
-    declarations: [LocationComponent]
+    declarations: [LocationComponent, LocationViewComponent]
 })
 export class LocationModule {}
