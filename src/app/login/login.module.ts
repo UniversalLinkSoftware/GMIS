@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
@@ -9,6 +10,8 @@ import { LoginComponent } from './login.component';
     imports: [
         CommonModule,
         TranslateModule,
+        FormsModule,
+        ReactiveFormsModule,
         LoginRoutingModule],
     declarations: [LoginComponent]
 })

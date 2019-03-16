@@ -1,5 +1,7 @@
+import { UserService } from './../../shared/user.service';
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-dashboard',
@@ -10,8 +12,8 @@ import { routerTransition } from '../../router.animations';
 export class DashboardComponent implements OnInit {
     public alerts: Array<any> = [];
     public sliders: Array<any> = [];
-
-    constructor() {
+    userClaims: any;
+    constructor(private userService: UserService, private router: Router ) {
         this.sliders.push(
             {
                 imagePath: 'assets/images/image1.jpg',
@@ -52,10 +54,20 @@ export class DashboardComponent implements OnInit {
         );
     }
 
-    ngOnInit() {}
+    ngOnInit() {
+        this.userService.getUserClaims().subscribe((data: any) => {
+            console.log(data);
+            this.userClaims = data;
+          });
+    }
 
     public closeAlert(alert: any) {
         const index: number = this.alerts.indexOf(alert);
         this.alerts.splice(index, 1);
     }
+
+    Logout() {
+        localStorage.removeItem('userToken');
+        this.router.navigate(['/login']);
+      }
 }

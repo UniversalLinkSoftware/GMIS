@@ -1,3 +1,4 @@
+import { UserService } from '../../../shared/user.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
@@ -9,8 +10,9 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class HeaderComponent implements OnInit {
     public pushRightClass: string;
+    userClaims: any;
 
-    constructor(private translate: TranslateService, public router: Router) {
+    constructor(private translate: TranslateService, public router: Router , private userService: UserService) {
 
         this.translate.addLangs(['en', 'fr', 'ur', 'es', 'it', 'fa', 'de', 'zh-CHS', 'ne']);
         this.translate.setDefaultLang('en');
@@ -30,6 +32,10 @@ export class HeaderComponent implements OnInit {
 
     ngOnInit() {
         this.pushRightClass = 'push-right';
+        this.userService.getUserClaims().subscribe((data: any) => {
+            console.log(data);
+            this.userClaims = data;
+          });
     }
 
     isToggled(): boolean {
@@ -48,7 +54,8 @@ export class HeaderComponent implements OnInit {
     }
 
     onLoggedout() {
-        localStorage.removeItem('isLoggedin');
+        localStorage.removeItem('userToken');
+       // this.router.navigate(['/login']);
     }
 
     changeLang(language: string) {
