@@ -1,6 +1,7 @@
-<div id="header">
+<div id = "header">
     <img src="../../../../assets/images/GOVimage.jpg" class="img-responsive">
     <img src="../../../../assets/images/flag.gif" class="img-responsive img-2">
+    </div>
     <nav class="navbar navbar-expand-lg fixed-top">
         <a class="navbar-brand" href="#">GMIS DOI </a>
         <button class="navbar-toggler" type="button" (click)="toggleSidebar()">
@@ -11,8 +12,8 @@
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="{{ 'Search' | translate }}">
             </form>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item d-none d-xl-block">
+            <ul class="navbar-nav ml-auto" style="margin-right: 5%">
+                <!-- <li class="nav-item d-none d-xl-block">
                     <a href="" class="nav-link btn mt-1" role="button" style="padding: .375rem 1rem !important;border-color: #999;">
                         {{ 'Download Report' | translate }}
                     </a>
@@ -106,10 +107,10 @@
                             {{ 'Nepali' | translate }}
                         </a>
                     </div>
-                </li>
+                </li> -->
                 <li class="nav-item dropdown" ngbDropdown>
                     <a href="javascript:void(0)" class="nav-link" ngbDropdownToggle>
-                        <i class="fa fa-user"></i> {{userClaims.userName}} <b class="caret"></b>
+                        <i class="fa fa-user"></i> Admin <b class="caret"></b>
                     </a>
                     <div class="dropdown-menu-right" ngbDropdownMenu>
                         <a class="dropdown-item" href="javascript:void(0)">
@@ -129,4 +130,3 @@
             </ul>
         </div>
     </nav>
-</div>

@@ -4,6 +4,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute, Router, Params } from '@angular/router';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { PopupComponent } from './popup/popup.component';
 
 @Component({
   selector: 'app-project-info',
@@ -11,7 +13,7 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
   styleUrls: ['./project-info.component.scss']
 })
 export class ProjectInfoComponent implements OnInit, OnDestroy {
-
+  modalRef: BsModalRef;
   project: FormGroup;
   id: number;
   editMode = false;
@@ -83,7 +85,8 @@ export class ProjectInfoComponent implements OnInit, OnDestroy {
   //     });
   //     this.project.reset();  }
 
-  constructor(private route: ActivatedRoute , private projectService: ProjectService, private router: Router ) { }
+  // tslint:disable-next-line:max-line-length
+  constructor(private modalService: BsModalService, private route: ActivatedRoute , private projectService: ProjectService, private router: Router ) { }
 
   ngOnDestroy() {
     this.sub.unsubscribe();
@@ -135,6 +138,10 @@ ngOnInit() {
       // tslint:disable-next-line: prefer-const
       let pr = '';
       // tslint:disable-next-line: prefer-const
+      let prc = '';
+      // tslint:disable-next-line: prefer-const
+      let prn = '';
+      // tslint:disable-next-line: prefer-const
       let spt = '';
       // tslint:disable-next-line: prefer-const
       let sop = '';
@@ -177,6 +184,8 @@ ngOnInit() {
       'commandAreanca': new FormControl(canca, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]),
       'mgmtSystemOthers': new FormControl(ms, [Validators.required]),
       'program': new FormControl(pr, [Validators.required]),
+      'programCode': new FormControl(prc, [Validators.required]),
+      'programName': new FormControl(prn, [Validators.required]),
       'subProjectType': new FormControl(spt, [Validators.required]),
       'statusOfProject': new FormControl(sop, [Validators.required]),
       'subProjectCmmt': new FormControl(spc, [Validators.required]),
@@ -199,6 +208,8 @@ ngOnInit() {
           commandAreanca : project.commandAreanca,
           mgmtSystemOthers : project.mgmtSystemOthers,
           program : project.program,
+          programCode: project.programCode,
+          programName: project.programName,
           subProjectType : project.subProjectType,
           statusOfProject : project.statusOfProject,
           subProjectCmmt : project.subProjectCmmt,
@@ -212,5 +223,8 @@ ngOnInit() {
     }
   } );
 }
+  }
+  openModal() {
+    this.modalRef = this.modalService.show(PopupComponent);
   }
 }

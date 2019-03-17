@@ -54,19 +54,19 @@
                         <legend class="col-md-3 col-form-label">Management System</legend>
 
                         <div class="col-sm-2 form-check form-check-inline">
-                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+                            <input type="radio" id="optionsRadios1" value="option1" formControlName="mgmtSystemOthers">
                             <label class="form-check-label" for="inlineCheckbox1">FMIS</label>
                         </div>
                         <div class="col-sm-2 form-check form-check-inline">
-                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                            <input type="radio"  id="optionsRadios2" value="option2"  formControlName="mgmtSystemOthers">
                             <label class="form-check-label" for="inlineCheckbox2">AMIS</label>
                         </div>
                         <div class="col-sm-2 form-check form-check-inline">
-                            <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+                            <input type="radio"  id="optionsRadios3" value="option3"  formControlName="mgmtSystemOthers">
                             <label class="form-check-label" for="inlineCheckbox3">JMIS</label>
                         </div>
                         <div class="col-sm-4 form-check form-check-inline">
-                            <input type="radio" name="optionsRadios" id="optionsRadios4" value="option4">
+                            <input type="radio"  id="optionsRadios4" value="option4"  formControlName="mgmtSystemOthers">
                             <label class="form-check-label" for="inlineCheckbox4">others</label>
                             <input type="text" class="form-control ml-2">
                         </div>
@@ -78,7 +78,7 @@
                         <label class="col-sm-auto col-form-label">Program:</label>
                     </div>
                     <div class="col-sm-2">
-                        <select id="inputState" class="form-control" placeholder="Select One">
+                        <select id="inputState" class="form-control" placeholder="Select One" formControlName="program">
           <option>CMIASP</option>
           <option>IISP</option>
           <option>IWRMP</option>
@@ -88,11 +88,8 @@
         </select>
                     </div>
                     <div class="col-sm-2"></div>
-                    <div class="col-sm-2">
-                    </div>
-                    <div class="col-sm-2">
-                        <button type="submit" class="btn btn-primary">Add/Edit</button>
-                    </div>
+                    <div (click)="openModal()" class="btn btn-primary col-sm-2" >Add/Edit Program</div>
+                   
 
                 </div>
 
@@ -101,12 +98,12 @@
                         <label class="col-md-auto col-form-label ">Sub Project Type:</label>
                     </div>
                     <div class=" form-check form-check-inline">
-                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+                        <input type="radio"  id="optionsRadios1" value="option1" formControlName="subProjectType">
                         <label class="form-check-label" for="inlineCheckbox1">new</label>
                     </div>
                     <div class="col-sm-1"></div>
                     <div class="form-check form-check-inline">
-                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                        <input type="radio"  id="optionsRadios2" value="option2"  formControlName="subProjectType">
                         <label class="form-check-label" for="inlineCheckbox3">Rehabilaton</label>
                     </div>
                 </div>
@@ -116,7 +113,7 @@
                         <label class="col-md-auto col-form-label">Status of Project:</label>
                     </div>
                     <div class="col-sm-8">
-                        <select id="inputState" class="form-control">
+                        <select id="inputState" class="form-control" formControlName="statusOfProject">
             <option>-Select One-</option>
             <option>Demand Form</option>
             <option>Identification</option>
@@ -135,7 +132,7 @@
                         <label class="col-md-auto col-form-label">Sub Project Comment:</label>
                     </div>
                     <div class="col-8">
-                        <textarea class="form-control" rows="3"></textarea>
+                        <textarea class="form-control" rows="3" formControlName="subProjectCmmt"></textarea>
                     </div>
 
                 </div>
@@ -193,12 +190,12 @@
 
                 <div class="form-group row">
                     <div class="col-sm-2">
-                        <label class="col-md-auto col-form-label">Approved Date:</label>
+                        <label class="col-md-auto col-form-label">Start Date:</label>
                     </div>
                     <div class="col-sm-2">
-                        <input type="date" class="form-control" formControlName="approvedDate1">
-                        <span *ngIf="!project.get('approvedDate1').valid && project.get('approvedDate1').touched" class="text-danger">
-              <span *ngIf="project.get('approvedDate1').errors['required']"><small>This field is required!</small></span>
+                        <input type="date" class="form-control" formControlName="startDate">
+                        <span *ngIf="!project.get('startDate').valid && project.get('startDate').touched" class="text-danger">
+              <span *ngIf="project.get('startDate').errors['required']"><small>This field is required!</small></span>
                         </span>
                     </div>
                     <div class="col-sm-2">
@@ -221,7 +218,7 @@
 
                 <div class="btn-toolbar">
                     <div>
-                        <button class="btn btn-success ml-2 mr-4" type="save" (click)="onSaveData()">Save</button>
+                        <button class="btn btn-success ml-2 mr-4" type="save" >Save</button>
                         <button class="btn btn-primary ml-2 mr-4" type="submit">Submit</button>
                         <button class="btn ml-2 mr-4" type="fetch">Fetch</button>
                         <button class="btn btn-info ml-2 mr-4" type="edit">Edit</button>

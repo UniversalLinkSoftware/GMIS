@@ -6,6 +6,8 @@ import { RiverHydology } from './engineering-info.model';
 import { Response } from '@angular/http';
 // import { DataStorageService } from '../social-info/data-storage.service';
 import { Subscription } from 'rxjs';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { MapComponent } from './map/map.component';
 
 @Component({
   selector: 'app-engineering-info',
@@ -24,6 +26,7 @@ export class EngineeringInfoComponent implements OnInit {
   id: string;
   editMode = false;
   sub: Subscription;
+  modalRef: BsModalRef;
     ca = 0;
     lsrahw = 0;
     fd25 = 0;
@@ -113,7 +116,7 @@ export class EngineeringInfoComponent implements OnInit {
     bCanalStructure: bCanalStructure, } );
   this.myGroup.reset(); }
 
-  constructor(private engineeringService: EngineeringService, private _fb: FormBuilder ) {}
+  constructor(private modalService: BsModalService, private engineeringService: EngineeringService, private _fb: FormBuilder ) {}
   riverHydrology() {
     this.isCollapsed1 = !this.isCollapsed1;
   }
@@ -223,5 +226,8 @@ deleteRows(index: number) {
     alert('one record is mandatory.');
     return false;
   }
+}
+openModal() {
+  this.modalRef = this.modalService.show(MapComponent);
 }
 }

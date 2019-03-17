@@ -14,7 +14,7 @@ import { UserService } from '../shared/user.service';
   animations: [routerTransition()]
 })
 export class LoginComponent implements OnInit {
-  apiURL = 'http://localhost:32898';
+  apiURL = '';
   name: string;
   password: string;
   token: any;
@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
     this.userService.userAuthentication(userName, password).subscribe((data: any) => {
      localStorage.setItem('userToken', data.access_token);
      console.log(data.access_token);
-     this.router.navigate(['/dashboard']);
+     this.router.navigate(['/project-mgmt']);
    },
    (err: HttpErrorResponse) => {
      this.isLoginError = true;
@@ -49,5 +49,6 @@ export class LoginComponent implements OnInit {
 
   onLoggedin() {
    this.ValidateUser(this.loginForm.value.name, this.loginForm.value.password);
+   this.router.navigate(['/project-mgmt']);
 }
 }

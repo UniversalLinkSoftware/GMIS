@@ -4,6 +4,9 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { LocationService} from './location.service';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal';
+import { Popup2Component } from './popup2/popup2.component';
 @Component({
   selector: 'app-location',
   templateUrl: './location.component.html',
@@ -14,6 +17,7 @@ export class LocationComponent implements OnInit, OnDestroy {
   id: string;
   editMode = false;
   sub: Subscription;
+  modalRef: BsModalRef;
 
   public rows: Array<{
       ecologicalRegion: string,
@@ -98,7 +102,8 @@ export class LocationComponent implements OnInit, OnDestroy {
     this.pageForm.reset(); }
 
 
-  constructor(private route: ActivatedRoute , private locationService: LocationService, private router: Router) { }
+  // tslint:disable-next-line:max-line-length
+  constructor(private modalService: BsModalService, private route: ActivatedRoute , private locationService: LocationService, private router: Router) { }
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
@@ -223,5 +228,8 @@ export class LocationComponent implements OnInit, OnDestroy {
         }
       });
 }
+}
+openModal() {
+  this.modalRef = this.modalService.show(Popup2Component);
 }
 }

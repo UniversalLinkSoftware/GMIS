@@ -24,7 +24,11 @@ import { DoiService } from './shared/api/doi.service';
 import { UserService } from './shared/user.service';
 import { ToastrModule } from 'ngx-toastr';
 import {AuthInterceptor } from './shared/guard/auth.interceptor';
-
+import { LocationService } from './layout/location/location.service';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { MapComponent } from './layout/engineering-info/map/map.component';
+import { PopupComponent } from './layout/project-info/popup/popup.component';
+import { Popup2Component } from './layout/location/popup2/popup2.component';
 
 
 
@@ -42,6 +46,7 @@ export const createTranslateLoader = (http: HttpClient) => {
 
 @NgModule({
     imports: [
+        ModalModule.forRoot(),
         CommonModule,
         BrowserModule,
         BrowserAnimationsModule,
@@ -59,13 +64,14 @@ export const createTranslateLoader = (http: HttpClient) => {
         AppRoutingModule
     ],
     // tslint:disable-next-line:max-line-length
-    declarations: [AppComponent ],
+    declarations: [AppComponent, MapComponent, PopupComponent, Popup2Component ],
     // tslint:disable-next-line:max-line-length
-    providers: [AuthGuard, SocialService, ImplementationService, EngineeringService, ProjectService, GroundwaterService, EconomicService, DoiService, UserService, {
+    providers: [AuthGuard, SocialService, ImplementationService, EngineeringService, ProjectService, GroundwaterService, EconomicService, DoiService, UserService, LocationService, {
         provide : HTTP_INTERCEPTORS,
         useClass : AuthInterceptor,
         multi : true
       }],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    entryComponents : [MapComponent, PopupComponent, Popup2Component],
 })
 export class AppModule {}

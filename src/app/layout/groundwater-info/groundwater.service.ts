@@ -6,7 +6,7 @@ import { Groundwater } from './groundwater-info.model';
 
 @Injectable()
 export class GroundwaterService {
-  public API = 'http://localhost:8080/api';
+  public API = 'http://192.168.100.5:8089/api';
   public GROUNDWATER_API = `${this.API}/GroundwaterInfoes`;
 
   constructor(private http: HttpClient) {}

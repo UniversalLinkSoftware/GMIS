@@ -6,7 +6,7 @@ import {User} from '../shared/user.model';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 @Injectable()
 export class UserService {
-  readonly API = 'http://localhost:35257';
+  readonly API = 'http://192.168.100.5:8089';
 
     constructor(private http: HttpClient) {}
     registerUser(user: User) {

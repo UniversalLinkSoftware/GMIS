@@ -134,6 +134,16 @@ $topnav-background-color: #0d385b;
         left: 0px;
     }
 }
+@media screen and (max-width: 992px) {
+    .toggle-button {
+        display: none;
+    }
+}
+@media screen and (max-width: 992px) {
+    .header-fields {
+        display: none;
+    }
+}
 
 @media print {
     .sidebar {
