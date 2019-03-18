@@ -25,10 +25,14 @@
               "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "node_modules/font-awesome/css/font-awesome.css",
               "src/styles/app.scss",
-              "node_modules/ngx-toastr/toastr.css"
+              "node_modules/ngx-toastr/toastr.css",
+              "src/assets/leaflet/leaflet.css",
+              "./node_modules/leaflet-routing-machine/dist/leaflet-routing-machine.css"
             ],
             "scripts": [
-              "node_modules/chart.js/dist/Chart.js"
+              "node_modules/chart.js/dist/Chart.js",
+              "src/assets/leaflet/leaflet.js",
+              "./node_modules/leaflet-routing-machine/dist/leaflet-routing-machine.js"
             ]
           },
           "configurations": {

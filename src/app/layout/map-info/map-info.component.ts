@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FileUploadService } from './map-info.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
+declare let L ;
+
 
 @Component({
   selector: 'app-map-info',
@@ -23,7 +25,20 @@ export class MapInfoComponent implements OnInit {
       name: [''],
       profile: ['']
     });
-  }
+    const map = L.map('map').setView([27.7172, 85.3240], 9);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    L.Routing.control({
+      waypoints: [
+          L.latLng(27.7172, 85.3240),
+          L.latLng(28.2380, 83.9956)
+      ]
+  }).addTo(map);
+
+}
   onSelectedFile(event) {
     console.log(event.target.files);
     if (event.target.files.length > 0) {
