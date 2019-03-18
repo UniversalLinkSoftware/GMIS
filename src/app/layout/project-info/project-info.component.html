@@ -54,19 +54,19 @@
                         <legend class="col-md-3 col-form-label">Management System</legend>
 
                         <div class="col-sm-2 form-check form-check-inline">
-                            <input type="radio" id="optionsRadios1" value="option1" formControlName="mgmtSystemOthers">
+                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
                             <label class="form-check-label" for="inlineCheckbox1">FMIS</label>
                         </div>
                         <div class="col-sm-2 form-check form-check-inline">
-                            <input type="radio"  id="optionsRadios2" value="option2"  formControlName="mgmtSystemOthers">
+                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
                             <label class="form-check-label" for="inlineCheckbox2">AMIS</label>
                         </div>
                         <div class="col-sm-2 form-check form-check-inline">
-                            <input type="radio"  id="optionsRadios3" value="option3"  formControlName="mgmtSystemOthers">
+                            <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
                             <label class="form-check-label" for="inlineCheckbox3">JMIS</label>
                         </div>
                         <div class="col-sm-4 form-check form-check-inline">
-                            <input type="radio"  id="optionsRadios4" value="option4"  formControlName="mgmtSystemOthers">
+                            <input type="radio" name="optionsRadios" id="optionsRadios4" value="option4">
                             <label class="form-check-label" for="inlineCheckbox4">others</label>
                             <input type="text" class="form-control ml-2">
                         </div>
@@ -78,7 +78,7 @@
                         <label class="col-sm-auto col-form-label">Program:</label>
                     </div>
                     <div class="col-sm-2">
-                        <select id="inputState" class="form-control" placeholder="Select One" formControlName="program">
+                        <select id="inputState" class="form-control" placeholder="Select One">
           <option>CMIASP</option>
           <option>IISP</option>
           <option>IWRMP</option>
@@ -88,8 +88,12 @@
         </select>
                     </div>
                     <div class="col-sm-2"></div>
+                    <div class="col-sm-2">
+                    </div>
+                    <div class="col-sm-2">
+                        
+                    </div>
                     <div (click)="openModal()" class="btn btn-primary col-sm-2" >Add/Edit Program</div>
-                   
 
                 </div>
 
@@ -98,12 +102,12 @@
                         <label class="col-md-auto col-form-label ">Sub Project Type:</label>
                     </div>
                     <div class=" form-check form-check-inline">
-                        <input type="radio"  id="optionsRadios1" value="option1" formControlName="subProjectType">
+                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
                         <label class="form-check-label" for="inlineCheckbox1">new</label>
                     </div>
                     <div class="col-sm-1"></div>
                     <div class="form-check form-check-inline">
-                        <input type="radio"  id="optionsRadios2" value="option2"  formControlName="subProjectType">
+                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
                         <label class="form-check-label" for="inlineCheckbox3">Rehabilaton</label>
                     </div>
                 </div>
@@ -113,7 +117,7 @@
                         <label class="col-md-auto col-form-label">Status of Project:</label>
                     </div>
                     <div class="col-sm-8">
-                        <select id="inputState" class="form-control" formControlName="statusOfProject">
+                        <select id="inputState" class="form-control">
             <option>-Select One-</option>
             <option>Demand Form</option>
             <option>Identification</option>
@@ -132,7 +136,7 @@
                         <label class="col-md-auto col-form-label">Sub Project Comment:</label>
                     </div>
                     <div class="col-8">
-                        <textarea class="form-control" rows="3" formControlName="subProjectCmmt"></textarea>
+                        <textarea class="form-control" rows="3"></textarea>
                     </div>
 
                 </div>

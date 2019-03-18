@@ -14,7 +14,7 @@ import { UserService } from '../shared/user.service';
   animations: [routerTransition()]
 })
 export class LoginComponent implements OnInit {
-  apiURL = '';
+  apiURL = 'http://localhost:32898';
   name: string;
   password: string;
   token: any;
@@ -49,6 +49,5 @@ export class LoginComponent implements OnInit {
 
   onLoggedin() {
    this.ValidateUser(this.loginForm.value.name, this.loginForm.value.password);
-   this.router.navigate(['/project-mgmt']);
 }
 }

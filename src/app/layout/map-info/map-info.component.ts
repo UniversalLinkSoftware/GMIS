@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FileUploadService } from './map-info.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
+
 @Component({
   selector: 'app-map-info',
   templateUrl: './map-info.component.html',

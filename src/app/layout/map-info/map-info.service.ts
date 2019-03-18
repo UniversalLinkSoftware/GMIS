@@ -2,14 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpEvent, HttpErrorResponse, HttpEventType} from '@angular/common/http';
 import { throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FileUploadService {
-    apiUrl = 'http://192.168.100.9:8088/api/File/post';
+    apiUrl = 'http://192.168.100.5:8089/api/File/post';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private toastr: ToastrService) { }
   upload(formData) {
     return this.http.post<any>(`${this.apiUrl}`, formData, {
       reportProgress: true,
@@ -23,9 +24,11 @@ export class FileUploadService {
     switch (event.type) {
 
       case HttpEventType.UploadProgress:
+      // console.log(this.fileUploadProgress(event));
         return this.fileUploadProgress(event);
 
       case HttpEventType.Response:
+      console.log(this.apiResponse(event));
         return this.apiResponse(event);
 
       default:
@@ -35,6 +38,9 @@ export class FileUploadService {
 
   private fileUploadProgress(event) {
     const percentDone = Math.round(100 * event.loaded / event.total);
+    if (percentDone === 100 ) {
+    this.toastr.success('File is uploaded');
+    }
     return { status: 'progress', message: percentDone };
   }
 
