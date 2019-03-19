@@ -1,5 +1,4 @@
 <div *ngFor="let groundwaters of groundwater">
-    <button class="btn btn-info ml-2 mr-4" (click)="captureScreen()" >Print</button>
   <div id='a'>
 <div class="jumbotron">
   <fieldset>
@@ -620,13 +619,14 @@
 
     <!-- End of Distribution system -->
 
-    <h3>
-      <a [routerLink]="['groundwater-edit/', groundwaters.id]"><button class="btn btn-info ml-2 mr-4" type="edit" >Edit</button> </a>
-    </h3>
+    
 
     
 </fieldset>
 </div>
-<br>
 
 </div>
+<div>
+    <button class="btn btn-info ml-2 mr-4" (click)="captureScreen()" >Print</button>
+      <a [routerLink]="['groundwater-edit/', groundwaters.id]"><button class="btn btn-info ml-2 mr-4" type="edit" >Edit</button> </a>
+    </div>

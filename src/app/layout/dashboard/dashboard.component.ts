@@ -13,24 +13,46 @@ export class DashboardComponent implements OnInit {
     public alerts: Array<any> = [];
     public sliders: Array<any> = [];
     userClaims: any;
+    public pieChartLabels: string[] = [
+        'Download Sales',
+        'In-Store Sales',
+        'Mail Sales'
+    ];
+    public pieChartData: number[] = [300, 500, 100];
+    public pieChartType: string;
+    public chartClicked(e: any): void {
+        // console.log(e);
+    }
+
+    public chartHovered(e: any): void {
+        // console.log(e);
+    }
+
+    public randomize(): void {
+        // Only Change 3 values
+        const data = [
+            Math.round(Math.random() * 100),
+            59,
+            80,
+            Math.random() * 100,
+            56,
+            Math.random() * 100,
+            40
+        ];
+    }
     constructor(private userService: UserService, private router: Router ) {
         this.sliders.push(
             {
                 imagePath: 'assets/images/image1.jpg',
-                label: 'First slide label',
-                text:
-                    'Nulla vitae elit libero, a pharetra augue mollis interdum.'
+                label: 'Irregation Project 1',
             },
             {
                 imagePath: 'assets/images/image2.jpg',
-                label: 'Second slide label',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+                label: 'Irregation Project 2',
             },
             {
                 imagePath: 'assets/images/image3.jpg',
-                label: 'Third slide label',
-                text:
-                    'Praesent commodo cursus magna, vel scelerisque nisl consectetur.'
+                label: 'Irregation Project 3',
             }
         );
 
@@ -55,6 +77,7 @@ export class DashboardComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.pieChartType = 'pie';
         this.userService.getUserClaims().subscribe((data: any) => {
             console.log(data);
             this.userClaims = data;
