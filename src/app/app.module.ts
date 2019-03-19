@@ -29,6 +29,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { MapComponent } from './layout/engineering-info/map/map.component';
 import { PopupComponent } from './layout/project-info/popup/popup.component';
 import { Popup2Component } from './layout/location/popup2/popup2.component';
+import { ReportService } from './layout/report/report.service';
 
 
 
@@ -66,7 +67,7 @@ export const createTranslateLoader = (http: HttpClient) => {
     // tslint:disable-next-line:max-line-length
     declarations: [AppComponent, MapComponent, PopupComponent, Popup2Component ],
     // tslint:disable-next-line:max-line-length
-    providers: [AuthGuard, SocialService, ImplementationService, EngineeringService, ProjectService, GroundwaterService, EconomicService, DoiService, UserService, LocationService, {
+    providers: [AuthGuard, SocialService, ImplementationService, EngineeringService, ProjectService, GroundwaterService, EconomicService, DoiService, UserService, LocationService, ReportService, {
         provide : HTTP_INTERCEPTORS,
         useClass : AuthInterceptor,
         multi : true
